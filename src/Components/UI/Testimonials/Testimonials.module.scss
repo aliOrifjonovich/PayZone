@@ -1,0 +1,61 @@
+@import "/src/styles/mixins.scss";
+
+.review{
+    border: 2px solid blue;
+    border-radius: 10px;
+    padding: 30px 15px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.084) 0%, rgba(217, 217, 217, 0.042) 100%);
+    border: 1px solid #FFFFFF8A;
+    position: relative;
+
+
+    .markedIcon{
+        position: absolute;
+        top: -40px;
+        right: 30px;
+        @include align-items-center;
+        gap: 10px;
+
+    }
+
+    &_content{
+        @include direction-column;
+        gap: 15px;
+
+        p{
+           font-family: Poppins sans-serif;
+           font-size: 18px;
+           letter-spacing: 1px;
+           color: #ffffff; 
+        }
+
+        .reviewer_wrapper{
+            @include align-items-center;
+            gap: 10px;
+
+            .img_wrapper{
+                @include element-center;
+                border-radius: 50%;
+
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .name_position{
+                h1{
+                    font-size: 20px;
+                    font-weight: 500;
+                    color: #fff;
+                }
+                h2{
+                    font-size: 12px;
+                    font-weight: 500;
+                    color: #AFB0B1;
+                }
+            }
+        }
+    }
+}

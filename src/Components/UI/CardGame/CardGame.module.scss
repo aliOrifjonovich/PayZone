@@ -1,0 +1,65 @@
+@import "styles/mixins.scss";
+
+.card {
+  @include element-center;
+  padding: 15px 11px 0px 11px;
+  border-radius: 20px;
+  box-shadow: 3px 7px 15px 0px #00000024;
+  background: linear-gradient(
+    179.86deg,
+    rgba(255, 255, 255, 0) -6.53%,
+    rgba(255, 255, 255, 0.08) 102.38%
+  );
+  transition: all 0.2s ease-in-out;
+
+  &_wrapper {
+    @include direction-column;
+    gap: 15px;
+
+    .img_wrapper {
+      width: 231px;
+      height: 295px;
+      border-radius: 10px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .card_content {
+      @include direction-column;
+      align-items: center;
+      justify-content: center;
+      gap: 11px;
+
+      h1 {
+        text-align: center;
+        font-size: 18px;
+        font-weight: 400;
+        font-family: Manrope sans-serif;
+        color: #fcfffa;
+      }
+
+      .btn {
+        @include element-center;
+        gap: 15px;
+        width: max-content;
+        border-radius: 12px 12px 0px 0px;
+
+        span {
+          @include element-center;
+        }
+      }
+    }
+  }
+
+  &:hover {
+    background: linear-gradient(
+      179.86deg,
+      rgba(255, 255, 255, 0) -6.53%,
+      rgba(63, 255, 130, 0.1) 102.38%
+    );
+  }
+}

@@ -1,0 +1,56 @@
+@import "styles/mixins.scss";
+
+
+.players{
+    @include direction-column;
+    gap: 20px;
+
+    .buttons{
+        display: flex;
+        gap: 50px;
+        padding: 20px 15px;
+        border-bottom: 1px solid #7EFD0036;
+        border-top: 1px solid #7EFD0036 ;
+    }
+
+    &_wrapper{
+
+        .tablerow{
+            background-color: #00122A;
+            padding: 0 20px;
+            border: none;
+            &_content{
+                color: #A4A4A4;
+                text-transform: capitalize;
+                font-weight: 500;
+                font-size: 18px;
+            }
+        }
+
+
+        .img_wrapper{
+            border-radius: 50%;
+            @include element-center;
+        }
+        .gamerName{
+            h1{
+                color: #00D44A;
+                font-size: 18px;
+                font-weight: 600;
+                letter-spacing: 1px;
+            }
+
+            span{
+                color: #8FA877;
+                font-weight: 500;
+            }
+        }
+
+        .payment{
+            @include align-items-center;
+            gap: 10px;
+            font-size: 18px;
+            font-weight: 500;
+        }
+    }
+}
