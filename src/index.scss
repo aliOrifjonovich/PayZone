@@ -1,16 +1,15 @@
 @import "/src/styles/mixins.scss";
 @import "/src/styles/functions.scss";
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
-*{
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap");
+* {
   text-decoration: none;
   list-style: none;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  // overflow: hidden;
 }
-html{
-  scroll-behavior: smooth; 
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -23,62 +22,86 @@ body {
   @include element-center;
 }
 
-.title{
+.title {
   text-align: center;
   color: #ffffff;
   margin-bottom: 30px;
-  padding-top: 70px;  // Adjust this value based on the height of your navbar or desired offset
+  padding-top: 70px; // Adjust this value based on the height of your navbar or desired offset
   margin-top: -70px;
 }
 
-
-.main_wrapper{
-  background-color: #00172B;
+.main_wrapper {
+  background-color: #00172b;
   @include direction-column;
   gap: 80px;
   padding: 50px 0;
 
-
-
-  .little_about{
+  .little_about {
     background: url("./Components//assets//images/bgimageAdvert.png") no-repeat;
     background-size: cover;
     background-attachment: fixed;
     position: relative;
+    padding: 50px 0;
 
-    &::before{
+    &::before {
       content: "";
       position: absolute;
       top: 0;
-      left:0;
-      background: conic-gradient(from 0deg at 50% 50%, rgba(101, 101, 101, 0.29) 0deg, rgba(0, 18, 42, 0.8) 360deg);
-      // border: 2px solid red;
-      // width: 100%;
+      left: 0;
+      background: rgb(0, 0, 0);
+      background: linear-gradient( rgba(0, 18, 42, 0.903), rgba(0, 18, 42, 0.903));
+      width: 100%;
       height: 100%;
+
     }
   }
 }
 
-.mySwiper{
+.mySwiper {
   display: flex;
   // border: 2px solid red;
   width: 100%;
   overflow: hidden;
   padding: 60px 0;
 
-  .swiper-wrapper{
-      display: flex;
-      // gap: 150px;
+  .swiper-wrapper {
+    display: flex;
+    // gap: 150px;
 
-
-      .swiper-slide{
-        width: 537px !important;
-      }
+    .swiper-slide {
+      width: 537px !important;
+    }
   }
 }
 
+.MuiPaper-root {
+  background-color: transparent !important;
+  .MuiTable-root {
+    border-collapse: unset !important;
 
+    tbody {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
 
+      tr {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        gap: 20px;
+      }
+    }
+
+    th {
+      border-bottom: #00172b 1px solid;
+    }
+
+    td {
+      border-bottom: #00172b 1px solid;
+    }
+  }
+}
 
 /* Default scrollbar width */
 ::-webkit-scrollbar {
@@ -92,11 +115,31 @@ body {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(77.5deg, #00D44A -31.33%, #11E35A -19.3%, #0AB847 -4.45%, #0FB849 11.89%, #25B758 29.28%, #00D44A 47.54%, #29FE73 66.2%, #3FFF82 81.84%);
+  background: linear-gradient(
+    77.5deg,
+    #00d44a -31.33%,
+    #11e35a -19.3%,
+    #0ab847 -4.45%,
+    #0fb849 11.89%,
+    #25b758 29.28%,
+    #00d44a 47.54%,
+    #29fe73 66.2%,
+    #3fff82 81.84%
+  );
   border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(77.5deg, #00D44A -31.33%, #11E35A -19.3%, #0AB847 -4.45%, #0FB849 11.89%, #25B758 29.28%, #00D44A 47.54%, #29FE73 66.2%, #3FFF82 81.84%)
+  background: linear-gradient(
+    77.5deg,
+    #00d44a -31.33%,
+    #11e35a -19.3%,
+    #0ab847 -4.45%,
+    #0fb849 11.89%,
+    #25b758 29.28%,
+    #00d44a 47.54%,
+    #29fe73 66.2%,
+    #3fff82 81.84%
+  );
 }

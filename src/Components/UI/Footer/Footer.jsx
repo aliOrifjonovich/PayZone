@@ -9,7 +9,7 @@ import { CopywritingIcon, EmailIcon, InstagramIcon, TelegramIcon, WhatsappIcon }
 export function Footer() {
   const { t } = useTranslation("common");
   return (
-    <footer className={styles.footer}>
+    <footer className={styles.footer} id="#contact">
       <Container>
         <div className={styles.box}>
          <div className={styles.logo_email_wrapper}>

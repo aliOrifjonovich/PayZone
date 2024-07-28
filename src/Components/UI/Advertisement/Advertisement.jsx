@@ -9,7 +9,7 @@ const Advertisement = () => {
   const { t } = useTranslation("common");
   return (
     <Container>
-      <div className={styles.wrapper}>
+      <div className={styles.wrapper} id="#payzone">
         <div className={styles.content}>
           <div className={styles.img_wrapper}>
             <img src={img} alt="intro pubg gaming image" />
@@ -23,9 +23,11 @@ const Advertisement = () => {
             </h1>
 
             <p>{t("info")}</p>
-            <Button variant="outlined" className={styles.btn}>
-              {t("Play")}
-            </Button>
+            <div className={styles.btn}>
+              <Button variant="outlined">
+                <div className={styles.btn_content}>{t("Play")}</div>
+              </Button>
+            </div>
           </div>
         </div>
       </div>

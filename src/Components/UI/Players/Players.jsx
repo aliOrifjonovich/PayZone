@@ -31,7 +31,10 @@ const Players = () => {
         <div className={styles.buttons}>
           <Button variant="outlined">{t("latest")}</Button>
 
-          <Button variant="contained">{t("top players")}</Button>
+         <div className={styles.btn}>
+          <Button variant="contained">
+            <div className={styles.btn_content }>{t("top players")}</div></Button>
+         </div>
         </div>
 
         <div className={styles.players_wrapper}>
@@ -56,7 +59,7 @@ const Players = () => {
                   <TableRow
                     key={row.gamers}
                     sx={{
-                      "&:last-child td, &:last-child th": { border: 0 },
+                      "&:last-child td, &:last-child th": { border: "none" },
                     }}
                   >
                     <TableCell
@@ -77,15 +80,14 @@ const Players = () => {
                         <span>{`#${row.id}`}</span>
                       </div>
                     </TableCell>
-                    <TableCell
-                      align="right"
-                      sx={{
-                      }}
-                    >
-                     <span className={styles.payment}> <PaymentIcon /> {row.payment}</span>
+                    <TableCell align="right" sx={{}}>
+                      <span className={styles.payment}>
+                        {" "}
+                        <PaymentIcon /> {row.payment}
+                      </span>
                     </TableCell>
                     <TableCell align="right">
-                    <span className={styles.img_wrapper}>
+                      <span className={styles.img_wrapper}>
                         <img src={gamerImage} alt="gamer-image" />
                         {/* <span>A</span> */}
                       </span>

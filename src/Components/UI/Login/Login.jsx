@@ -64,7 +64,9 @@ const Login = ({ setOpenModalLogin, setOpenModalSignup }) => {
         <p className={styles.content}>
           {t("Forgot your password? ")} <a>{t("Reset")}</a>
         </p>
-        <span className={styles.text}>login with</span>
+        <div className={styles.text}>
+          <span>login with</span>
+        </div>
         <div className={styles.btns}>
           <div className={styles.btn}>
             <GoogleIcon />
