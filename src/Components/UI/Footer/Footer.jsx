@@ -9,7 +9,7 @@ import { CopywritingIcon, EmailIcon, InstagramIcon, TelegramIcon, WhatsappIcon }
 export function Footer() {
   const { t } = useTranslation("common");
   return (
-    <footer className={styles.footer} id="#contact">
+    <footer className={styles.footer}>
       <Container>
         <div className={styles.box}>
          <div className={styles.logo_email_wrapper}>
@@ -43,7 +43,7 @@ export function Footer() {
           <div className={styles.social_medais_wrapper}>
             <h2>{t("Social Medias")}</h2>
 
-            <div className={styles.icons}>
+            <div className={styles.icons} id="#contact">
               <NavLink to={'/'}><TelegramIcon/></NavLink>
               <NavLink to={'/'}><InstagramIcon/></NavLink>
               <NavLink to={'/'}><WhatsappIcon/></NavLink>

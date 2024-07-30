@@ -12,6 +12,7 @@ const Advertisement = () => {
       <div className={styles.wrapper} id="#payzone">
         <div className={styles.content}>
           <div className={styles.img_wrapper}>
+            <div className={styles.gradient}></div>
             <img src={img} alt="intro pubg gaming image" />
           </div>
 

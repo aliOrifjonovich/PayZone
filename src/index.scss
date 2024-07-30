@@ -28,6 +28,11 @@ body {
   margin-bottom: 30px;
   padding-top: 70px; // Adjust this value based on the height of your navbar or desired offset
   margin-top: -70px;
+
+  @media screen and (max-width: 500px) {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
 }
 
 .main_wrapper {
@@ -49,58 +54,157 @@ body {
       top: 0;
       left: 0;
       background: rgb(0, 0, 0);
-      background: linear-gradient( rgba(0, 18, 42, 0.903), rgba(0, 18, 42, 0.903));
+      background: linear-gradient(
+        rgba(0, 18, 42, 0.903),
+        rgba(0, 18, 42, 0.903)
+      );
       width: 100%;
       height: 100%;
-
     }
+
+    @media screen and (max-width:700px) {
+      padding: 10px;
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    gap: 30px;
   }
 }
 
 .mySwiper {
-  display: flex;
-  // border: 2px solid red;
   width: 100%;
+  height: 100%;
   overflow: hidden;
-  padding: 60px 0;
+  width: 100%;
+  position: relative;
+  padding: 60px 0 !important;
 
   .swiper-wrapper {
     display: flex;
-    // gap: 150px;
 
     .swiper-slide {
       width: 537px !important;
+
+      @media screen and (max-width:500px) {
+        width: 262px !important;
+        height: 330px;        
+      }
     }
+
+
+  }
+
+  .swiper-pagination {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .swiper-pagination-bullet {
+      width: 25px;
+      height: 5px;
+      background:  linear-gradient(
+        158.34deg,
+        rgba(255, 255, 255, 0.1) 6.53%,
+        rgba(91, 91, 91, 0.1) 92.78%
+      );
+      border-radius: 3px;
+
+      // Change this to the desired color
+      opacity: 1;
+      &.swiper-pagination-bullet-active {
+
+        background: linear-gradient(77.5deg, #00D44A -31.33%, #11E35A -19.3%, #0AB847 -4.45%, #0FB849 11.89%, #25B758 29.28%, #00D44A 47.54%, #29FE73 66.2%, #3FFF82 81.84%);
+
+
+      }
+    }
+  }
+
+  @media screen and (max-width:500px) {
+    padding: 90px 0 !important;
   }
 }
 
 .MuiPaper-root {
   background-color: transparent !important;
   .MuiTable-root {
-    border-collapse: unset !important;
+    border-collapse: separate !important;
+    border-spacing: 0 10px;
 
     tbody {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
       width: 100%;
 
       tr {
-        display: flex;
-        align-items: center;
         width: 100%;
-        gap: 20px;
+        background: url("./Components/assets/images/image.png") no-repeat;
+        background-size: cover;
+
+        &:nth-child(1) {
+          background-image: linear-gradient(
+              180deg,
+              rgba(255, 225, 134, 0.36) 4.4%,
+              rgba(248, 211, 100, 0.36) 19.4%,
+              rgba(237, 199, 85, 0.36) 32.4%,
+              rgba(234, 199, 87, 0.32) 46.4%,
+              rgba(228, 193, 73, 0.32) 60.4%,
+              rgba(201, 167, 50, 0.32) 77.4%,
+              rgba(174, 141, 11, 0.32) 100%
+            ),
+            url("./Components/assets/images/image.png");
+        }
+
+        &:nth-child(2) {
+          background: linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.24) 0%,
+            rgba(220, 220, 220, 0.204176) 33.9%,
+            rgba(186, 186, 186, 0.24) 52.9%,
+            rgba(150, 150, 150, 0.24) 75.4%,
+            rgba(131, 131, 131, 0.3) 100%
+          );
+        }
+        &:nth-child(3) {
+          background: linear-gradient(
+            180deg,
+            rgba(176, 141, 87, 0.32) 0%,
+            rgba(170, 139, 95, 0.32) 30.5%,
+            rgba(163, 138, 103, 0.32) 50.5%,
+            rgba(156, 136, 110, 0.32) 76.5%,
+            rgba(148, 135, 117, 0.32) 100%
+          );
+        }
       }
     }
 
     th {
       border-bottom: #00172b 1px solid;
+
+      @media screen and (max-width: 700px) {
+        gap: 10px;
+        padding: 10px;
+      }
     }
 
     td {
       border-bottom: #00172b 1px solid;
+      @media screen and (max-width: 700px) {
+        padding: 10px;
+      }
     }
   }
+}
+
+.MuiTableRow-root tr:first-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.MuiTableRow-root td:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 /* Default scrollbar width */

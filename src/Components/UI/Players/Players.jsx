@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Container } from "@mui/material";
+import { Button, Container, useMediaQuery } from "@mui/material";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -10,14 +10,14 @@ import Paper from "@mui/material/Paper";
 import styles from "./Players.module.scss";
 import { t } from "i18next";
 import gamerImage from "../../assets/images/gamerimg.png";
-import { PaymentIcon } from "helpers/Protected/icons";
+import { FirstPlaceIcon, PaymentIcon, SecondPlaceIcon, ThirdPlaceIcon } from "helpers/Protected/icons";
 
 function createData(id, gamers, payment, game) {
   return { id, gamers, payment, game };
 }
 
 const rows = [
-  createData(1231, "Frozen yoghurt", 159, 6.0),
+  createData(1231, "Frozen yoghurt", 1000000, 6.0),
   createData(1231, "Ice cream sandwich", 237, 9.0),
   createData(1231, "Eclair", 262, 16.0),
   createData(1231, "Cupcake", 305, 3.7),
@@ -25,21 +25,23 @@ const rows = [
 ];
 
 const Players = () => {
+  const width700 = useMediaQuery("(max-width: 700px)");
   return (
     <Container>
       <div className={styles.players}>
         <div className={styles.buttons}>
-          <Button variant="outlined">{t("latest")}</Button>
+          <p>{t("Eng so’nggi")}</p>
 
-         <div className={styles.btn}>
-          <Button variant="contained">
-            <div className={styles.btn_content }>{t("top players")}</div></Button>
-         </div>
+          <div className={styles.btn}>
+            <Button variant="contained">
+              <div className={styles.btn_content}>{t("top players")}</div>
+            </Button>
+          </div>
         </div>
 
         <div className={styles.players_wrapper}>
           <TableContainer component={Paper}>
-            <Table sx={{ minWidth: 650 }} aria-label="simple table">
+            <Table sx={width700 ? { maxWidth: 650 } : {minWidth: 650}} aria-label="simple table">
               <TableHead>
                 <TableRow className={styles.tablerow}>
                   <TableCell className={styles.tablerow_content}>
@@ -55,11 +57,12 @@ const Players = () => {
               </TableHead>
 
               <TableBody>
-                {rows.map((row) => (
+                {rows.map((row, index) => (
                   <TableRow
                     key={row.gamers}
                     sx={{
-                      "&:last-child td, &:last-child th": { border: "none" },
+                      "&:firs-child td, &:second-child th": { border: "1px solid red" },
+                      
                     }}
                   >
                     <TableCell
@@ -69,8 +72,27 @@ const Players = () => {
                         display: "flex",
                         alignItems: "center",
                         gap: "20px",
+                        position: "relative",
                       }}
+                      className={
+                        index === 0
+                          ? "firstRow"
+                          : index === 1
+                          ? "secondRow"
+                          : index === 2
+                          ? "thirdRow"
+                          : ""
+                      }
                     >
+                      <span className={styles.place}>
+                        {index === 0 ? (
+                          <FirstPlaceIcon />
+                        ) : index === 1 ? (
+                          <SecondPlaceIcon />
+                        ) : index === 2 ? (
+                          <ThirdPlaceIcon />
+                        ) : null}
+                      </span>
                       <span className={styles.img_wrapper}>
                         <img src={gamerImage} alt="gamer-image" />
                         {/* <span>A</span> */}

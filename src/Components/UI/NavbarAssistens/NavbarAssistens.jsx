@@ -8,8 +8,8 @@ import { Link } from "react-scroll";
 const NavbarAssistens = () => {
   const [activeId, setActiveId] = useState(null);
 
-  const handleClick = (Id) => {
-    setActiveId(Id);
+  const handleSetActive = (to) => {
+    setActiveId(to);
   };
 
   return (
@@ -25,7 +25,9 @@ const NavbarAssistens = () => {
               duration={300}
               state={item.state}
               key={item.path}
-              onClick={() => handleClick(item.path)}
+              // onClick={() => handleSetActive(item.path)}
+              onSetActive={handleSetActive}
+              activeClass={styles.active}
               className={`${
                 item.path === activeId ? styles.active : ""
               }`}

@@ -24,7 +24,8 @@
       transition: all 0.2s ease-in-out;
       color: #fff;
 
-      &:hover {
+      &:hover,
+      &.active {
         border-color: #00d44a;
         background: linear-gradient(
           178.42deg,
@@ -36,10 +37,26 @@
       }
     }
   }
+
+  @media screen and (max-width: 1000px) {
+    display: none;
+  }
+  // @media screen and (max-width: 620px) {
+  //   ul {
+  //     gap: 50px;
+  //     padding: 0 20px;
+
+  //     li {
+  //       padding: 15px 10px;
+  //     }
+  //   }
+  // }
+  // @media screen and (max-width: 500px) {
+  //   display: none;
+  // }
 }
 
-
-.active{
+.active {
   border-bottom: 2px solid #00d44a;
   background: linear-gradient(
     178.42deg,

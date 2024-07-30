@@ -1,7 +1,6 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-import styles from "./Games.module.scss";
 import CardGame from "../CardGame/CardGame";
 import fakedata from "fakedata";
 import { t } from "i18next";
@@ -10,9 +9,9 @@ import { Container } from "@mui/material";
 const Games = () => {
   const data = fakedata();
   return (
-    <Container>
+      <Container>
       <Box sx={{ flexGrow: 1 }}>
-        <h1 className="title" id="#games">{t("Games")}</h1>
+        <h1 className="title" id="#games">{t("Game")}</h1>
 
         <Grid
           container
@@ -20,7 +19,7 @@ const Games = () => {
           columns={{ xs: 4, sm: 8, md: 12 }}
         >
           {data?.root1.map((item, index) => (
-            <Grid item xs={12} sm={6} md={3} key={index}>
+            <Grid item xs={12} sm={4} md={3} key={index}>
               <CardGame
                 key={item.id}
                 id={item.id}

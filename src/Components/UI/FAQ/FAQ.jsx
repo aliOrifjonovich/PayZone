@@ -78,7 +78,7 @@ const FAQ = () => {
 
   return (
     <Container style={{ marginTop: "50px" }}>
-      <h1 className="title" id="#faq">{t("FAQ")}</h1>
+      <h1 className="title" id="#">{t("FAQ")}</h1>
       <div className={styles.wrapper}>
         <div className={styles.accordion}>
           {data?.slice(0, 5).map((item, i) => (
@@ -98,6 +98,7 @@ const FAQ = () => {
                 }
                 aria-controls={`panel${i}bh-content`}
                 id={`panel${i}bh-header`}
+                sx={{display:"flex", gap:"20px"}}
               >
                 <Typography
                   sx={{ width: "100%", flexShrink: 0, fontSize: "1.2rem" }}

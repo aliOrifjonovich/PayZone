@@ -109,6 +109,13 @@
             color: #03b942;
           }
         }
+
+        @media screen and (max-width:500px) {
+          padding: 0 5px;
+          p {
+            font-size: 12px;
+          }
+        }
       }
     }
   }
@@ -192,7 +199,15 @@
         border-radius: 5px;
         color: #616b74;
         letter-spacing: 1px;
+        @media screen and (max-width: 500px) {
+          padding: 6px 20px 6px 20px;
+        }
       }
     }
+  }
+
+
+  @media screen and (max-width: 500px) {
+    padding: 30px 15px;
   }
 }

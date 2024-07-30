@@ -15,12 +15,12 @@ import { useForm } from "react-hook-form";
 import Modal from "../Modal/Modal";
 import Login from "../Login/Login";
 import Singup from "../Signup/Singup";
+import MobileNavbar from "../MobileNavbar/MobileNavbar";
 
 const Header = () => {
   const [isTrue, setIsTrue] = useState(true);
   const [openModalLogin, setOpenModalLogin] = useState(false);
   const [openModalSignup, setOpenModalSignup] = useState(false);
-
 
   const { t, i18n } = useTranslation("common");
   const langs = [
@@ -51,84 +51,100 @@ const Header = () => {
   return (
     <>
       <div className={styles.navbar}>
-      <NavLink to="/">
-        <div className={styles.logo_wrapper}>
-          <img src={logo} alt="logo-image" />
-        </div>
-      </NavLink>
-
-      <div className={styles.navbar_items}>
-        <Input
-          icon={<SearchIcon />}
-          type="text"
-          control={control}
-          name="search"
-          placeholder="Izlash..."
-        />
-
-        <div className={styles.navbar_items_wrapper}>
-          <div className={styles.header_navbar_utils_langs}>
-            <li className={styles.item}>
-              <div className={styles.item_wrapper}>
-                <span>{i18n.language}</span>
-                <span className={styles.iconrow}>
-                  <LanguageRowIcon />
-                </span>
-              </div>
-              <div className={styles.childList}>
-                <ul>
-                  {langs.map((lang) => (
-                    <li
-                      key={lang?.label}
-                      className={styles.childItems}
-                      onClick={() => handleChangeLang(lang.label)}
-                    >
-                      <>
-                        <a>{lang.label} </a>
-                      </>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </li>
+        <NavLink to="/">
+          <div className={styles.logo_wrapper}>
+            <img src={logo} alt="logo-image" />
           </div>
+        </NavLink>
 
-          <div className={styles.navbar_items_wrapper_buttons}>
-            {isTrue && (
-              <div className={styles.registerButtons}>
-                <Button onClick={() => setOpenModalLogin(true)} className={styles.registerbutton} variant="contained">
-                  {t("Login")}
-                </Button>
-                <Button onClick={() => setOpenModalSignup(true)} className={styles.registerbutton} variant="outlined">
-                  {t("Signup")}
-                </Button>
-              </div>
-            )}
+        <div className={styles.navbar_items}>
+          <Input
+            icon={<SearchIcon />}
+            type="text"
+            control={control}
+            name="search"
+            placeholder="Izlash..."
+          />
 
-            {!isTrue && (
-              <div className={styles.navbar_items_wrapper_buttons_usersCard}>
-                <div className={styles.user_button}>
-                  <UserIcon />
+          <div className={styles.navbar_items_wrapper}>
+            <div className={styles.header_navbar_utils_langs}>
+              <li className={styles.item}>
+                <div className={styles.item_wrapper}>
+                  <span>{i18n.language}</span>
+                  <span className={styles.iconrow}>
+                    <LanguageRowIcon />
+                  </span>
                 </div>
-                <NavLink to={"/card"}>
-                  <Button className={styles.card_button} variant="contained">
-                    <CardButton />
-                    {count ? <div className={styles.count}>{count}</div> : ""}
+                <div className={styles.childList}>
+                  <ul>
+                    {langs.map((lang) => (
+                      <li
+                        key={lang?.label}
+                        className={styles.childItems}
+                        onClick={() => handleChangeLang(lang.label)}
+                      >
+                        <>
+                          <a>{lang.label} </a>
+                        </>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </li>
+            </div>
+
+            <div className={styles.navbar_items_wrapper_buttons}>
+              {!isTrue && (
+                <div className={styles.registerButtons}>
+                  <Button
+                    onClick={() => setOpenModalLogin(true)}
+                    className={styles.registerbutton}
+                    variant="contained"
+                  >
+                    {t("Login")}
                   </Button>
-                </NavLink>
-              </div>
-            )}
+                  <Button
+                    onClick={() => setOpenModalSignup(true)}
+                    className={styles.registerbutton}
+                    variant="outlined"
+                  >
+                    {t("Signup")}
+                  </Button>
+                </div>
+              )}
+
+              {isTrue && (
+                <div className={styles.navbar_items_wrapper_buttons_usersCard}>
+                  <div className={styles.user_button}>
+                    <UserIcon />
+                  </div>
+                  <NavLink to={"/card"}>
+                    <Button className={styles.card_button} variant="contained">
+                      <CardButton />
+                      {count ? <div className={styles.count}>{count}</div> : ""}
+                    </Button>
+                  </NavLink>
+                </div>
+              )}
+              
+              <MobileNavbar />
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <Modal open={openModalLogin} handleClose={handleCloseLogin}>
-        <Login setOpenModalLogin={setOpenModalLogin} setOpenModalSignup={setOpenModalSignup}/>
+      <Modal open={openModalLogin} handleClose={handleCloseLogin}>
+        <Login
+          setOpenModalLogin={setOpenModalLogin}
+          setOpenModalSignup={setOpenModalSignup}
+        />
       </Modal>
 
       <Modal open={openModalSignup} handleClose={handleCloseSignup}>
-        <Singup setOpenModalSignup={setOpenModalSignup} setOpenModalLogin={setOpenModalLogin}/>
+        <Singup
+          setOpenModalSignup={setOpenModalSignup}
+          setOpenModalLogin={setOpenModalLogin}
+        />
       </Modal>
     </>
   );

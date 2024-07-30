@@ -44,4 +44,14 @@
     border-radius: 50%;
     background: linear-gradient(77.5deg, #00D44A -31.33%, #11E35A -19.3%, #0AB847 -4.45%, #0FB849 11.89%, #25B758 29.28%, #00D44A 47.54%, #29FE73 66.2%, #3FFF82 81.84%);
   }
+
+  @media screen and (max-width:1000px) {
+    width: 350px;
+  }
+  @media screen and (max-width: 830px) {
+    width: 300px;
+  }
+  @media screen and (max-width: 760px) {
+    display: none;
+  }
 }

@@ -1,12 +1,15 @@
 import React from "react";
-import { Container } from "@mui/material";
+import { Container, useMediaQuery } from "@mui/material";
 import { t } from "i18next";
 import { Swiper, SwiperSlide } from "swiper/react";
 import styles from "./Testimonials.module.scss";
 import { styled } from "@mui/material/styles";
 import { Rating } from "@mui/material";
 // import required modules
-import { Pagination } from "swiper/modules";
+import { Autoplay, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/autoplay';
+import 'swiper/css/pagination';
 import { MarkedIcon } from "helpers/Protected/icons";
 import img from "../../assets/images/gamerimg.png";
 import { useTranslation } from "react-i18next";
@@ -77,6 +80,7 @@ const data = [
 
 const Testimonials = () => {
   const { t } = useTranslation("common");
+  const width500px = useMediaQuery("max-width:500px")
   return (
     <Container>
       <div
@@ -93,17 +97,22 @@ const Testimonials = () => {
       </div>
 
       <Swiper
-        slidesPerView={3}
-        spaceBetween={20}
-        // freeMode={true}
+        slidesPerView={width500px ? 1 : 3}
+        centeredSlides={true}
+        spaceBetween={10}
+        autoplay={{
+          delay: 2000,
+          disableOnInteraction: false,
+        }}
         pagination={{
           clickable: true,
         }}
-        modules={[Pagination]}
+        loop={true}
+        modules={[Autoplay, Pagination]}
         className="mySwiper"
       >
         {data?.map((item, index) => (
-          <SwiperSlide>
+          <SwiperSlide key={index}>
             <div className={styles.review}>
               <div className={styles.markedIcon}>
                 <span>

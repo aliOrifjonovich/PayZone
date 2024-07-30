@@ -1,0 +1,24 @@
+@import "styles/mixins.scss";
+
+.hamburger, 
+.cancelIcon {
+    cursor: pointer;
+    padding: 12px 12px 0 12px;
+    width: max-content;
+
+    @media (min-width: 1001px) {
+        display: none;
+      }
+}
+
+.cancelIcon{
+  position: absolute;
+  top: 10px;
+  right: 0;
+}
+
+.registerButtons {
+  @include direction-column;
+  gap: 20px;
+  width: 100%;
+}

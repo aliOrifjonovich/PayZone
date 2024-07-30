@@ -16,6 +16,7 @@
     .img_wrapper {
       width: 885px;
       height: 602px;
+      position: relative;
 
       img {
         width: 100%;
@@ -27,11 +28,10 @@
     &_infos {
       @include direction-column;
       gap: 15px;
-      border-radius: 20px;
+      border-radius: 10px;
       box-shadow: 0px 4px 20px -1px #00000000;
       color: #fff;
-      // background: url("../../assets/images/background.png") no-repeat;
-      // border: 1px solid #FFFFFF33;
+      text-transform: capitalize;
 
       h1 {
         font-size: 40px;
@@ -51,13 +51,140 @@
 
       .btn {
         width: max-content;
-        transform: skew(-20deg);
+        transform: skew(-15deg);
         border-radius: 20px !important;
 
         &_content {
           padding: 10px 35px;
           font-size: 20px;
-          transform: skew(20deg);
+          transform: skew(15deg);
+        }
+      }
+    }
+
+    @media screen and (max-width: 1024px) {
+      gap: 30px;
+      .img_wrapper {
+        width: 790px;
+        height: 502px;
+      }
+
+      &_infos {
+        h1 {
+          font-size: 35px;
+          font-weight: 700;
+          letter-spacing: 1px;
+        }
+
+        p {
+          font-size: 25px;
+        }
+
+        .btn {
+          &_content {
+            padding: 10px 25px;
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: 900px) {
+      gap: 25px;
+      padding: 25px 20px;
+      .img_wrapper {
+        width: 700px;
+        height: 450px;
+      }
+
+      &_infos {
+        h1 {
+          font-size: 25px;
+        }
+
+        p {
+          font-size: 15px;
+        }
+
+        .btn {
+          &_content {
+            padding: 10px 20px;
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      gap: 25px;
+      padding: 25px 20px;
+      .img_wrapper {
+        width: 650px;
+        height: 450px;
+      }
+
+      &_infos {
+        h1 {
+          font-size: 20px;
+        }
+
+        p {
+          font-size: 15px;
+        }
+
+        .btn {
+          &_content {
+            padding: 8px 15px;
+            font-size: 15px;
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: 700px) {
+      @include direction-column;
+      gap: 15px;
+      background: transparent;
+      .img_wrapper {
+        width: 233px;
+        height: 289px;
+
+        .gradient {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 10%; // Adjust the height as needed
+          background: rgb(0, 18, 42);
+          background: linear-gradient(
+            180deg,
+            rgba(0, 18, 42, 0.5984768907563025) 0%,
+            rgba(0, 18, 42, 1) 100%
+          );
+        }
+      }
+
+      &_infos {
+        @include element-center;
+        background: url("../../assets/images/background.png") no-repeat;
+        background-position: cover;
+        background-size: cover;
+        padding: 25px 20px;
+
+        h1 {
+          font-size: 20px;
+          text-align: center;
+          line-height: 23px;
+        }
+
+        p {
+          font-size: 15px;
+          text-align: center;
+          line-height: 29px;
+        }
+
+        .btn {
+          &_content {
+            font-size: 15px;
+          }
         }
       }
     }
