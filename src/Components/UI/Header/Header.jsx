@@ -115,9 +115,11 @@ const Header = () => {
 
               {isTrue && (
                 <div className={styles.navbar_items_wrapper_buttons_usersCard}>
-                  <div className={styles.user_button}>
-                    <UserIcon />
-                  </div>
+                  <NavLink to={"/profile"}>
+                    <div className={styles.user_button}>
+                      <UserIcon />
+                    </div>
+                  </NavLink>
                   <NavLink to={"/card"}>
                     <Button className={styles.card_button} variant="contained">
                       <CardButton />
@@ -126,7 +128,7 @@ const Header = () => {
                   </NavLink>
                 </div>
               )}
-              
+
               <MobileNavbar />
             </div>
           </div>

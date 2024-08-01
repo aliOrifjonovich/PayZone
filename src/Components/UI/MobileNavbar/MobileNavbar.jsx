@@ -11,7 +11,6 @@ import {
 } from "@mui/material";
 import styles from "./MobileNavbar.module.scss";
 import { navbarItems } from "utils/navbarItems";
-import { Link } from "react-router-dom";
 import { CancelIcon, HamburgerMenu } from "helpers/Protected/icons";
 import { useTheme } from "@emotion/react";
 import LanguageSelection from "../LanguageSelection/LanguageSelection";
@@ -19,6 +18,7 @@ import Modal from "../Modal/Modal";
 import Login from "../Login/Login";
 import Singup from "../Signup/Singup";
 import { t } from "i18next";
+import { Link } from "react-scroll";
 
 const MobileNavbar = () => {
   const {
@@ -68,7 +68,7 @@ const MobileNavbar = () => {
         <LanguageSelection />
 
         {navbarItems?.map((item) => (
-          <Link to={item.path}>
+          <Link to={item.path} onClick={toggleDrawer(false)}>
             <ListItem key={item} disablePadding>
               <ListItemButton
                 sx={
@@ -86,9 +86,10 @@ const MobileNavbar = () => {
                     textAlign: "center",
                     textTransform: "capitalize",
                     fontSize: "20px",
-                    fontWeight: "600",
+                    fontWeight: "500",
                     letterSpacing: "2px",
-                    color: `${mode === "light" ? "#2B2D42" : "#fff"}`,
+                    lineHeight:"25px",
+                    color: `#fff`,
                   }}
                 />
               </ListItemButton>

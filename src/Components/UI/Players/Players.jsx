@@ -50,7 +50,7 @@ const Players = () => {
                   <TableCell className={styles.tablerow_content} align="left">
                     {t("payment")}
                   </TableCell>
-                  <TableCell className={styles.tablerow_content} align="center">
+                  <TableCell className={styles.tablerow_content} align="left">
                     {t("game")}
                   </TableCell>
                 </TableRow>

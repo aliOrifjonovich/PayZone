@@ -6,6 +6,7 @@ import ProductsLayout from "./Components/ProductsLayout/ProductsLayout";
 import Main from "pages/Main/Main";
 import Protected from "helpers/Protected/Protected";
 import Card from "pages/Card/Card";
+import Profile from "pages/Profile/Profile";
 
 export const Routes = () =>
   useRoutes([
@@ -33,6 +34,10 @@ export const Routes = () =>
       ],
     },
 
+    {
+      path: "/profile",
+      element: <Profile/>
+    },
     {
       path: "*",
       element: <NotFound />,
