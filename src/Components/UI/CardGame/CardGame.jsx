@@ -18,18 +18,24 @@ const CardGame = ({ name, img, id }) => {
 
           <div className={styles.card_content}>
             <h1>{name}</h1>
-            <Button
-              variant="contained"
-              className={styles.btn}
-              fullWidth={false}
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
+
+            <Link
+              to={`/single-game/${id}`}
+              className={styles.project_button}
             >
-              {t("buy")}
-              <span>
-                <BuyRowIcon fill={isHovered ? "#00d44a" : "#102838"} />
-              </span>
-            </Button>
+              <Button
+                variant="contained"
+                className={styles.btn}
+                fullWidth={false}
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+              >
+                {t("buy")}
+                <span>
+                  <BuyRowIcon fill={isHovered ? "#00d44a" : "#102838"} />
+                </span>
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

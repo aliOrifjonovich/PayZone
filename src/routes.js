@@ -7,6 +7,7 @@ import Main from "pages/Main/Main";
 import Protected from "helpers/Protected/Protected";
 import Card from "pages/Card/Card";
 import Profile from "pages/Profile/Profile";
+import SingleGame from "pages/SingleGame/SingleGame";
 
 export const Routes = () =>
   useRoutes([
@@ -32,6 +33,10 @@ export const Routes = () =>
           element: <ProductsById />,
         },
       ],
+    },
+    {
+      path: "/single-game/:id",
+      element: <SingleGame/>,
     },
 
     {
