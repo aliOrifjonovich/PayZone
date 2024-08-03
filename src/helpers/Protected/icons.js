@@ -743,3 +743,99 @@ export const Line = () => (
     </defs>
   </svg>
 );
+export const DoneIcon = () => (
+  <svg
+    width="20"
+    height="14"
+    viewBox="0 0 20 14"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M19.2422 1.3125L9.28906 12.6875L5.02344 8.42188"
+      stroke="url(#paint0_linear_482_3865)"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M5.02344 12.6875L0.757812 8.42188"
+      stroke="url(#paint1_linear_482_3865)"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M14.9766 1.3125L8.93359 8.24414"
+      stroke="url(#paint2_linear_482_3865)"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <defs>
+      <linearGradient
+        id="paint0_linear_482_3865"
+        x1="8.76298"
+        y1="45.8179"
+        x2="27.0192"
+        y2="40.7584"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stop-color="#00D44A" />
+        <stop offset="0.1063" stop-color="#11E35A" />
+        <stop offset="0.2375" stop-color="#0AB847" />
+        <stop offset="0.3819" stop-color="#0FB849" />
+        <stop offset="0.5356" stop-color="#25B758" />
+        <stop offset="0.6969" stop-color="#00D44A" />
+        <stop offset="0.8618" stop-color="#29FE73" />
+        <stop offset="1" stop-color="#3FFF82" />
+      </linearGradient>
+      <linearGradient
+        id="paint1_linear_482_3865"
+        x1="1.87967"
+        y1="25.1114"
+        x2="7.50088"
+        y2="23.8651"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stop-color="#00D44A" />
+        <stop offset="0.1063" stop-color="#11E35A" />
+        <stop offset="0.2375" stop-color="#0AB847" />
+        <stop offset="0.3819" stop-color="#0FB849" />
+        <stop offset="0.5356" stop-color="#25B758" />
+        <stop offset="0.6969" stop-color="#00D44A" />
+        <stop offset="0.8618" stop-color="#29FE73" />
+        <stop offset="1" stop-color="#3FFF82" />
+      </linearGradient>
+      <linearGradient
+        id="paint2_linear_482_3865"
+        x1="10.5229"
+        y1="28.433"
+        x2="18.5768"
+        y2="26.8763"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stop-color="#00D44A" />
+        <stop offset="0.1063" stop-color="#11E35A" />
+        <stop offset="0.2375" stop-color="#0AB847" />
+        <stop offset="0.3819" stop-color="#0FB849" />
+        <stop offset="0.5356" stop-color="#25B758" />
+        <stop offset="0.6969" stop-color="#00D44A" />
+        <stop offset="0.8618" stop-color="#29FE73" />
+        <stop offset="1" stop-color="#3FFF82" />
+      </linearGradient>
+    </defs>
+  </svg>
+);
+
+export const ChangeIconButton = ({fill}) => (
+  <svg
+    width="20"
+    height="18"
+    viewBox="0 0 20 18"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M17.4385 17.7486H2.56208C1.98246 17.748 1.42674 17.5175 1.01688 17.1077C0.607032 16.6978 0.376533 16.1421 0.375977 15.5625L0.375977 5.06249C0.375976 4.4825 0.60623 3.92624 1.01614 3.51594C1.42606 3.10563 1.98209 2.87484 2.56208 2.87429H5.52308L6.59408 0.732287C6.66618 0.586401 6.77787 0.463744 6.91639 0.378332C7.0549 0.292921 7.21465 0.248202 7.37738 0.249287H12.6274C12.79 0.248936 12.9494 0.293958 13.0878 0.379287C13.2262 0.464616 13.338 0.586867 13.4107 0.732287L14.4796 2.87429H17.4385C18.0185 2.87429 18.5747 3.10454 18.985 3.51445C19.3953 3.92437 19.6261 4.4804 19.6267 5.06039V15.5604C19.6267 16.1407 19.3961 16.6973 18.9858 17.1077C18.5754 17.518 18.0188 17.7486 17.4385 17.7486ZM10.0024 5.93609C9.13663 5.93526 8.29008 6.19122 7.56984 6.6716C6.84959 7.15198 6.288 7.83519 5.95612 8.6348C5.62423 9.43441 5.53697 10.3145 5.70536 11.1637C5.87375 12.0129 6.29023 12.7931 6.90211 13.4056C7.51399 14.0181 8.29378 14.4353 9.14284 14.6045C9.99189 14.7737 10.8721 14.6873 11.672 14.3562C12.4719 14.025 13.1557 13.4641 13.6367 12.7443C14.1178 12.0245 14.3746 11.1782 14.3746 10.3125C14.3735 9.15286 13.9126 8.04099 13.093 7.22061C12.2734 6.40024 11.162 5.93831 10.0024 5.93609Z"
+      fill={fill}
+    />
+  </svg>
+);

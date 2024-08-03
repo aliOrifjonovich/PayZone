@@ -1,15 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./SIngleCardGame.module.scss";
 import { t } from "i18next";
 import { Button } from "@mui/material";
 import img from "../../assets/images/singlegame.png";
-import img2 from "../../assets/images/1.png"
-import Modal from "../Modal/Modal";
-import { CancelIcon, Exclamation, Line } from "helpers/Protected/icons";
 
-const SIngleCardGame = () => {
-  const [openModal, setOpenModal] = useState(false);
-  const handleClose = () => setOpenModal(false);
+const SIngleCardGame = ({setOpenModal}) => {
+  
 
   return (
     <>
@@ -29,45 +25,6 @@ const SIngleCardGame = () => {
           13,000 so’m
         </Button>
       </div>
-      <Modal open={openModal} handleClose={handleClose}>
-        <div className={styles.login_wrapper}>
-          <h1 className={styles.title}>ID raqamingizni kiriting</h1>
-          <span
-            className={styles.cancelIcon}
-            onClick={() => setOpenModal(false)}
-          >
-            <CancelIcon />
-          </span>
-
-          <form action="">
-            <div className={styles.inputs}>
-              <div className={styles.input}>
-                <input type="text" placeholder="ID" />
-              </div>
-            </div>
-
-            <Button
-              variant="contained"
-              sx={{ borderRadius: "10px", fontSize: "20px" }}
-            >
-              {t("Qabul qilish")}
-            </Button>
-          </form>
-
-          <div className={styles.img_content}>
-            <span className={styles.line}>
-              <Line/>
-            </span>
-            <div className={styles.guide}>
-              <Exclamation/>
-              ID raqam profil qismida bo‘ladi
-            </div>
-            <div className={styles.img_wrapper}>
-              <img src={img2} alt="guide" />
-            </div>
-          </div>
-        </div>
-      </Modal>
     </>
   );
 };

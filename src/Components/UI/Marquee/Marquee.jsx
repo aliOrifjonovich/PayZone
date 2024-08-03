@@ -2,6 +2,7 @@ import { StartMarqueeIcon } from "helpers/Protected/icons";
 import React from "react";
 import Marquee from 'react-fast-marquee';
 import styles from './Marquee.module.scss'
+import { useTranslation } from "react-i18next";
 
 
 const data = [
@@ -16,6 +17,7 @@ const data = [
 ];
 
 const MarqueeElem = () => {
+  const {t}=useTranslation("common")
   return (
     <div>
       <Marquee
@@ -29,7 +31,7 @@ const MarqueeElem = () => {
 
         {data?.map((item, index)=>(
         <div className={styles.marquee__item} key={index}>
-          <h1><StartMarqueeIcon/> {item.text}</h1>
+          <h1><StartMarqueeIcon/> {t(item.text)}</h1>
         </div>
         ))}
       </Marquee>

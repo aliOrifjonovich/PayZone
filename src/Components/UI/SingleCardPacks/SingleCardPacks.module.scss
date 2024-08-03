@@ -1,10 +1,8 @@
 @import "styles/mixins.scss";
 
 .card {
-  border: 2px solid red;
   @include direction-column;
   @include element-center;
-  text-align: center;
   gap: 20px;
   padding: 20px 0 0 0;
   border-radius: 12px;
@@ -28,13 +26,31 @@
     gap: 10px;
 
     .img_wrapper {
-      width: 127px;
-      height: 60px;
+      width: 262px;
+      height: 262px;
 
       img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+      }
+    }
+
+    .content {
+      @include direction-column;
+      @include element-center;
+      gap: 10px;
+
+      p {
+        @include align-items-center;
+        gap: 5px;
+        font-family: Montserrat;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 22.23px;
+        text-align: left;
+        color: #FCFFFA;
+
       }
     }
   }
@@ -72,5 +88,3 @@
     text-align: left;
   }
 }
-
-

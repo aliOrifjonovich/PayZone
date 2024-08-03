@@ -11,6 +11,7 @@ import styles from "./Players.module.scss";
 import { t } from "i18next";
 import gamerImage from "../../assets/images/gamerimg.png";
 import { FirstPlaceIcon, PaymentIcon, SecondPlaceIcon, ThirdPlaceIcon } from "helpers/Protected/icons";
+import { useTranslation } from "react-i18next";
 
 function createData(id, gamers, payment, game) {
   return { id, gamers, payment, game };
@@ -26,6 +27,7 @@ const rows = [
 
 const Players = () => {
   const width700 = useMediaQuery("(max-width: 700px)");
+  const {t}=useTranslation("common");
   return (
     <Container>
       <div className={styles.players}>

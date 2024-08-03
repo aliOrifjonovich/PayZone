@@ -1,31 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Profile.module.scss";
-import {
-  Button,
-  Container,
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-  useMediaQuery,
-  Paper,
-} from "@mui/material";
+import { Button, Container, useMediaQuery } from "@mui/material";
 import img from "../../Components/assets/images/profile.png";
-import { t } from "i18next";
-
-// function createData(game, coin, payment) {
-//   return { game, coin, payment };
-// }
-
-// const rows = [
-//   createData("PUBG Mobile", 1000000, 6.0),
-//   createData("PUBG Mobile", 237, 9.0),
-//   createData("PUBG Mobile", 262, 16.0),
-//   createData("PUBG Mobile", 305, 3.7),
-//   createData("PUBG Mobile", 356, 16.0),
-// ];
+import {
+  CancelIcon,
+  ChangeIconButton,
+  Exclamation,
+} from "helpers/Protected/icons";
+import { useTranslation } from "react-i18next";
+import Modal from "Components/UI/Modal/Modal";
 
 const data = [
   { game: "Pubg Mobile", coin: 1900, payment: "12,500" },
@@ -38,36 +21,52 @@ const data = [
 
 const Profile = () => {
   const width700 = useMediaQuery("(max-width: 700px)");
+  const [isHovered, setIsHovered] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
+  const { t } = useTranslation("common");
+  const handleClose = () => setOpenModal(false);
 
   return (
-    <div className={styles.profile}>
-      <span className={styles.shadow}></span>
-      <Container>
-        <div className={styles.profile_wrapper}>
-          <div className={styles.myInfo}>
-            <h1 className={styles.title}>{t("My Info")}</h1>
-            <div className={styles.img_wrapper}>
-              <img src={img} alt="profile image" />
+    <>
+      <div className={styles.profile}>
+        <span className={styles.shadow}></span>
+        <Container>
+          <div className={styles.profile_wrapper}>
+            <div className={styles.myInfo}>
+              <h1 className={styles.title}>{t("My Info")}</h1>
+              <div className={styles.img_wrapper}>
+                <img src={img} alt="profile image" />
+                <div className={styles.btn_wrapper}>
+                  <button
+                    variant="contained"
+                    onMouseEnter={() => setIsHovered(true)}
+                    onMouseLeave={() => setIsHovered(false)}
+                    onClick={() => setOpenModal(true)}
+                  >
+                    <ChangeIconButton
+                      fill={isHovered ? "#00d44a" : "#102838"}
+                    />
+                  </button>
+                </div>
+              </div>
+              <div className={styles.myInfo_content}>
+                <h1>Arlene McCoy</h1>
+                <p>arlenecoy@gmail.com</p>
+              </div>
+              <Button
+                variant="contained"
+                sx={{
+                  background: "#EB4343",
+                  color: "#fff",
+                }}
+              >
+                {t("Logout")}
+              </Button>
             </div>
-            <div className={styles.myInfo_content}>
-              <h1>Arlene McCoy</h1>
-              <p>arlenecoy@gmail.com</p>
-            </div>
-            <Button
-              variant="contained"
-              sx={{
-                background: "#EB4343",
-                color: "#fff",
-                borderColor: "transparent !important",
-              }}
-            >
-              {t("Logout")}
-            </Button>
-          </div>
 
-          <div className={styles.payments}>
-            <h1>{t("My payments")}</h1>
-            {/* <TableContainer component={Paper}>
+            <div className={styles.payments}>
+              <h1>{t("My payments")}</h1>
+              {/* <TableContainer component={Paper}>
               <Table
                 sx={width700 ? { maxWidth: 650 } : { minWidth: 650 }}
                 aria-label="simple table"
@@ -131,25 +130,54 @@ const Profile = () => {
               </Table>
             </TableContainer> */}
 
-            <table className={styles.table}>
-              <tr className={styles.tableHeader}>
-                <th>Game</th>
-                <th>Coin</th>
-                <th>Payment</th>
-              </tr>
-
-              {data?.map((item, index) => (
-                <tr key={index} className={styles.tableBody}>
-                  <td>{item.game}</td>
-                  <td>{item.coin}</td>
-                  <td>{item.payment}</td>
+              <table className={styles.table}>
+                <tr className={styles.tableHeader}>
+                  <th>Game</th>
+                  <th>Coin</th>
+                  <th>Payment</th>
                 </tr>
-              ))}
-            </table>
+
+                {data?.map((item, index) => (
+                  <tr key={index} className={styles.tableBody}>
+                    <td>{item.game}</td>
+                    <td>{item.coin}</td>
+                    <td>{item.payment}</td>
+                  </tr>
+                ))}
+              </table>
+            </div>
           </div>
+        </Container>
+      </div>
+
+      <Modal open={openModal} handleClose={handleClose}>
+        <div className={styles.login_wrapper}>
+          <h1 className={styles.title}>{t("Upload Your Image")}</h1>
+          <span
+            className={styles.cancelIcon}
+            onClick={() => setOpenModal(false)}
+          >
+            <CancelIcon />
+          </span>
+
+          <form action="">
+            <div className={styles.inputs}>
+              <div className={styles.input}>
+                <input type="file" placeholder="Add image" />
+              </div>
+            </div>
+
+            <Button
+              variant="contained"
+              fullWidth={true}
+              sx={{ borderRadius: "10px", fontSize: "20px" }}
+            >
+              {t("Change")}
+            </Button>
+          </form>
         </div>
-      </Container>
-    </div>
+      </Modal>
+    </>
   );
 };
 

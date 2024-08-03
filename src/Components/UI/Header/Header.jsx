@@ -48,6 +48,7 @@ const Header = () => {
   const handleCloseLogin = () => setOpenModalLogin(false);
   const handleCloseSignup = () => setOpenModalSignup(false);
 
+
   return (
     <>
       <div className={styles.navbar}>
@@ -63,7 +64,7 @@ const Header = () => {
             type="text"
             control={control}
             name="search"
-            placeholder="Izlash..."
+            placeholder={t("search...")}
           />
 
           <div className={styles.navbar_items_wrapper}>

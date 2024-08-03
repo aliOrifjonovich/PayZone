@@ -1,8 +1,22 @@
 {
-  "greeting": "Salom Dunyo",
   "home": "Asosiy sahifa",
   "blog": "Blog",
   "about": "Biz haqimizda",
-  "buy":"Sotib olish",
-  "reviews": "Biz haqimizdagi Fikrlar"
+  "buy": "Sotib olish",
+  "reviews": "Biz haqimizdagi Fikrlar",
+  "search...": "Qidirish...",
+  "Games": "O'yinlar",
+  "Payzone": "Payzone",
+  "Contact": "Aloqa",
+  "Bonuslar": "Bonuslar",
+  "tez & xavfsiz": "tez & xavfsiz",
+  "o‘yinlar": "o'yinlar",
+  "Tez tranzaksiyalar": "Tez tranzaksiyalar",
+  "gamers": "Gamers",
+  "payment": "To'lov",
+  "game": "O'yin",
+  "Eng so'nggi": "So'nggi",
+  "top players": "eng yaxshi o'yinchilar",
+  "Havolalar":"Havolalar",
+  "Social Medias":"Ishtimoiy tarmoqlar"
 }

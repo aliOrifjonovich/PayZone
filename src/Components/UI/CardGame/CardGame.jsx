@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 import styles from "./CardGame.module.scss";
 import { BuyRowIcon } from "helpers/Protected/icons";
 import { Button } from "@mui/material";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 
 const CardGame = ({ name, img, id }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const {t}=useTranslation("common");
+
 
   return (
     <Link href={`/card/${id}`}>

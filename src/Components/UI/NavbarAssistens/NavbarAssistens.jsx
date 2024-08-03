@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import styles from "./NavbarAssistens.module.scss";
 import { navbarItems } from "utils/navbarItems";
-import { NavLink } from "react-router-dom";
-import { t } from "i18next";
 import { Link } from "react-scroll";
+import { useTranslation } from "react-i18next";
 
 const NavbarAssistens = () => {
   const [activeId, setActiveId] = useState(null);
+  const {t} = useTranslation("common")
 
   const handleSetActive = (to) => {
     setActiveId(to);
