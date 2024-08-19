@@ -10,6 +10,11 @@ export const navbarItems = [
       state: null,
     },
     {
+      path: "/steam",
+      slug: "Steam services",
+      state: null,
+    },
+    {
       path: "#contact",
       slug: "Contact",
       state: null,

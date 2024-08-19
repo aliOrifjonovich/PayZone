@@ -5,14 +5,18 @@ import CardGame from "../CardGame/CardGame";
 import fakedata from "fakedata";
 import { Container } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import { useGetGames } from "services/games.service";
 
 const Games = () => {
   const data = fakedata();
   const {t}=useTranslation("common");
+  const {data: Games} = useGetGames();
+
+  console.log("games", Games)
   return (
       <Container>
       <Box sx={{ flexGrow: 1 }}>
-        <h1 className="title" id="#games">{t("Games")}</h1>
+        <h1 className="title" id="#games" style={{textAlign:"center"}}>{t("Games")}</h1>
 
         <Grid
           container

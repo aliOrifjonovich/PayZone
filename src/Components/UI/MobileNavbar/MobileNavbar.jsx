@@ -19,6 +19,7 @@ import Login from "../Login/Login";
 import Singup from "../Signup/Singup";
 import { t } from "i18next";
 import { Link } from "react-scroll";
+import { NavLink } from "react-router-dom";
 
 const MobileNavbar = () => {
   const {
@@ -42,12 +43,12 @@ const MobileNavbar = () => {
     <Box
       sx={{
         width: "320px",
-        display:"flex",
+        display: "flex",
         gap: "50px",
         padding: "50px",
         background: "#00122A",
-        height:"100%",
-        position:"relative"
+        height: "100%",
+        position: "relative",
       }}
       role="presentation"
     >
@@ -61,41 +62,77 @@ const MobileNavbar = () => {
           flexDirection: "column",
           alignItems: "center",
           gap: "20px",
-          height:"100%",
-          width:"100%"
+          height: "100%",
+          width: "100%",
         }}
       >
         <LanguageSelection />
 
-        {navbarItems?.map((item) => (
-          <Link to={item.path} onClick={toggleDrawer(false)}>
-            <ListItem key={item} disablePadding>
-              <ListItemButton
-                sx={
-                  {
-                    // "&:hover": {
-                    //   borderRadius: "2rem !important",
-                    //   background: "red"
-                    // },
+        {navbarItems?.map((item) =>
+          item.path.startsWith("#") ? (
+            <Link to={item.path} onClick={toggleDrawer(false)}>
+              <ListItem key={item} disablePadding>
+                <ListItemButton
+                  sx={
+                    {
+                      // "&:hover": {
+                      //   borderRadius: "2rem !important",
+                      //   background: "red"
+                      // },
+                    }
                   }
-                }
-              >
-                <ListItemText
-                  primary={item.slug || ""}
-                  sx={{
-                    textAlign: "center",
-                    textTransform: "capitalize",
-                    fontSize: "20px",
-                    fontWeight: "500",
-                    letterSpacing: "2px",
-                    lineHeight:"25px",
-                    color: `#fff`,
-                  }}
-                />
-              </ListItemButton>
-            </ListItem>
-          </Link>
-        ))}
+                >
+                  <ListItemText
+                    primary={item.slug || ""}
+                    sx={{
+                      textAlign: "center",
+                      textTransform: "capitalize",
+                      fontSize: "20px",
+                      fontWeight: "500",
+                      letterSpacing: "2px",
+                      lineHeight: "25px",
+                      color: `#fff`,
+                    }}
+                  />
+                </ListItemButton>
+              </ListItem>
+            </Link>
+          ) : (
+            <NavLink
+              to={item.path}
+              state={item.state}
+              key={item.path}
+              className={({ isActive }) => (isActive ? styles.active : "")}
+            >
+              
+              <ListItem key={item} disablePadding>
+                <ListItemButton
+                  sx={
+                    {
+                      // "&:hover": {
+                      //   borderRadius: "2rem !important",
+                      //   background: "red"
+                      // },
+                    }
+                  }
+                >
+                  <ListItemText
+                    primary={item.slug || ""}
+                    sx={{
+                      textAlign: "center",
+                      textTransform: "capitalize",
+                      fontSize: "20px",
+                      fontWeight: "500",
+                      letterSpacing: "2px",
+                      lineHeight: "25px",
+                      color: `#fff`,
+                    }}
+                  />
+                </ListItemButton>
+              </ListItem>
+            </NavLink>
+          )
+        )}
 
         <div className={styles.registerButtons}>
           <Button

@@ -56,9 +56,12 @@
 
       .btn {
         @include element-center;
-        gap: 15px;
+        gap: 10px;
         width: max-content;
         border-radius: 12px 12px 0px 0px;
+        font-size: 16px;
+        line-height: 20.06px;
+        font-weight: 500;
 
         span{
           @include element-center;

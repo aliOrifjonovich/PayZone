@@ -6,7 +6,7 @@ import { t } from "i18next";
 import SIngleCardGame from "Components/UI/SingleCardGame/SIngleCardGame";
 import SingleCardPacks from "Components/UI/SingleCardPacks/SingleCardPacks";
 import Modal from "Components/UI/Modal/Modal";
-import { CancelIcon, Exclamation, Line } from "helpers/Protected/icons";
+import { CancelIcon, Exclamation, LanguageRowIcon, Line, PriceIcon } from "helpers/Protected/icons";
 import img2 from "../../Components/assets/images/1.png";
 import SingleCardOffer from "Components/UI/SingleCardOffer/SingleCardOffer";
 
@@ -14,6 +14,17 @@ const SingleGame = () => {
   const data = fakedata();
   const [openModal, setOpenModal] = useState(false);
   const handleClose = () => setOpenModal(false);
+  const price = [
+    {
+      label: "so'm",
+    },
+    {
+      label: "usd",
+    },
+    {
+      label: "rub",
+    },
+  ];
 
   return (
     <div className={styles.singleGame}>
@@ -21,7 +32,37 @@ const SingleGame = () => {
         style={{ display: "flex", flexDirection: "column", gap: "50px" }}
       >
         <Box sx={{ flexGrow: 1 }}>
-          <h1 className="title">{t("PUBG Mobile UC")}</h1>
+          <div className={styles.nav_item}>
+            <h1 className="title">{t("PUBG Mobile UC")}</h1>
+            <div className={styles.header_navbar_utils_langs}>
+              <li className={styles.item}>
+                <div className={styles.item_wrapper}>
+                  <span className={styles.iconrow}>
+                    <PriceIcon />
+                  </span>
+                  <span>{"sum"}</span>
+                  <span className={styles.iconrow}>
+                    <LanguageRowIcon />
+                  </span>
+                </div>
+                <div className={styles.childList}>
+                  <ul>
+                    {price.map((lang) => (
+                      <li
+                        key={lang?.label}
+                        className={styles.childItems}
+                        // onClick={() => handleChangeLang(lang.label)}
+                      >
+                        <>
+                          <a>{lang.label} </a>
+                        </>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </li>
+            </div>
+          </div>
 
           <Grid
             container

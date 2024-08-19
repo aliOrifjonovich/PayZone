@@ -1,15 +1,14 @@
 import React from "react";
-import { Container, useMediaQuery } from "@mui/material";
-import { t } from "i18next";
+import { useMediaQuery } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
 import styles from "./Testimonials.module.scss";
 import { styled } from "@mui/material/styles";
 import { Rating } from "@mui/material";
 // import required modules
-import { Autoplay, Pagination } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/autoplay';
-import 'swiper/css/pagination';
+import { Autoplay, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/autoplay";
+import "swiper/css/pagination";
 import { MarkedIcon } from "helpers/Protected/icons";
 import img from "../../assets/images/gamerimg.png";
 import { useTranslation } from "react-i18next";
@@ -80,11 +79,11 @@ const data = [
 
 const Testimonials = () => {
   const { t } = useTranslation("common");
-  const width500px = useMediaQuery("max-width:500px")
+  const width500px = useMediaQuery("max-width:500px");
   return (
-    <Container>
+    <>
       <div
-      id="#about"
+        id="#about"
         style={{
           display: "flex",
           alignItems: "center",
@@ -97,9 +96,9 @@ const Testimonials = () => {
       </div>
 
       <Swiper
-        slidesPerView={width500px ? 1 : 3}
+        slidesPerView={width500px ? 1 :1.5}
         centeredSlides={true}
-        spaceBetween={10}
+        spaceBetween={30}
         autoplay={{
           delay: 2000,
           disableOnInteraction: false,
@@ -147,7 +146,7 @@ const Testimonials = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-    </Container>
+    </>
   );
 };
 

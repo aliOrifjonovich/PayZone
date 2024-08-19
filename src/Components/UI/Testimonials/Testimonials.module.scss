@@ -1,16 +1,17 @@
 @import "/src/styles/mixins.scss";
 
 .review {
-  border: 2px solid blue;
-  border-radius: 10px;
-  padding: 30px 15px;
+  padding: 40px;
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0.084) 0%,
     rgba(217, 217, 217, 0.042) 100%
   );
   border: 1px solid #ffffff8a;
+  border-radius: 10px;
   position: relative;
+  // width: 537px;
+  // height: 343px;
 
   .markedIcon {
     position: absolute;
@@ -32,15 +33,14 @@
       padding-bottom: 20px;
 
       border-width: 0 0 3px 0;
-        border-style: solid;
-        border-image: linear-gradient(
-          90deg,
-          rgba(255, 255, 255, 0) 1.04%,
-          rgba(0, 212, 74, 0.6) 48.94%,
-          rgba(255, 255, 255, 0) 100%
-        );
-        border-image-slice: 0 0 1 0;
-
+      border-style: solid;
+      border-image: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 1.04%,
+        rgba(0, 212, 74, 0.6) 48.94%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      border-image-slice: 0 0 1 0;
     }
 
     .reviewer_wrapper {
@@ -62,18 +62,22 @@
         @include direction-column;
         gap: 10px;
         h1 {
-          font-size: 20px;
-          font-weight: 500;
           color: #fff;
+          font-family: Manrope, sans-serif !important;
+          font-size: 20.97px;
+          font-weight: 500;
+          line-height: 23.19px;
+          letter-spacing: 0.035em;
         }
         h2 {
+          font-family: Manrope, sans-serif !important;
           font-size: 12px;
           font-weight: 500;
           color: #afb0b1;
         }
 
         @media screen and (max-width: 500px) {
-          h1{
+          h1 {
             font-size: 15px;
             line-height: 17.3px;
           }

@@ -64,6 +64,13 @@
           cursor: pointer;
         }
       }
+
+      .errorMessage{
+        color: red;
+        font-family: Manrope sans-serif;
+        font-size: 18px;
+        line-height: 22.23px;
+      }
     }
 
     .btn_wrapper {
@@ -131,8 +138,9 @@
       letter-spacing: 1px;
       padding: 0 20px;
       font-family: Manrope sans-serif;
-
-      a {
+      @include element-center;
+      gap: 5px;
+      p {
         color: #03b942;
         font-weight: 600;
         cursor: pointer;

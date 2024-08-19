@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import styles from "./Login.module.scss";
 import { Button } from "@mui/material";
+import { useForm } from "react-hook-form";
+import styles from "./Login.module.scss";
 import { t } from "i18next";
 import {
   AppleIcon,
   CancelIcon,
   CloseEyeIcon,
-  EyeIcon,
   GoogleIcon,
   OpenEyeIcon,
 } from "helpers/Protected/icons";
@@ -14,42 +14,79 @@ import {
 const Login = ({ setOpenModalLogin, setOpenModalSignup }) => {
   const [passwordVisible, setPasswordVisible] = useState(false);
 
-  const pushLoginModal = () => (
-    setOpenModalLogin(false),
-    setOpenModalSignup(true)
-  );
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm({
+    defaultValues: {
+      email: "",
+      password: "",
+    },
+  });
 
-  const togglePasswordVisibility = () => {
+  const handleLoginModalClose = () => {
+    setOpenModalLogin(false);
+    reset();
+  };
+
+  const handlePasswordToggle = () => {
     setPasswordVisible(!passwordVisible);
+  };
+
+  const onSubmit = (data) => {
+    console.log("Login Data:", data);
+    handleLoginModalClose();
+  };
+
+  const switchToSignupModal = () => {
+    setOpenModalLogin(false);
+    setOpenModalSignup(true);
+    reset();
   };
 
   return (
     <div className={styles.login_wrapper}>
       <h1 className={styles.title}>{t("Welcome Back!")}</h1>
-      <span
-        className={styles.cancelIcon}
-        onClick={() => setOpenModalLogin(false)}
-      >
+      <span className={styles.cancelIcon} onClick={handleLoginModalClose}>
         <CancelIcon />
       </span>
 
-      <form action="">
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div className={styles.inputs}>
           <div className={styles.input}>
-            <input type="email" placeholder="E-mail" />
+            <input
+              type="email"
+              placeholder="E-mail"
+              {...register("email", { required: "E-mail is required" })}
+              style={errors.email ? { borderColor: "#F76659" } : {}}
+            />
           </div>
+          {errors.email && (
+              <p className={styles.errorMessage}>Write correct email </p>
+            )}
           <div className={styles.input}>
             <input
               type={passwordVisible ? "text" : "password"}
               placeholder="Password"
+              {...register("password", { required: "Password is required" })}
+              style={errors.password ? { borderColor: "#F76659" } : {}}
             />
-            <span onClick={togglePasswordVisibility} className={styles.eyeIcon}>
+            <span
+              onClick={handlePasswordToggle}
+              className={styles.eyeIcon}
+            >
               {passwordVisible ? <OpenEyeIcon /> : <CloseEyeIcon />}
             </span>
           </div>
+          {errors.password && (
+              <p className={styles.errorMessage}>{errors.password.message}</p>
+            )}
         </div>
 
         <Button
+          type="submit"
           variant="contained"
           sx={{ borderRadius: "10px", fontSize: "20px" }}
         >
@@ -59,13 +96,15 @@ const Login = ({ setOpenModalLogin, setOpenModalSignup }) => {
 
       <div className={styles.links}>
         <p className={styles.content}>
-          {t("Don’t have an account? ")} <a  onClick={pushLoginModal}>{t("Sign up")}</a>
+          {t("Don’t have an account? ")}
+          <p onClick={switchToSignupModal}>{t("Sign up")}</p>
         </p>
         <p className={styles.content}>
-          {t("Forgot your password? ")} <a>{t("Reset")}</a>
+          {t("Forgot your password? ")}
+          <p href="/reset">{t("Reset")}</p>
         </p>
         <div className={styles.text}>
-          <span>login with</span>
+          <span>{t("Login with")}</span>
         </div>
         <div className={styles.btns}>
           <div className={styles.btn}>

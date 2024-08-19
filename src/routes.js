@@ -4,10 +4,10 @@ import ProductsById from "pages/ProductsById/ProductsById";
 import NotFound from "pages/NotFound/NotFound";
 import ProductsLayout from "./Components/ProductsLayout/ProductsLayout";
 import Main from "pages/Main/Main";
-import Protected from "helpers/Protected/Protected";
 import Card from "pages/Card/Card";
 import Profile from "pages/Profile/Profile";
 import SingleGame from "pages/SingleGame/SingleGame";
+import Steam from "pages/Steam/Steam";
 
 export const Routes = () =>
   useRoutes([
@@ -42,6 +42,10 @@ export const Routes = () =>
     {
       path: "/profile",
       element: <Profile/>
+    },
+    {
+      path: "/steam",
+      element: <Steam/>
     },
     {
       path: "*",

@@ -35,7 +35,7 @@ const Players = () => {
           <p>{t("Eng so’nggi")}</p>
 
           <div className={styles.btn}>
-            <Button variant="contained">
+            <Button variant="contained" sx={{padding:"10px 20px", borderRadius:"10px"}}>
               <div className={styles.btn_content}>{t("top players")}</div>
             </Button>
           </div>
@@ -63,8 +63,7 @@ const Players = () => {
                   <TableRow
                     key={row.gamers}
                     sx={{
-                      "&:firs-child td, &:second-child th": { border: "1px solid red" },
-                      
+                      "&:firs-child td, &:second-child th": { border: "1px solid red" },                      
                     }}
                   >
                     <TableCell
@@ -96,7 +95,7 @@ const Players = () => {
                         ) : null}
                       </span>
                       <span className={styles.img_wrapper}>
-                        <img src={gamerImage} alt="gamer-image" />
+                        <img src={gamerImage} alt="gamer-payzone" />
                         {/* <span>A</span> */}
                       </span>
                       <div className={styles.gamerName}>
@@ -112,7 +111,7 @@ const Players = () => {
                     </TableCell>
                     <TableCell align="right">
                       <span className={styles.img_wrapper}>
-                        <img src={gamerImage} alt="gamer-image" />
+                        <img src={gamerImage} alt="gamer-payzone" />
                         {/* <span>A</span> */}
                       </span>
                     </TableCell>

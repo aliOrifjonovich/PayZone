@@ -35,13 +35,11 @@ const Header = () => {
     },
   ];
 
-  let count = 3;
-
   const handleChangeLang = (lang) => {
     i18n.changeLanguage(lang);
   };
 
-  const { control, watch, setValue } = useForm({
+  const { control } = useForm({
     defaultValues: {},
   });
 
@@ -54,7 +52,7 @@ const Header = () => {
       <div className={styles.navbar}>
         <NavLink to="/">
           <div className={styles.logo_wrapper}>
-            <img src={logo} alt="logo-image" />
+            <img src={logo} alt="Payzone" />
           </div>
         </NavLink>
 
@@ -73,7 +71,7 @@ const Header = () => {
                 <div className={styles.item_wrapper}>
                   <span>{i18n.language}</span>
                   <span className={styles.iconrow}>
-                    <LanguageRowIcon />
+                    <LanguageRowIcon fill = {"#fff"}/>
                   </span>
                 </div>
                 <div className={styles.childList}>
@@ -95,7 +93,7 @@ const Header = () => {
             </div>
 
             <div className={styles.navbar_items_wrapper_buttons}>
-              {!isTrue && (
+              {isTrue && (
                 <div className={styles.registerButtons}>
                   <Button
                     onClick={() => setOpenModalLogin(true)}
@@ -114,19 +112,19 @@ const Header = () => {
                 </div>
               )}
 
-              {isTrue && (
+              {!isTrue && (
                 <div className={styles.navbar_items_wrapper_buttons_usersCard}>
                   <NavLink to={"/profile"}>
                     <div className={styles.user_button}>
                       <UserIcon />
                     </div>
                   </NavLink>
-                  <NavLink to={"/card"}>
+                  {/* <NavLink to={"/card"}>
                     <Button className={styles.card_button} variant="contained">
                       <CardButton />
                       {count ? <div className={styles.count}>{count}</div> : ""}
                     </Button>
-                  </NavLink>
+                  </NavLink> */}
                 </div>
               )}
 

@@ -1,5 +1,6 @@
 @import "/src/styles/mixins.scss";
 @import "/src/styles/functions.scss";
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap");
 * {
   text-decoration: none;
@@ -16,6 +17,11 @@ body {
   font-family: "Orbitron", sans-serif;
 }
 
+input:-internal-autofill-selected {
+  background-color: #00172b !important;
+  background-image: none !important;
+}
+
 .suspense {
   width: 100%;
   height: 100vh;
@@ -23,7 +29,7 @@ body {
 }
 
 .title {
-  text-align: center;
+  text-align: left;
   color: #ffffff;
   margin-bottom: 30px;
   padding-top: 70px; // Adjust this value based on the height of your navbar or desired offset
@@ -62,7 +68,7 @@ body {
       height: 100%;
     }
 
-    @media screen and (max-width:700px) {
+    @media screen and (max-width: 700px) {
       padding: 10px;
     }
   }
@@ -78,22 +84,7 @@ body {
   overflow: hidden;
   width: 100%;
   position: relative;
-  padding: 60px 0 !important;
-
-  .swiper-wrapper {
-    display: flex;
-
-    .swiper-slide {
-      width: 537px !important;
-
-      @media screen and (max-width:500px) {
-        width: 262px !important;
-        height: 330px;        
-      }
-    }
-
-
-  }
+  padding: 60px 25rem !important;
 
   .swiper-pagination {
     position: absolute;
@@ -106,7 +97,7 @@ body {
     .swiper-pagination-bullet {
       width: 25px;
       height: 5px;
-      background:  linear-gradient(
+      background: linear-gradient(
         158.34deg,
         rgba(255, 255, 255, 0.1) 6.53%,
         rgba(91, 91, 91, 0.1) 92.78%
@@ -116,16 +107,26 @@ body {
       // Change this to the desired color
       opacity: 1;
       &.swiper-pagination-bullet-active {
-
-        background: linear-gradient(77.5deg, #00D44A -31.33%, #11E35A -19.3%, #0AB847 -4.45%, #0FB849 11.89%, #25B758 29.28%, #00D44A 47.54%, #29FE73 66.2%, #3FFF82 81.84%);
-
-
+        background: linear-gradient(
+          77.5deg,
+          #00d44a -31.33%,
+          #11e35a -19.3%,
+          #0ab847 -4.45%,
+          #0fb849 11.89%,
+          #25b758 29.28%,
+          #00d44a 47.54%,
+          #29fe73 66.2%,
+          #3fff82 81.84%
+        );
       }
     }
   }
 
-  @media screen and (max-width:500px) {
-    padding: 90px 0 !important;
+  @media screen and (max-width: 1000px) {
+    padding: 80px 20px !important;
+  }
+  @media screen and (max-width: 1000px) {
+    padding: 80px 0 !important;
   }
 }
 
@@ -144,38 +145,20 @@ body {
         background-size: cover;
 
         &:nth-child(1) {
-          background-image: linear-gradient(
-              180deg,
-              rgba(255, 225, 134, 0.36) 4.4%,
-              rgba(248, 211, 100, 0.36) 19.4%,
-              rgba(237, 199, 85, 0.36) 32.4%,
-              rgba(234, 199, 87, 0.32) 46.4%,
-              rgba(228, 193, 73, 0.32) 60.4%,
-              rgba(201, 167, 50, 0.32) 77.4%,
-              rgba(174, 141, 11, 0.32) 100%
-            ),
-            url("./Components/assets/images/image.png");
+          background: url("./Components/assets/images/background1.png")
+            no-repeat;
+          background-size: cover;
         }
 
         &:nth-child(2) {
-          background: linear-gradient(
-            180deg,
-            rgba(255, 255, 255, 0.24) 0%,
-            rgba(220, 220, 220, 0.204176) 33.9%,
-            rgba(186, 186, 186, 0.24) 52.9%,
-            rgba(150, 150, 150, 0.24) 75.4%,
-            rgba(131, 131, 131, 0.3) 100%
-          );
+          background: url("./Components/assets/images/background2.png")
+            no-repeat;
+          background-size: cover;
         }
         &:nth-child(3) {
-          background: linear-gradient(
-            180deg,
-            rgba(176, 141, 87, 0.32) 0%,
-            rgba(170, 139, 95, 0.32) 30.5%,
-            rgba(163, 138, 103, 0.32) 50.5%,
-            rgba(156, 136, 110, 0.32) 76.5%,
-            rgba(148, 135, 117, 0.32) 100%
-          );
+          background: url("./Components/assets/images/background3.png")
+            no-repeat;
+          background-size: cover;
         }
       }
     }
@@ -205,6 +188,13 @@ body {
 .MuiTableRow-root td:last-child {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
+}
+
+.PhoneInput{
+
+  .PhoneInputCountry{
+    display: none;
+  }
 }
 
 /* Default scrollbar width */

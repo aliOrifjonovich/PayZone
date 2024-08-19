@@ -15,7 +15,7 @@ export function Footer() {
          <div className={styles.logo_email_wrapper}>
          <NavLink to="/">
             <div className={styles.logo_wrapper}>
-              <img src={logo} alt="logo-image" />
+              <img src={logo} alt="logo-payzone" />
             </div>
           </NavLink>
 

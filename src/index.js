@@ -9,6 +9,8 @@ import "./i18n";
 import { Provider } from "react-redux";
 import { persistor, store } from "redux/store";
 import { PersistGate } from "redux-persist/integration/react";
+import { QueryClientProvider } from "react-query";
+import { queryClient } from "services/http-client";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -16,11 +18,13 @@ root.render(
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <ThemeProvider theme={theme}>
+        <QueryClientProvider client={queryClient}>
           <BrowserRouter>
             <Suspense fallback={<div className="suspense">Loading...</div>}>
               <App />
             </Suspense>
           </BrowserRouter>
+        </QueryClientProvider>
         </ThemeProvider>
       </PersistGate>
     </Provider>

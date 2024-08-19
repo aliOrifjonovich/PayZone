@@ -2,14 +2,14 @@
 
 .footer {
   background: #00122a;
-  box-shadow: 0px -10px 60px 0px #00D44A1C;
+  box-shadow: 0px -10px 60px 0px #00D44A1C !important;
   padding: 50px 0;
 
   .box {
     @include justify-content-between;
     border-width: 0 0 3px 0;
     border-style: solid;
-    padding: 15px 0;
+    padding: 20px 0;
     border-image: linear-gradient(
       90deg,
       rgba(255, 255, 255, 0) 1.04%,

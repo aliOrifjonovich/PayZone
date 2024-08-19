@@ -1,75 +1,149 @@
 import React, { useState } from "react";
-import styles from "../Login/Login.module.scss";
 import { Button } from "@mui/material";
+import { useForm, Controller } from "react-hook-form";
+import PhoneInput from "react-phone-number-input";
+import "react-phone-number-input/style.css";
+import styles from "../Login/Login.module.scss";
 import { t } from "i18next";
 import {
   AppleIcon,
   CancelIcon,
   CloseEyeIcon,
-  EyeIcon,
   GoogleIcon,
   OpenEyeIcon,
 } from "helpers/Protected/icons";
 
-const Singup = ({ setOpenModalSignup, setOpenModalLogin }) => {
+const Signup = ({ setOpenModalSignup, setOpenModalLogin }) => {
   const [passwordVisible, setPasswordVisible] = useState(false);
 
-  const pushLoginModal = () => (
-    setOpenModalSignup(false), setOpenModalLogin(true)
-  );
-  const togglePasswordVisibility = () => {
+  const {
+    register,
+    handleSubmit,
+    control,
+    watch,
+    reset,
+    formState: { errors },
+  } = useForm({
+    defaultValues: {
+      fullname: "",
+      phoneNumber: "",
+      email: "",
+      password: "",
+      confirmPassword: "",
+    },
+  });
+
+  const handleModalClose = () => {
+    setOpenModalSignup(false);
+    reset();
+  };
+
+  const handlePasswordToggle = () => {
     setPasswordVisible(!passwordVisible);
+  };
+
+  const onSubmit = (data) => {
+    console.log("Form Data:", data);
+    handleModalClose();
   };
 
   return (
     <div className={styles.login_wrapper}>
       <h1 className={styles.title}>{t("Welcome to PayZone!")}</h1>
-      <span
-        className={styles.cancelIcon}
-        onClick={() => setOpenModalSignup(false)}
-      >
+      <span className={styles.cancelIcon} onClick={handleModalClose}>
         <CancelIcon />
       </span>
 
-      <form action="">
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div className={styles.inputs}>
           <div className={styles.input}>
-            <input type="text" placeholder="Full Name" />
+            <input
+              type="text"
+              placeholder="Full Name"
+              {...register("fullname", { required: true })}
+              style={errors.fullname ? { borderColor: "#F76659" } : {}}
+            />
           </div>
+          {errors.fullname && (
+            <p className={styles.errorMessage}>Pleace write full name</p>
+          )}
           <div className={styles.input}>
-            <input type="email" placeholder="E-mail" />
+            <Controller
+              name="phoneNumber"
+              control={control}
+              render={({ field }) => (
+                <PhoneInput
+                  {...field}
+                  placeholder="Phone Number (optional)"
+                  defaultCountry="US"
+                  style={errors.phoneNumber ? { borderColor: "#F76659" } : {}}
+                />
+              )}
+            />
           </div>
+
+          <div className={styles.input}>
+            <input
+              type="email"
+              placeholder="E-mail"
+              {...register("email", { required: true })}
+              style={errors.email ? { borderColor: "#F76659" } : {}}
+            />
+          </div>
+          {errors.email && (
+            <p className={styles.errorMessage}>Pleace write correct email</p>
+          )}
           <div className={styles.input}>
             <input
               type={passwordVisible ? "text" : "password"}
               placeholder="Password"
+              {...register("password", { required: true })}
+              style={errors.password ? { borderColor: "#F76659" } : {}}
             />
-            <span onClick={togglePasswordVisibility} className={styles.eyeIcon}>
+            <span onClick={handlePasswordToggle} className={styles.eyeIcon}>
               {passwordVisible ? <OpenEyeIcon /> : <CloseEyeIcon />}
             </span>
           </div>
+          {errors.password && (
+            <p className={styles.errorMessage}>
+              Please create a password
+            </p>
+          )}
+
           <div className={styles.input}>
             <input
               type={passwordVisible ? "text" : "password"}
               placeholder="Confirm Password"
+              {...register("confirmPassword", {
+                required: true,
+                validate: (value) =>
+                  value === watch("password") || "Passwords do not same",
+              })}
+              style={errors.confirmPassword ? { borderColor: "#F76659" } : {}}
             />
-            <span onClick={togglePasswordVisibility} className={styles.eyeIcon}>
+            <span onClick={handlePasswordToggle} className={styles.eyeIcon}>
               {passwordVisible ? <OpenEyeIcon /> : <CloseEyeIcon />}
             </span>
           </div>
+          {errors.confirmPassword && (
+            <p className={styles.errorMessage}>
+              {errors.confirmPassword.message}
+            </p>
+          )}
         </div>
 
         <div className={styles.btn_wrapper}>
           <div className={styles.agreement}>
             <input type="checkbox" />
             <p>
-              {t("I am agree with ")} <a href="/">terms & conditions</a>{" "}
+              {t("I agree with ")} <a href="/">terms & conditions</a>
             </p>
           </div>
           <Button
             variant="contained"
-            fullWidth={true}
+            fullWidth
             sx={{ borderRadius: "10px", fontSize: "20px" }}
+            type="submit"
           >
             {t("Sign up")}
           </Button>
@@ -78,11 +152,17 @@ const Singup = ({ setOpenModalSignup, setOpenModalLogin }) => {
 
       <div className={styles.links}>
         <p className={styles.content}>
-          {t("Already have an account? ")}{" "}
-          <a onClick={pushLoginModal}>{t("Login")}</a>
+          {t("Already have an account? ")}
+          <p
+            onClick={() =>
+              setOpenModalSignup(false) || setOpenModalLogin(true) || reset()
+            }
+          >
+            {t("Login")}
+          </p>
         </p>
         <div className={styles.text}>
-          <span>login with</span>
+          <span>{t("Login with")}</span>
         </div>
         <div className={styles.btns}>
           <div className={styles.btn}>
@@ -99,4 +179,4 @@ const Singup = ({ setOpenModalSignup, setOpenModalLogin }) => {
   );
 };
 
-export default Singup;
+export default Signup;

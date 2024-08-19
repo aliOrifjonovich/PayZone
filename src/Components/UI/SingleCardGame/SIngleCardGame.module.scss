@@ -1,7 +1,6 @@
 @import "styles/mixins.scss";
 
 .card {
-  border: 2px solid red;
   @include direction-column;
   @include element-center;
   text-align: center;
