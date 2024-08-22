@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./Advertisement.module.scss";
 import img from "../../assets/images/pubg.png";
 import { Button, Container } from "@mui/material";
-import { t } from "i18next";
 import { useTranslation } from "react-i18next";
 
 const Advertisement = () => {
@@ -13,7 +12,7 @@ const Advertisement = () => {
         <div className={styles.content}>
           <div className={styles.img_wrapper}>
             <div className={styles.gradient}></div>
-            <img src={img} alt="intro pubg gaming image" />
+            <img src={img} alt="intro_pubg_gaming" />
           </div>
 
           <div className={styles.content_infos}>

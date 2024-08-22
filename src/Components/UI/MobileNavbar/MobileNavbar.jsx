@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Box,
   Button,
@@ -12,25 +12,44 @@ import {
 import styles from "./MobileNavbar.module.scss";
 import { navbarItems } from "utils/navbarItems";
 import { CancelIcon, HamburgerMenu } from "helpers/Protected/icons";
-import { useTheme } from "@emotion/react";
 import LanguageSelection from "../LanguageSelection/LanguageSelection";
 import Modal from "../Modal/Modal";
 import Login from "../Login/Login";
 import Singup from "../Signup/Singup";
 import { t } from "i18next";
 import { Link } from "react-scroll";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 
 const MobileNavbar = () => {
-  const {
-    palette: { mode },
-  } = useTheme();
 
-  const [isTrue, setIsTrue] = useState(true);
   const [openModalLogin, setOpenModalLogin] = useState(false);
   const [openModalSignup, setOpenModalSignup] = useState(false);
-
+  const [activeId, setActiveId] = useState(null);
   const [open, setOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (location.pathname === "/steam") {
+      setActiveId(null);
+    }
+  }, [location]);
+
+  const handleSetActive = (to) => {
+    if (location.pathname === "/steam" && to.startsWith("#")) {
+      navigate("/");
+      setOpen(false);
+    } else {
+      setActiveId(to);
+    }
+  };
+
+  const handleNavLinkClick = (path) => {
+    if (!path.startsWith("#")) {
+      setActiveId(null);
+    }
+    setOpen(false);
+  };
 
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
@@ -70,18 +89,19 @@ const MobileNavbar = () => {
 
         {navbarItems?.map((item) =>
           item.path.startsWith("#") ? (
-            <Link to={item.path} onClick={toggleDrawer(false)}>
+            <Link
+              to={item.path}
+              spy={true}
+              smooth={true}
+              offset={-100}
+              duration={300}
+              state={item.state}
+              key={item.path}
+              onClick={() => handleSetActive(item.path)}
+              activeClass={styles.active}
+            >
               <ListItem key={item} disablePadding>
-                <ListItemButton
-                  sx={
-                    {
-                      // "&:hover": {
-                      //   borderRadius: "2rem !important",
-                      //   background: "red"
-                      // },
-                    }
-                  }
-                >
+                <ListItemButton>
                   <ListItemText
                     primary={item.slug || ""}
                     sx={{
@@ -103,19 +123,10 @@ const MobileNavbar = () => {
               state={item.state}
               key={item.path}
               className={({ isActive }) => (isActive ? styles.active : "")}
+              onClick={() => handleNavLinkClick(item.path)}
             >
-              
               <ListItem key={item} disablePadding>
-                <ListItemButton
-                  sx={
-                    {
-                      // "&:hover": {
-                      //   borderRadius: "2rem !important",
-                      //   background: "red"
-                      // },
-                    }
-                  }
-                >
+                <ListItemButton>
                   <ListItemText
                     primary={item.slug || ""}
                     sx={{
@@ -157,8 +168,7 @@ const MobileNavbar = () => {
   return (
     <>
       <div onClick={toggleDrawer(true)} className={styles.hamburger}>
-        <HamburgerMenu fill={mode === "light" ? "#2B2D42" : "#fff"} />
-        {console.log("open", open)}
+        <HamburgerMenu fill={"#fff"} />
       </div>
       <Drawer open={open} onClose={toggleDrawer(false)} anchor="right">
         {list()}

@@ -33,7 +33,7 @@ const NavbarAssistens = () => {
 
   return (
     <>
-      <nav className={styles.navbar}>
+      <nav className={styles.navbar} data-aos="fade-down" data-aos-duration="3000">
         <ul>
           {navbarItems?.map((item) => (
             item.path.startsWith("#") ? (

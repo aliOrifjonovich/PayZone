@@ -84,68 +84,64 @@ const Testimonials = () => {
     <>
       <div
         id="#about"
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
+       className={styles.wrapper}
       >
         <h1 style={{ textAlign: "center", width: "327px" }} className="title">
           {t("reviews")}
         </h1>
-      </div>
 
-      <Swiper
-        slidesPerView={width500px ? 1 :1.5}
-        centeredSlides={true}
-        spaceBetween={30}
-        autoplay={{
-          delay: 2000,
-          disableOnInteraction: false,
-        }}
-        pagination={{
-          clickable: true,
-        }}
-        loop={true}
-        modules={[Autoplay, Pagination]}
-        className="mySwiper"
-      >
-        {data?.map((item, index) => (
-          <SwiperSlide key={index}>
-            <div className={styles.review}>
-              <div className={styles.markedIcon}>
-                <span>
-                  <MarkedIcon />
-                </span>
-                <span>
-                  <MarkedIcon />
-                </span>
-              </div>
+        <Swiper
+          slidesPerView={width500px ? 1 : 1.5}
+          centeredSlides={true}
+          spaceBetween={30}
+          autoplay={{
+            delay: 2000,
+            disableOnInteraction: false,
+          }}
+          pagination={{
+            clickable: true,
+          }}
+          loop={true}
+          modules={[Autoplay, Pagination]}
+          className="mySwiper"
+        >
+          {data?.map((item, index) => (
+            <SwiperSlide key={index}>
+              <div className={styles.review}>
+                <div className={styles.markedIcon}>
+                  <span>
+                    <MarkedIcon />
+                  </span>
+                  <span>
+                    <MarkedIcon />
+                  </span>
+                </div>
 
-              <div className={styles.review_content}>
-                <StyledRating
-                  name="read-only"
-                  max={5}
-                  value={item.value}
-                  readOnly
-                />
-                <p className={styles.review_content_text}>{item.text}</p>
+                <div className={styles.review_content}>
+                  <StyledRating
+                    name="read-only"
+                    max={5}
+                    value={item.value}
+                    readOnly
+                  />
+                  <p className={styles.review_content_text}>{item.text}</p>
 
-                <div className={styles.reviewer_wrapper}>
-                  <div className={styles.img_wrapper}>
-                    <img src={item.img} alt="reviewer_image" />
-                  </div>
+                  <div className={styles.reviewer_wrapper}>
+                    <div className={styles.img_wrapper}>
+                      <img src={item.img} alt="reviewer_image" />
+                    </div>
 
-                  <div className={styles.name_position}>
-                    <h1>{item.name}</h1>
-                    <h2>{item.position}</h2>
+                    <div className={styles.name_position}>
+                      <h1>{item.name}</h1>
+                      <h2>{item.position}</h2>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
     </>
   );
 };

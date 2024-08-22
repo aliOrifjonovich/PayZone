@@ -88,7 +88,7 @@ const Login = ({ setOpenModalLogin, setOpenModalSignup }) => {
         <Button
           type="submit"
           variant="contained"
-          sx={{ borderRadius: "10px", fontSize: "20px" }}
+          sx={{ borderRadius: "10px", fontSize: "20px", textTransform:"capitalize" }}
         >
           {t("Login")}
         </Button>

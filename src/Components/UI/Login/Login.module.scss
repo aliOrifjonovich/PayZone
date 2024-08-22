@@ -65,14 +65,71 @@
         }
       }
 
-      .errorMessage{
+      .errorMessage {
         color: red;
         font-family: Manrope sans-serif;
         font-size: 18px;
         line-height: 22.23px;
       }
     }
+    .otp_wrapper {
+      @include direction-column;
+      gap: 20px;
 
+
+      h3 {
+        font-family: Montserrat;
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 17.07px;
+        color: #fcfffa;
+      }
+
+      div {
+        @include element-center;
+        gap: 20px;
+        flex-wrap: wrap;
+        width: 100%;
+
+
+        input {
+          background: #142436;
+          font-size: 20px;
+          color: #fcfffa;
+          width: 55px !important;
+          height: 55px;
+          border-radius: 10px;
+          border: none;
+          outline: none;
+
+          &:focus{
+            border: 2px solid #03b942 !important;
+          }
+        }
+
+        @media (max-width: 500px) {
+          gap: 30px;
+          input{
+            width: 75px !important;
+            height: 65px;
+          }
+        }
+      }
+      p {
+        font-family: Montserrat;
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 17.07px;
+        color: #00d44a;
+        cursor: pointer;
+      }
+
+      @media (max-width:500px) {
+      @include element-center;
+        
+      }
+
+    }
     .btn_wrapper {
       @include direction-column;
       gap: 15px;
@@ -117,7 +174,7 @@
           }
         }
 
-        @media screen and (max-width:500px) {
+        @media screen and (max-width: 500px) {
           padding: 0 5px;
           p {
             font-size: 12px;
@@ -190,7 +247,6 @@
         left: 40%;
         z-index: 100;
         padding: 0 5px;
-
       }
     }
 
@@ -213,7 +269,6 @@
       }
     }
   }
-
 
   @media screen and (max-width: 500px) {
     padding: 30px 15px;

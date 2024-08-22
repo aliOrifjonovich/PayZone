@@ -1,17 +1,11 @@
-import { LanguageRowIcon, UserIcon } from "helpers/Protected/icons";
-import { t } from "i18next";
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
-import { Button } from "react-scroll";
+import { LanguageRowIcon } from "helpers/Protected/icons";
+import React from "react";
 import styles from "./LanguageSelection.module.scss"
 import { useTranslation } from "react-i18next";
 
 const LanguageSelection = () => {
-  const [isTrue, setIsTrue] = useState(true);
-  const [openModalLogin, setOpenModalLogin] = useState(false);
-  const [openModalSignup, setOpenModalSignup] = useState(false);
 
-  const { t, i18n } = useTranslation("common");
+  const {i18n } = useTranslation("common");
 
   const langs = [
     {
@@ -36,7 +30,7 @@ const LanguageSelection = () => {
           <div className={styles.item_wrapper}>
             <span>{i18n.language}</span>
             <span className={styles.iconrow}>
-              <LanguageRowIcon />
+              <LanguageRowIcon fill={"#fff"}/>
             </span>
           </div>
           <div className={styles.childList}>

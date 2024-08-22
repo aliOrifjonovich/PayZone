@@ -13,7 +13,7 @@ import {
   OpenEyeIcon,
 } from "helpers/Protected/icons";
 
-const Signup = ({ setOpenModalSignup, setOpenModalLogin }) => {
+const Signup = ({ setOpenModalSignup, setOpenModalLogin, setOpenModalOTP }) => {
   const [passwordVisible, setPasswordVisible] = useState(false);
 
   const {
@@ -45,6 +45,7 @@ const Signup = ({ setOpenModalSignup, setOpenModalLogin }) => {
   const onSubmit = (data) => {
     console.log("Form Data:", data);
     handleModalClose();
+    setOpenModalOTP(true);
   };
 
   return (
@@ -142,7 +143,7 @@ const Signup = ({ setOpenModalSignup, setOpenModalLogin }) => {
           <Button
             variant="contained"
             fullWidth
-            sx={{ borderRadius: "10px", fontSize: "20px" }}
+            sx={{ borderRadius: "10px", fontSize: "20px", textTransform:"capitalize" }}
             type="submit"
           >
             {t("Sign up")}

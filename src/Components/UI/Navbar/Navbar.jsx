@@ -5,7 +5,7 @@ import NavbarAssistens from "../NavbarAssistens/NavbarAssistens";
 
 export function Navbar() {
   return (
-    <header className={styles.header}>
+    <header className={styles.header} >
       <Container>
         <div className={styles.header_wrapper}>
           <Header />

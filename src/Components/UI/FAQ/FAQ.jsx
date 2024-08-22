@@ -78,7 +78,7 @@ const FAQ = () => {
 
   return (
     <Container style={{ marginTop: "50px" }}>
-      <h1 className="title" id="#">{t("FAQ")}</h1>
+      <h1 className="title" id="#" style={{textAlign:"center"}}>{t("FAQ")}</h1>
       <div className={styles.wrapper}>
         <div className={styles.accordion}>
           {data?.slice(0, 5).map((item, i) => (

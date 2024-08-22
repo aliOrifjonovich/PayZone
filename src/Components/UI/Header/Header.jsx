@@ -2,12 +2,7 @@ import React, { useState } from "react";
 import styles from "./Header.module.scss";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
-import {
-  CardButton,
-  LanguageRowIcon,
-  SearchIcon,
-  UserIcon,
-} from "helpers/Protected/icons";
+import { LanguageRowIcon, SearchIcon, UserIcon } from "helpers/Protected/icons";
 import { Button } from "@mui/material";
 import Input from "../Input/Input";
 import logo from "../../assets/images/logo.png";
@@ -16,11 +11,14 @@ import Modal from "../Modal/Modal";
 import Login from "../Login/Login";
 import Singup from "../Signup/Singup";
 import MobileNavbar from "../MobileNavbar/MobileNavbar";
+import VerifyOTP from "../VerifyOTP/VerifyOTP";
+import LanguageSelection from "../LanguageSelection/LanguageSelection";
 
 const Header = () => {
   const [isTrue, setIsTrue] = useState(true);
   const [openModalLogin, setOpenModalLogin] = useState(false);
   const [openModalSignup, setOpenModalSignup] = useState(false);
+  const [openModalOTP, setOpenModalOTP] = useState(false);
 
   const { t, i18n } = useTranslation("common");
   const langs = [
@@ -45,11 +43,15 @@ const Header = () => {
 
   const handleCloseLogin = () => setOpenModalLogin(false);
   const handleCloseSignup = () => setOpenModalSignup(false);
-
+  const handleCloseOTP = () => setOpenModalOTP(false);
 
   return (
     <>
-      <div className={styles.navbar}>
+      <div
+        className={styles.navbar}
+        data-aos="fade-down"
+        data-aos-duration="2000"
+      >
         <NavLink to="/">
           <div className={styles.logo_wrapper}>
             <img src={logo} alt="Payzone" />
@@ -66,30 +68,8 @@ const Header = () => {
           />
 
           <div className={styles.navbar_items_wrapper}>
-            <div className={styles.header_navbar_utils_langs}>
-              <li className={styles.item}>
-                <div className={styles.item_wrapper}>
-                  <span>{i18n.language}</span>
-                  <span className={styles.iconrow}>
-                    <LanguageRowIcon fill = {"#fff"}/>
-                  </span>
-                </div>
-                <div className={styles.childList}>
-                  <ul>
-                    {langs.map((lang) => (
-                      <li
-                        key={lang?.label}
-                        className={styles.childItems}
-                        onClick={() => handleChangeLang(lang.label)}
-                      >
-                        <>
-                          <a>{lang.label} </a>
-                        </>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </li>
+            <div className={styles.language}>
+              <LanguageSelection />
             </div>
 
             <div className={styles.navbar_items_wrapper_buttons}>
@@ -107,7 +87,7 @@ const Header = () => {
                     className={styles.registerbutton}
                     variant="outlined"
                   >
-                    {t("Signup")}
+                    {t("Sign up")}
                   </Button>
                 </div>
               )}
@@ -145,6 +125,14 @@ const Header = () => {
         <Singup
           setOpenModalSignup={setOpenModalSignup}
           setOpenModalLogin={setOpenModalLogin}
+          setOpenModalOTP={setOpenModalOTP}
+        />
+      </Modal>
+      <Modal open={openModalOTP} handleClose={handleCloseOTP}>
+        <VerifyOTP
+          setOpenModalSignup={setOpenModalSignup}
+          setOpenModalLogin={setOpenModalLogin}
+          setOpenModalOTP={setOpenModalOTP}
         />
       </Modal>
     </>

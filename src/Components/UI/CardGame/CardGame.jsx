@@ -11,7 +11,7 @@ const CardGame = ({ name, img, id }) => {
 
 
   return (
-      <div className={styles.card}>
+      <div className={styles.card} >
         <div className={styles.card_wrapper}>
           <div className={styles.img_wrapper}>
             <img src={img} alt="card-game" />

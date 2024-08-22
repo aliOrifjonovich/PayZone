@@ -13,10 +13,12 @@ const Games = () => {
   const {data: Games} = useGetGames();
 
   console.log("games", Games)
+
+  const getDuration = (index) => 1000 + index * 200;
   return (
       <Container>
       <Box sx={{ flexGrow: 1 }}>
-        <h1 className="title" id="#games" style={{textAlign:"center"}}>{t("Games")}</h1>
+        <h1 className="title" id="#games" style={{textAlign:"center"}} data-aos="fade-down" data-aos-duration="3000">{t("Games")}</h1>
 
         <Grid
           container
@@ -24,7 +26,8 @@ const Games = () => {
           columns={{ xs: 4, sm: 8, md: 12 }}
         >
           {data?.root1.map((item, index) => (
-            <Grid item xs={12} sm={4} md={3} key={index}>
+            <Grid item xs={12} sm={4} md={3} key={index} data-aos="fade-right"
+            data-aos-duration={getDuration(index)}>
               <CardGame
                 key={item.id}
                 id={item.id}
