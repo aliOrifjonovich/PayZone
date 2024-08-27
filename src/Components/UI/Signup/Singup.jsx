@@ -43,7 +43,6 @@ const Signup = ({ setOpenModalSignup, setOpenModalLogin, setOpenModalOTP }) => {
   };
 
   const onSubmit = (data) => {
-    console.log("Form Data:", data);
     handleModalClose();
     setOpenModalOTP(true);
   };

@@ -5,9 +5,12 @@ import { useTranslation } from "react-i18next";
 import { navbarItems } from "utils/navbarItems";
 import logo from "../../assets/images/logo.png";
 import { CopywritingIcon, EmailIcon, InstagramIcon, TelegramIcon, WhatsappIcon } from "helpers/Protected/icons";
+import { useGetMedias } from "services/socials.service";
 
 export function Footer() {
   const { t } = useTranslation("common");
+  const {data: Socials} = useGetMedias();
+
   return (
     <footer className={styles.footer}>
       <Container>

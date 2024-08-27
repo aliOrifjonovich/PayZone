@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./Header.module.scss";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
-import { LanguageRowIcon, SearchIcon, UserIcon } from "helpers/Protected/icons";
+import {SearchIcon, UserIcon } from "helpers/Protected/icons";
 import { Button } from "@mui/material";
 import Input from "../Input/Input";
 import logo from "../../assets/images/logo.png";
@@ -20,22 +20,7 @@ const Header = () => {
   const [openModalSignup, setOpenModalSignup] = useState(false);
   const [openModalOTP, setOpenModalOTP] = useState(false);
 
-  const { t, i18n } = useTranslation("common");
-  const langs = [
-    {
-      label: "ru",
-    },
-    {
-      label: "uz",
-    },
-    {
-      label: "en",
-    },
-  ];
-
-  const handleChangeLang = (lang) => {
-    i18n.changeLanguage(lang);
-  };
+  const { t } = useTranslation("common");
 
   const { control } = useForm({
     defaultValues: {},

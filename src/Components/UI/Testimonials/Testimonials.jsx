@@ -12,6 +12,7 @@ import "swiper/css/pagination";
 import { MarkedIcon } from "helpers/Protected/icons";
 import img from "../../assets/images/gamerimg.png";
 import { useTranslation } from "react-i18next";
+import { useGetFeedbacks } from "services/testimonials.service";
 
 const StyledRating = styled(Rating)({
   "&.MuiRating-root": {
@@ -79,7 +80,9 @@ const data = [
 
 const Testimonials = () => {
   const { t } = useTranslation("common");
-  const width500px = useMediaQuery("max-width:500px");
+  const width1000px = useMediaQuery("max-width:1000px");
+  const {data: feedbacks} = useGetFeedbacks();
+
   return (
     <>
       <div
@@ -91,7 +94,7 @@ const Testimonials = () => {
         </h1>
 
         <Swiper
-          slidesPerView={width500px ? 1 : 1.5}
+          slidesPerView={width1000px ? 1 : 1.5}
           centeredSlides={true}
           spaceBetween={30}
           autoplay={{

@@ -31,7 +31,6 @@ const VerifyOTP = ({ setOpenModalOTP, setOpenModalSignup }) => {
   };
 
   const onSubmit = (data) => {
-    console.log("OTP Data:", data);
     handleOTPModalClose();
   };
 

@@ -36,7 +36,6 @@ const Login = ({ setOpenModalLogin, setOpenModalSignup }) => {
   };
 
   const onSubmit = (data) => {
-    console.log("Login Data:", data);
     handleLoginModalClose();
   };
 

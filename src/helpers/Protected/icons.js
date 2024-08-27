@@ -66,16 +66,16 @@ export const EmailIcon = () => (
     <path
       d="M2.5 1H14.5C15.325 1 16 1.675 16 2.5V11.5C16 12.325 15.325 13 14.5 13H2.5C1.675 13 1 12.325 1 11.5V2.5C1 1.675 1.675 1 2.5 1Z"
       stroke="#FCFFFA"
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M16 2.5L8.5 7.75L1 2.5"
       stroke="#FCFFFA"
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
@@ -119,9 +119,9 @@ export const WhatsappIcon = () => (
     <path
       d="M12.1492 4.94035C12.9909 5.10425 13.7644 5.51511 14.3708 6.12033C14.9772 6.72556 15.3888 7.49761 15.5531 8.33769M12.1492 1.5C13.8979 1.69389 15.5286 2.47549 16.7735 3.71645C18.0184 4.95741 18.8035 6.58398 19 8.32909M18.1383 15.1926V17.7728C18.1392 18.0124 18.0901 18.2495 17.9939 18.469C17.8978 18.6884 17.7568 18.8854 17.5799 19.0474C17.4031 19.2093 17.1943 19.3326 16.967 19.4093C16.7396 19.4861 16.4987 19.5146 16.2597 19.493C13.608 19.2054 11.0608 18.3011 8.82292 16.8526C6.74082 15.532 4.97557 13.7701 3.65252 11.692C2.19617 9.44824 1.28985 6.8936 1.00699 4.23508C0.98546 3.99723 1.01378 3.75752 1.09015 3.5312C1.16652 3.30488 1.28927 3.09691 1.45059 2.92054C1.6119 2.74416 1.80824 2.60324 2.02711 2.50675C2.24598 2.41026 2.48258 2.36031 2.72185 2.36009H5.30705C5.72525 2.35598 6.13069 2.50379 6.44778 2.77597C6.76487 3.04815 6.97198 3.42612 7.03051 3.83944C7.13963 4.66518 7.34199 5.47595 7.63373 6.25628C7.74967 6.56413 7.77476 6.89869 7.70603 7.22034C7.63731 7.54198 7.47764 7.83722 7.24595 8.07106L6.15155 9.16337C7.37827 11.3166 9.16456 13.0995 11.322 14.3239L12.4164 13.2316C12.6506 13.0003 12.9465 12.841 13.2687 12.7724C13.591 12.7038 13.9262 12.7288 14.2346 12.8445C15.0164 13.1357 15.8288 13.3377 16.6561 13.4466C17.0747 13.5055 17.457 13.716 17.7303 14.0379C18.0035 14.3598 18.1488 14.7708 18.1383 15.1926Z"
       stroke="#FCFFFA"
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
@@ -137,16 +137,16 @@ export const CopywritingIcon = () => (
     <path
       d="M4.5 7.85319C6.433 7.85319 8 6.31905 8 4.4266C8 2.53414 6.433 1 4.5 1C2.567 1 1 2.53414 1 4.4266C1 6.31905 2.567 7.85319 4.5 7.85319Z"
       stroke="#AEAEAE"
-      stroke-width="0.7"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="0.7"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M5.47228 3.28405C5.27582 3.0902 5.03354 2.96388 4.77452 2.92027C4.51549 2.87666 4.25072 2.91761 4.01197 3.0382C3.77323 3.15878 3.57066 3.35389 3.42856 3.6001C3.28646 3.84631 3.21088 4.13317 3.21088 4.42625C3.21088 4.71934 3.28646 5.0062 3.42856 5.25241C3.57066 5.49862 3.77323 5.69372 4.01197 5.81431C4.25072 5.9349 4.51549 5.97584 4.77452 5.93223C5.03354 5.88862 5.27582 5.76231 5.47228 5.56845"
       stroke="#AEAEAE"
-      stroke-width="0.7"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="0.7"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
@@ -187,14 +187,14 @@ export const StartMarqueeIcon = () => (
         y2="129.669"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#00D44A" />
-        <stop offset="0.1063" stop-color="#11E35A" />
-        <stop offset="0.2375" stop-color="#0AB847" />
-        <stop offset="0.3819" stop-color="#0FB849" />
-        <stop offset="0.5356" stop-color="#25B758" />
-        <stop offset="0.6969" stop-color="#00D44A" />
-        <stop offset="0.8618" stop-color="#29FE73" />
-        <stop offset="1" stop-color="#3FFF82" />
+        <stop stopColor="#00D44A" />
+        <stop offset="0.1063" stopColor="#11E35A" />
+        <stop offset="0.2375" stopColor="#0AB847" />
+        <stop offset="0.3819" stopColor="#0FB849" />
+        <stop offset="0.5356" stopColor="#25B758" />
+        <stop offset="0.6969" stopColor="#00D44A" />
+        <stop offset="0.8618" stopColor="#29FE73" />
+        <stop offset="1" stopColor="#3FFF82" />
       </linearGradient>
     </defs>
   </svg>
@@ -259,14 +259,14 @@ export const MarkedIcon = () => (
         y2="266.984"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#00D44A" />
-        <stop offset="0.1063" stop-color="#11E35A" />
-        <stop offset="0.2375" stop-color="#0AB847" />
-        <stop offset="0.3819" stop-color="#0FB849" />
-        <stop offset="0.5356" stop-color="#25B758" />
-        <stop offset="0.6969" stop-color="#00D44A" />
-        <stop offset="0.8618" stop-color="#29FE73" />
-        <stop offset="1" stop-color="#3FFF82" />
+        <stop stopColor="#00D44A" />
+        <stop offset="0.1063" stopColor="#11E35A" />
+        <stop offset="0.2375" stopColor="#0AB847" />
+        <stop offset="0.3819" stopColor="#0FB849" />
+        <stop offset="0.5356" stopColor="#25B758" />
+        <stop offset="0.6969" stopColor="#00D44A" />
+        <stop offset="0.8618" stopColor="#29FE73" />
+        <stop offset="1" stopColor="#3FFF82" />
       </linearGradient>
     </defs>
   </svg>
@@ -367,8 +367,8 @@ export const CloseEyeIcon = () => (
     <path
       d="M14.1609 17.2037C13.4609 17.3253 12.7386 17.3889 12.0001 17.3889C6.83831 17.3889 2.46894 14.2825 1 10C1.3999 8.83414 2.01474 7.75548 2.802 6.80291M9.5541 7.76083C10.18 7.18778 11.0445 6.83333 11.9995 6.83333C13.9095 6.83333 15.4578 8.25105 15.4578 10C15.4578 10.8744 15.0707 11.6661 14.4449 12.2392M9.5541 7.76083L14.4449 12.2392M9.5541 7.76083L5.76202 4.28856M14.4449 12.2392L18.2374 15.7118M5.76202 4.28856L1.62452 0.5M5.76202 4.28856C7.56014 3.22707 9.70156 2.61111 12 2.61111C17.1618 2.61111 21.5311 5.71752 23 10C22.1851 12.3757 20.4776 14.3895 18.2374 15.7118M18.2374 15.7118L22.3745 19.5"
       stroke="#616B74"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
@@ -384,14 +384,14 @@ export const OpenEyeIcon = () => (
     <path
       d="M15.4578 8.5001C15.4578 10.3937 13.9094 11.9287 11.9995 11.9287C10.0895 11.9287 8.54114 10.3937 8.54114 8.5001C8.54114 6.6065 10.0895 5.07153 11.9995 5.07153C13.9094 5.07153 15.4578 6.6065 15.4578 8.5001Z"
       stroke="#FCFFFA"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M1 8.5C2.46895 3.86329 6.8383 0.5 12 0.5C17.1617 0.5 21.531 3.86333 23 8.5C21.531 13.1367 17.1617 16.5 12 16.5C6.83828 16.5 2.46892 13.1367 1 8.5Z"
       stroke="#FCFFFA"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
@@ -429,8 +429,8 @@ export const FirstPlaceIcon = () => (
         y2="31"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#FFF96E" />
-        <stop offset="1" stop-color="#FFB800" />
+        <stop stopColor="#FFF96E" />
+        <stop offset="1" stopColor="#FFB800" />
       </linearGradient>
       <linearGradient
         id="paint1_linear_133_424"
@@ -440,8 +440,8 @@ export const FirstPlaceIcon = () => (
         y2="21.7"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#FFF96E" />
-        <stop offset="1" stop-color="#FFB800" />
+        <stop stopColor="#FFF96E" />
+        <stop offset="1" stopColor="#FFB800" />
       </linearGradient>
       <linearGradient
         id="paint2_linear_133_424"
@@ -451,8 +451,8 @@ export const FirstPlaceIcon = () => (
         y2="16.6623"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#FFF96E" />
-        <stop offset="1" stop-color="#FFB800" />
+        <stop stopColor="#FFF96E" />
+        <stop offset="1" stopColor="#FFB800" />
       </linearGradient>
     </defs>
   </svg>
@@ -491,11 +491,11 @@ export const SecondPlaceIcon = () => (
         y2="31.551"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0.104" stop-color="#C0C0C0" />
-        <stop offset="0.274" stop-color="#868686" />
-        <stop offset="0.494" stop-color="#C0C0C0" />
-        <stop offset="0.759" stop-color="#C0C0C0" />
-        <stop offset="1" stop-color="#868686" />
+        <stop offset="0.104" stopColor="#C0C0C0" />
+        <stop offset="0.274" stopColor="#868686" />
+        <stop offset="0.494" stopColor="#C0C0C0" />
+        <stop offset="0.759" stopColor="#C0C0C0" />
+        <stop offset="1" stopColor="#868686" />
       </linearGradient>
       <linearGradient
         id="paint1_linear_133_429"
@@ -505,11 +505,11 @@ export const SecondPlaceIcon = () => (
         y2="22.2509"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0.104" stop-color="#C0C0C0" />
-        <stop offset="0.274" stop-color="#868686" />
-        <stop offset="0.494" stop-color="#C0C0C0" />
-        <stop offset="0.759" stop-color="#C0C0C0" />
-        <stop offset="1" stop-color="#868686" />
+        <stop offset="0.104" stopColor="#C0C0C0" />
+        <stop offset="0.274" stopColor="#868686" />
+        <stop offset="0.494" stopColor="#C0C0C0" />
+        <stop offset="0.759" stopColor="#C0C0C0" />
+        <stop offset="1" stopColor="#868686" />
       </linearGradient>
       <linearGradient
         id="paint2_linear_133_429"
@@ -519,11 +519,11 @@ export const SecondPlaceIcon = () => (
         y2="17.2136"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0.104" stop-color="#C0C0C0" />
-        <stop offset="0.274" stop-color="#868686" />
-        <stop offset="0.494" stop-color="#C0C0C0" />
-        <stop offset="0.759" stop-color="#C0C0C0" />
-        <stop offset="1" stop-color="#868686" />
+        <stop offset="0.104" stopColor="#C0C0C0" />
+        <stop offset="0.274" stopColor="#868686" />
+        <stop offset="0.494" stopColor="#C0C0C0" />
+        <stop offset="0.759" stopColor="#C0C0C0" />
+        <stop offset="1" stopColor="#868686" />
       </linearGradient>
     </defs>
   </svg>
@@ -562,13 +562,13 @@ export const ThirdPlaceIcon = () => (
         y2="31.1018"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#B08D57" />
-        <stop offset="0.0789996" stop-color="#AA8B5F" />
-        <stop offset="0.164" stop-color="#A38A67" />
-        <stop offset="0.319" stop-color="#9C886E" />
-        <stop offset="0.494" stop-color="#948775" />
-        <stop offset="0.759" stop-color="#8D857D" />
-        <stop offset="1" stop-color="#848484" />
+        <stop stopColor="#B08D57" />
+        <stop offset="0.0789996" stopColor="#AA8B5F" />
+        <stop offset="0.164" stopColor="#A38A67" />
+        <stop offset="0.319" stopColor="#9C886E" />
+        <stop offset="0.494" stopColor="#948775" />
+        <stop offset="0.759" stopColor="#8D857D" />
+        <stop offset="1" stopColor="#848484" />
       </linearGradient>
       <linearGradient
         id="paint1_linear_133_434"
@@ -578,13 +578,13 @@ export const ThirdPlaceIcon = () => (
         y2="21.8017"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#B08D57" />
-        <stop offset="0.0789996" stop-color="#AA8B5F" />
-        <stop offset="0.164" stop-color="#A38A67" />
-        <stop offset="0.319" stop-color="#9C886E" />
-        <stop offset="0.494" stop-color="#948775" />
-        <stop offset="0.759" stop-color="#8D857D" />
-        <stop offset="1" stop-color="#848484" />
+        <stop stopColor="#B08D57" />
+        <stop offset="0.0789996" stopColor="#AA8B5F" />
+        <stop offset="0.164" stopColor="#A38A67" />
+        <stop offset="0.319" stopColor="#9C886E" />
+        <stop offset="0.494" stopColor="#948775" />
+        <stop offset="0.759" stopColor="#8D857D" />
+        <stop offset="1" stopColor="#848484" />
       </linearGradient>
       <linearGradient
         id="paint2_linear_133_434"
@@ -594,13 +594,13 @@ export const ThirdPlaceIcon = () => (
         y2="16.7643"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#B08D57" />
-        <stop offset="0.0789996" stop-color="#AA8B5F" />
-        <stop offset="0.164" stop-color="#A38A67" />
-        <stop offset="0.319" stop-color="#9C886E" />
-        <stop offset="0.494" stop-color="#948775" />
-        <stop offset="0.759" stop-color="#8D857D" />
-        <stop offset="1" stop-color="#848484" />
+        <stop stopColor="#B08D57" />
+        <stop offset="0.0789996" stopColor="#AA8B5F" />
+        <stop offset="0.164" stopColor="#A38A67" />
+        <stop offset="0.319" stopColor="#9C886E" />
+        <stop offset="0.494" stopColor="#948775" />
+        <stop offset="0.759" stopColor="#8D857D" />
+        <stop offset="1" stopColor="#848484" />
       </linearGradient>
     </defs>
   </svg>
@@ -617,9 +617,9 @@ export const HamburgerMenu = () => (
     <path
       d="M1.66675 1.5H21.6667M1.66675 9H21.6667M12.9167 16.5H21.6667"
       stroke="#FCFFFA"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
@@ -634,23 +634,23 @@ export const Exclamation = () => (
     <path
       d="M13.5 23.625C19.0919 23.625 23.625 19.0919 23.625 13.5C23.625 7.90812 19.0919 3.375 13.5 3.375C7.90812 3.375 3.375 7.90812 3.375 13.5C3.375 19.0919 7.90812 23.625 13.5 23.625Z"
       stroke="url(#paint0_linear_513_1032)"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M13.5 9V13.5"
       stroke="url(#paint1_linear_513_1032)"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M13.5 18H13.5107"
       stroke="url(#paint2_linear_513_1032)"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <defs>
       <linearGradient
@@ -661,14 +661,14 @@ export const Exclamation = () => (
         y2="76.688"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#00D44A" />
-        <stop offset="0.1063" stop-color="#11E35A" />
-        <stop offset="0.2375" stop-color="#0AB847" />
-        <stop offset="0.3819" stop-color="#0FB849" />
-        <stop offset="0.5356" stop-color="#25B758" />
-        <stop offset="0.6969" stop-color="#00D44A" />
-        <stop offset="0.8618" stop-color="#29FE73" />
-        <stop offset="1" stop-color="#3FFF82" />
+        <stop stopColor="#00D44A" />
+        <stop offset="0.1063" stopColor="#11E35A" />
+        <stop offset="0.2375" stopColor="#0AB847" />
+        <stop offset="0.3819" stopColor="#0FB849" />
+        <stop offset="0.5356" stopColor="#25B758" />
+        <stop offset="0.6969" stopColor="#00D44A" />
+        <stop offset="0.8618" stopColor="#29FE73" />
+        <stop offset="1" stopColor="#3FFF82" />
       </linearGradient>
       <linearGradient
         id="paint1_linear_513_1032"
@@ -678,14 +678,14 @@ export const Exclamation = () => (
         y2="26.5386"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#00D44A" />
-        <stop offset="0.1063" stop-color="#11E35A" />
-        <stop offset="0.2375" stop-color="#0AB847" />
-        <stop offset="0.3819" stop-color="#0FB849" />
-        <stop offset="0.5356" stop-color="#25B758" />
-        <stop offset="0.6969" stop-color="#00D44A" />
-        <stop offset="0.8618" stop-color="#29FE73" />
-        <stop offset="1" stop-color="#3FFF82" />
+        <stop stopColor="#00D44A" />
+        <stop offset="0.1063" stopColor="#11E35A" />
+        <stop offset="0.2375" stopColor="#0AB847" />
+        <stop offset="0.3819" stopColor="#0FB849" />
+        <stop offset="0.5356" stopColor="#25B758" />
+        <stop offset="0.6969" stopColor="#00D44A" />
+        <stop offset="0.8618" stopColor="#29FE73" />
+        <stop offset="1" stopColor="#3FFF82" />
       </linearGradient>
       <linearGradient
         id="paint2_linear_513_1032"
@@ -695,14 +695,14 @@ export const Exclamation = () => (
         y2="21.9125"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#00D44A" />
-        <stop offset="0.1063" stop-color="#11E35A" />
-        <stop offset="0.2375" stop-color="#0AB847" />
-        <stop offset="0.3819" stop-color="#0FB849" />
-        <stop offset="0.5356" stop-color="#25B758" />
-        <stop offset="0.6969" stop-color="#00D44A" />
-        <stop offset="0.8618" stop-color="#29FE73" />
-        <stop offset="1" stop-color="#3FFF82" />
+        <stop stopColor="#00D44A" />
+        <stop offset="0.1063" stopColor="#11E35A" />
+        <stop offset="0.2375" stopColor="#0AB847" />
+        <stop offset="0.3819" stopColor="#0FB849" />
+        <stop offset="0.5356" stopColor="#25B758" />
+        <stop offset="0.6969" stopColor="#00D44A" />
+        <stop offset="0.8618" stopColor="#29FE73" />
+        <stop offset="1" stopColor="#3FFF82" />
       </linearGradient>
     </defs>
   </svg>
@@ -728,14 +728,14 @@ export const Line = () => (
         y2="124.104"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#00D44A" />
-        <stop offset="0.1063" stop-color="#11E35A" />
-        <stop offset="0.2375" stop-color="#0AB847" />
-        <stop offset="0.3819" stop-color="#0FB849" />
-        <stop offset="0.5356" stop-color="#25B758" />
-        <stop offset="0.6969" stop-color="#00D44A" />
-        <stop offset="0.8618" stop-color="#29FE73" />
-        <stop offset="1" stop-color="#3FFF82" />
+        <stop stopColor="#00D44A" />
+        <stop offset="0.1063" stopColor="#11E35A" />
+        <stop offset="0.2375" stopColor="#0AB847" />
+        <stop offset="0.3819" stopColor="#0FB849" />
+        <stop offset="0.5356" stopColor="#25B758" />
+        <stop offset="0.6969" stopColor="#00D44A" />
+        <stop offset="0.8618" stopColor="#29FE73" />
+        <stop offset="1" stopColor="#3FFF82" />
       </linearGradient>
     </defs>
   </svg>
@@ -751,20 +751,20 @@ export const DoneIcon = () => (
     <path
       d="M19.2422 1.3125L9.28906 12.6875L5.02344 8.42188"
       stroke="url(#paint0_linear_482_3865)"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M5.02344 12.6875L0.757812 8.42188"
       stroke="url(#paint1_linear_482_3865)"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M14.9766 1.3125L8.93359 8.24414"
       stroke="url(#paint2_linear_482_3865)"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <defs>
       <linearGradient
@@ -775,14 +775,14 @@ export const DoneIcon = () => (
         y2="40.7584"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#00D44A" />
-        <stop offset="0.1063" stop-color="#11E35A" />
-        <stop offset="0.2375" stop-color="#0AB847" />
-        <stop offset="0.3819" stop-color="#0FB849" />
-        <stop offset="0.5356" stop-color="#25B758" />
-        <stop offset="0.6969" stop-color="#00D44A" />
-        <stop offset="0.8618" stop-color="#29FE73" />
-        <stop offset="1" stop-color="#3FFF82" />
+        <stop stopColor="#00D44A" />
+        <stop offset="0.1063" stopColor="#11E35A" />
+        <stop offset="0.2375" stopColor="#0AB847" />
+        <stop offset="0.3819" stopColor="#0FB849" />
+        <stop offset="0.5356" stopColor="#25B758" />
+        <stop offset="0.6969" stopColor="#00D44A" />
+        <stop offset="0.8618" stopColor="#29FE73" />
+        <stop offset="1" stopColor="#3FFF82" />
       </linearGradient>
       <linearGradient
         id="paint1_linear_482_3865"
@@ -792,14 +792,14 @@ export const DoneIcon = () => (
         y2="23.8651"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#00D44A" />
-        <stop offset="0.1063" stop-color="#11E35A" />
-        <stop offset="0.2375" stop-color="#0AB847" />
-        <stop offset="0.3819" stop-color="#0FB849" />
-        <stop offset="0.5356" stop-color="#25B758" />
-        <stop offset="0.6969" stop-color="#00D44A" />
-        <stop offset="0.8618" stop-color="#29FE73" />
-        <stop offset="1" stop-color="#3FFF82" />
+        <stop stopColor="#00D44A" />
+        <stop offset="0.1063" stopColor="#11E35A" />
+        <stop offset="0.2375" stopColor="#0AB847" />
+        <stop offset="0.3819" stopColor="#0FB849" />
+        <stop offset="0.5356" stopColor="#25B758" />
+        <stop offset="0.6969" stopColor="#00D44A" />
+        <stop offset="0.8618" stopColor="#29FE73" />
+        <stop offset="1" stopColor="#3FFF82" />
       </linearGradient>
       <linearGradient
         id="paint2_linear_482_3865"
@@ -809,14 +809,14 @@ export const DoneIcon = () => (
         y2="26.8763"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#00D44A" />
-        <stop offset="0.1063" stop-color="#11E35A" />
-        <stop offset="0.2375" stop-color="#0AB847" />
-        <stop offset="0.3819" stop-color="#0FB849" />
-        <stop offset="0.5356" stop-color="#25B758" />
-        <stop offset="0.6969" stop-color="#00D44A" />
-        <stop offset="0.8618" stop-color="#29FE73" />
-        <stop offset="1" stop-color="#3FFF82" />
+        <stop stopColor="#00D44A" />
+        <stop offset="0.1063" stopColor="#11E35A" />
+        <stop offset="0.2375" stopColor="#0AB847" />
+        <stop offset="0.3819" stopColor="#0FB849" />
+        <stop offset="0.5356" stopColor="#25B758" />
+        <stop offset="0.6969" stopColor="#00D44A" />
+        <stop offset="0.8618" stopColor="#29FE73" />
+        <stop offset="1" stopColor="#3FFF82" />
       </linearGradient>
     </defs>
   </svg>
@@ -863,8 +863,8 @@ export const PlusIcon = ()=>(
 <path d="M17.904 42.424V0.375999H25.968V42.424H17.904ZM0.432 25.24V17.656H43.44V25.24H0.432Z" fill="url(#paint0_linear_769_1197)"/>
 <defs>
 <linearGradient id="paint0_linear_769_1197" x1="22" y1="-32" x2="22" y2="74" gradientUnits="userSpaceOnUse">
-<stop stop-color="#73FFA3"/>
-<stop offset="1" stop-color="#006B25"/>
+<stop stopColor="#73FFA3"/>
+<stop offset="1" stopColor="#006B25"/>
 </linearGradient>
 </defs>
 </svg>

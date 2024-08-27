@@ -119,12 +119,10 @@ const Profile = () => {
   const { register: registerCard, handleSubmit: handleCardSubmit, formState: { errors: cardErrors } } = useForm();
 
   const handleProfileImageSubmit = (data) => {
-    console.log("Profile Data:", data);
     // Handle form submission logic here
   };
 
   const handleAddCardSubmit = (data) => {
-    console.log("Card Data:", data);
     // Handle card addition logic here
   };
   const handleClose = () => {

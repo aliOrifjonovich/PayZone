@@ -9,6 +9,8 @@ import React, { useState } from "react";
 import styles from "./FAQ.module.scss";
 import { useTranslation } from "react-i18next";
 import { FAQMinusIcon, FAQPlusIcon } from "helpers/Protected/icons";
+import { useGetFaq } from "services/faq.service";
+import { useParams } from "react-router-dom";
 
 const data = [
   {
@@ -71,10 +73,22 @@ const data = [
 const FAQ = () => {
   const { t } = useTranslation("common");
   const [expanded, setExpanded] = useState(false);
+  const params = useParams();
+  console.log("params",params )
+
 
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
+
+  const {data: FAQ} = useGetFaq({
+    // params: id,
+    queryParams: {
+      limit: 0,
+      offset: 0,
+    },
+  });
+
 
   return (
     <Container style={{ marginTop: "50px" }}>

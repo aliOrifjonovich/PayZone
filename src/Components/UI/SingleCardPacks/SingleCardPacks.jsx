@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./SingleCardPacks.module.scss";
 import { Button } from "@mui/material";
 import img from "../../assets/images/packs.png"
-import { t } from "i18next";
 import { DoneIcon } from "helpers/Protected/icons";
 
 const SingleCardPacks = ({setOpenModal}) => {

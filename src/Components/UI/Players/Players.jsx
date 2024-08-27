@@ -8,7 +8,6 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import styles from "./Players.module.scss";
-import { t } from "i18next";
 import gamerImage from "../../assets/images/gamerimg.png";
 import { FirstPlaceIcon, PaymentIcon, SecondPlaceIcon, ThirdPlaceIcon } from "helpers/Protected/icons";
 import { useTranslation } from "react-i18next";

@@ -3,9 +3,12 @@ import styles from "./Advertisement.module.scss";
 import img from "../../assets/images/pubg.png";
 import { Button, Container } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import { useGetEvents } from "services/events.service";
 
 const Advertisement = () => {
   const { t } = useTranslation("common");
+  const {data: Events} = useGetEvents();
+
   return (
     <Container>
       <div className={styles.wrapper} id="#payzone">

@@ -12,7 +12,9 @@ const Games = () => {
   const {t}=useTranslation("common");
   const {data: Games} = useGetGames();
 
-  console.log("games", Games)
+  console.log("Games", Games);
+  
+
 
   const getDuration = (index) => 1000 + index * 200;
   return (
