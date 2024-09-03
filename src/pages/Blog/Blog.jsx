@@ -5,7 +5,7 @@ const Blog = () => {
   const { fakeData } = useSelector((store) => store.fake);
   return (
     <div>
-      <h1>Blogs</h1>
+      <h1>Blog</h1>
       <h2>{fakeData}</h2>
     </div>
   );
