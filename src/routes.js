@@ -8,6 +8,9 @@ import Card from "pages/Card/Card";
 import Profile from "pages/Profile/Profile";
 import SingleGame from "pages/SingleGame/SingleGame";
 import Steam from "pages/Steam/Steam";
+import MyPayments from "pages/MyPayments/MyPayments";
+import PaymentMethods from "pages/PaymentMethods/PaymentMethods";
+import MyProfile from "pages/MyProfile/MyProfile";
 
 export const Routes = () =>
   useRoutes([
@@ -18,7 +21,7 @@ export const Routes = () =>
 
     {
       path: "/card",
-      element: <Card/>
+      element: <Card />,
     },
     {
       path: "/products",
@@ -36,16 +39,29 @@ export const Routes = () =>
     },
     {
       path: "/single-game/:id",
-      element: <SingleGame/>,
+      element: <SingleGame />,
     },
-
     {
       path: "/profile",
-      element: <Profile/>
+      element: <Profile />,
+      children: [
+        {
+          index: true,
+          element: <MyProfile />,
+        },
+        {
+          path: "my-payments",
+          element: <MyPayments />,
+        },
+        {
+          path: "payment-methods",
+          element: <PaymentMethods />,
+        },
+      ],
     },
     {
       path: "/steam",
-      element: <Steam/>
+      element: <Steam />,
     },
     {
       path: "*",

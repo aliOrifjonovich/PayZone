@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./Profile.module.scss";
 import {
   Box,
   Button,
   Container,
   Divider,
-  Drawer,
   List,
   ListItem,
   ListItemButton,
@@ -23,138 +22,74 @@ import { useTranslation } from "react-i18next";
 import ProfilePage from "Components/UI/ProfilePage/ProfilePage";
 import Payments from "Components/UI/Payments/Payments";
 import PaymentCard from "Components/UI/PaymentCard/PaymentCard";
+import { Link, Outlet, useLocation } from "react-router-dom";
 
-const drawerdata = ["My payments", "Payment methods"];
+const drawerdata = [
+  {
+    icon: (props) => <PaymentProfileIcon {...props} />,
+    title: "My payments",
+    link: "my-payments",
+  },
+  {
+    icon: (props) => <PaymentMethod {...props} />,
+    title: "Payment methods",
+    link: "payment-methods",
+  },
+];
 
-const Profile = (props) => {
+const Profile = () => {
+  const { pathname } = useLocation();
   const { t } = useTranslation("common");
 
-  const drawerWidth = 221;
-  const { window } = props;
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [isClosing, setIsClosing] = useState(false);
-
-  const handleDrawerClose = () => {
-    setIsClosing(true);
-    setMobileOpen(false);
-  };
-
-  const handleDrawerTransitionEnd = () => {
-    setIsClosing(false);
-  };
-
-  const handleDrawerToggle = () => {
-    if (!isClosing) {
-      setMobileOpen(!mobileOpen);
-    }
-  };
   const drawer = (
-    <div className={styles.box}>
-      <Toolbar />
-      <Divider />
-      <List className={styles.list}>
-        <ListItem disablePadding className={styles.listItem}>
-          <ListItemButton>
-            <ListItemIcon>
-              <UserIcon />
-            </ListItemIcon>
-            <ListItemText primary="Profile" />
-          </ListItemButton>
-        </ListItem>
-
-        <ListItem disablePadding className={styles.listItem}>
-          <p className={styles.paymentTitle}>Payments</p>
-          {drawerdata?.map((text, index) => (
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <PaymentProfileIcon /> : <PaymentMethod />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          ))}
-        </ListItem>
-
-        <ListItem disablePadding>
-          <Button
-            variant="contained"
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              width: "100%",
-              marginTop: "10px",
-            }}
-          >
-            {t("Sign out")}
-            <SignoutIcon />
-          </Button>
-        </ListItem>
-      </List>
-      <Divider />
+    <div className={styles.list}>
+      <Link to="/profile">
+        <div
+          className={`${styles.list_item} ${
+            pathname === "/profile" && styles.list_item_active
+          }`}
+        >
+          <UserIcon fill={pathname === "/profile" ? "#00d44a" : "#869AB2"} />
+          <h4>Profile</h4>
+        </div>
+      </Link>
+      <p className={styles.list_payments_title}>Payments</p>
+      <div className={styles.list_payments}>
+        {drawerdata?.map((data) => (
+          <Link key={data.link} to={data.link}>
+            <div
+              className={`${styles.list_item} ${
+                pathname.includes(data.link) && styles.list_item_active
+              }`}
+            >
+              {data.icon({
+                stroke: pathname.includes(data.link) ? "#00d44a" : "#869AB2",
+              })}
+              <h4>{data.title}</h4>
+            </div>
+          </Link>
+        ))}
+      </div>
     </div>
   );
-
-  const container =
-    window !== undefined ? () => window().document.body : undefined;
 
   return (
     <>
       <div className={styles.profile}>
+        <div className={styles.profile_sidebar}>
+          <div className={styles.profile_sidebar_inner}>{drawer}</div>
+        </div>
         <Container>
-          <Box
-            component="nav"
-            sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 }}}
-            aria-label="mailbox folders"
-          >
-            {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-            <Drawer
-              container={container}
-              variant="temporary"
-              open={mobileOpen}
-              onTransitionEnd={handleDrawerTransitionEnd}
-              onClose={handleDrawerClose}
-              ModalProps={{
-                keepMounted: true, // Better open performance on mobile.
-              }}
-              sx={{
-                display: { xs: "block", sm: "none" },
-                "& .MuiDrawer-paper": {
-                  boxSizing: "border-box",
-                  width: drawerWidth,
-                },
-              }}
-            >
-              {drawer}
-            </Drawer>
-            <Drawer
-              variant="permanent"
-              sx={{
-                display: { xs: "none", sm: "block" },
-                "& .MuiDrawer-paper": {
-                  boxSizing: "border-box",
-                  width: drawerWidth,
-                },
-              }}
-              open
-            >
-              {drawer}
-            </Drawer>
-          </Box>
-
           <Box
             component="main"
             sx={{
               flexGrow: 1,
               p: 3,
-              width: { sm: `calc(100% - ${drawerWidth}px)` },
+              width: { sm: `calc(100% - 100px)` },
             }}
           >
             <div className={styles.profile_wrapper}>
-              <ProfilePage />
-
-              <Payments />
-
-              <PaymentCard />
+              <Outlet />
             </div>
           </Box>
         </Container>

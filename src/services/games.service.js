@@ -2,9 +2,8 @@ import { useQuery } from "react-query";
 import { requestPayzone } from "./http-client";
 
 const gamesService = {
-  getGame: () =>
-    requestPayzone.get("/Games"),
-  
+  getGame: () => requestPayzone.get("/Games"),
+  getAllProducts: (id) => requestPayzone.get(`/All_Products/?game=${id}`),
 };
 
 export const useGetGames = () => {
@@ -13,8 +12,8 @@ export const useGetGames = () => {
   });
 };
 
-export const useGetSingleGameService = () => {
-  return useQuery(["GET_SINGLE_GAME_SERVICE"], async () => {
-    return await gamesService.getSingleGameService();
+export const useGetAllProducts = (id) => {
+  return useQuery(["GET_ALL_PRODUCTS"], async () => {
+    return await gamesService.getAllProducts(id);
   });
 };

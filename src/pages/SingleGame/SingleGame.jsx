@@ -6,12 +6,21 @@ import { t } from "i18next";
 import SIngleCardGame from "Components/UI/SingleCardGame/SIngleCardGame";
 import SingleCardPacks from "Components/UI/SingleCardPacks/SingleCardPacks";
 import Modal from "Components/UI/Modal/Modal";
-import { CancelIcon, Exclamation, LanguageRowIcon, Line, PriceIcon } from "helpers/Protected/icons";
+import {
+  CancelIcon,
+  Exclamation,
+  LanguageRowIcon,
+  Line,
+  PriceIcon,
+} from "helpers/Protected/icons";
 import img2 from "../../Components/assets/images/1.png";
 import SingleCardOffer from "Components/UI/SingleCardOffer/SingleCardOffer";
+import { useParams } from "react-router-dom";
+import { useGetAllProducts } from "services/games.service";
 
 const SingleGame = () => {
   const data = fakedata();
+  const { id } = useParams();
   const [openModal, setOpenModal] = useState(false);
   const handleClose = () => setOpenModal(false);
   const price = [
@@ -25,7 +34,8 @@ const SingleGame = () => {
       label: "rub",
     },
   ];
-
+  const { data: allProducts } = useGetAllProducts(id);
+  console.log("all", allProducts);
   return (
     <div className={styles.singleGame}>
       <Container
