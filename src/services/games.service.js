@@ -4,7 +4,7 @@ import { requestPayzone } from "./http-client";
 const gamesService = {
   getGame: () =>
     requestPayzone.get("/Games"),
-  getSingleGameService: ()=>requestPayzone.get(`/Services?gameid`)
+  
 };
 
 export const useGetGames = () => {
@@ -12,8 +12,9 @@ export const useGetGames = () => {
     return await gamesService.getGame();
   });
 };
-// export const useGetSingleGameService = () => {
-//   return useQuery(["GET_SINGLE_GAME_SERVICE"], async () => {
-//     return await gamesService.getSingleGameService();
-//   });
-// };
+
+export const useGetSingleGameService = () => {
+  return useQuery(["GET_SINGLE_GAME_SERVICE"], async () => {
+    return await gamesService.getSingleGameService();
+  });
+};

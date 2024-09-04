@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./PaymentCard.module.scss";
 import { useTranslation } from "react-i18next";
 import { CancelIcon, PlusIcon } from "helpers/Protected/icons";
-import { Button } from "@mui/material";
+import { Button, Checkbox } from "@mui/material";
 
 import paymentCArd1 from "../../assets/images/HUMO.png";
 import paymentCArd2 from "../../assets/images/visa.png";
@@ -99,7 +99,14 @@ const PaymentCard = () => {
               </div>
 
               <div className={styles.agreement}>
-                <input type="checkbox" value="Yes" />
+                <Checkbox
+                  sx={{
+                    color: "#00d44a",
+                    "&.Mui-checked": {
+                      color: "#00d44a",
+                    },
+                  }}
+                />
                 <p>{t("Remember this card")}</p>
               </div>
             </div>

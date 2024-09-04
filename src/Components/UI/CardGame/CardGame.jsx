@@ -5,7 +5,7 @@ import { BuyRowIcon } from "helpers/Protected/icons";
 import { Button } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
-const CardGame = ({ name, img, id }) => {
+const CardGame = ({ name, image, id }) => {
   const [isHovered, setIsHovered] = useState(false);
   const {t}=useTranslation("common");
 
@@ -14,7 +14,7 @@ const CardGame = ({ name, img, id }) => {
       <div className={styles.card} >
         <div className={styles.card_wrapper}>
           <div className={styles.img_wrapper}>
-            <img src={img} alt="card-game" />
+            <img src={image} alt="card-game" />
           </div>
 
           <div className={styles.card_content}>

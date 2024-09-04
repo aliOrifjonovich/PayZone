@@ -13,8 +13,9 @@
     padding: 0px 20px;
     z-index: 100;
     gap: 40px;
+    position: relative;
     .img_wrapper {
-      width: 885px;
+      width: 1000px;
       height: 602px;
       position: relative;
 
@@ -25,18 +26,34 @@
       }
     }
 
+    // .gradient {
+    //   position: absolute;
+    //   bottom: 0;
+    //   left: -20px;
+    //   right: 20px;
+    //   height: 13%; // Adjust the height as needed
+    //   background: rgb(0, 18, 42);
+    //   background: linear-gradient(
+    //     180deg,
+    //     rgba(0, 18, 42, 0.5984768907563025) 0%,
+    //     rgba(0, 18, 42, 1) 100%
+    //   );
+    //   width: 510px;
+    // }
+
     &_infos {
       @include direction-column;
       gap: 15px;
       border-radius: 10px;
       box-shadow: 0px 4px 20px -1px #00000000;
       color: #fff;
-      text-transform: capitalize;
 
       h1 {
+        font-family: Orbitron;
         font-size: 40px;
         font-weight: 700;
         letter-spacing: 1px;
+        text-transform: uppercase;
 
         span {
           color: #00d44a;
@@ -46,17 +63,15 @@
       p {
         font-weight: 400;
         font-size: 24px;
-        font-family: Poppins sans-serif;
+        font-family: Montserrat sans-serif;
         font-weight: 400;
         line-height: 29.62px;
         letter-spacing: 0.04em;
-        text-align: center;
       }
 
       .btn {
         width: max-content;
         transform: skew(-15deg);
-        border-radius: 20px !important;
 
         &_content {
           padding: 10px 35px;
@@ -96,7 +111,7 @@
       gap: 25px;
       padding: 25px 20px;
       .img_wrapper {
-        width: 700px;
+        width: 850px;
         height: 450px;
       }
 

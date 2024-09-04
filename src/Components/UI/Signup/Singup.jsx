@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button } from "@mui/material";
+import { Button, Checkbox } from "@mui/material";
 import { useForm, Controller } from "react-hook-form";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
@@ -105,9 +105,7 @@ const Signup = ({ setOpenModalSignup, setOpenModalLogin, setOpenModalOTP }) => {
             </span>
           </div>
           {errors.password && (
-            <p className={styles.errorMessage}>
-              Please create a password
-            </p>
+            <p className={styles.errorMessage}>Please create a password</p>
           )}
 
           <div className={styles.input}>
@@ -134,7 +132,14 @@ const Signup = ({ setOpenModalSignup, setOpenModalLogin, setOpenModalOTP }) => {
 
         <div className={styles.btn_wrapper}>
           <div className={styles.agreement}>
-            <input type="checkbox" />
+            <Checkbox
+              sx={{
+                color: "#00d44a",
+                "&.Mui-checked": {
+                  color: "#00d44a",
+                },
+              }}
+            />
             <p>
               {t("I agree with ")} <a href="/">terms & conditions</a>
             </p>
@@ -142,7 +147,11 @@ const Signup = ({ setOpenModalSignup, setOpenModalLogin, setOpenModalOTP }) => {
           <Button
             variant="contained"
             fullWidth
-            sx={{ borderRadius: "10px", fontSize: "20px", textTransform:"capitalize" }}
+            sx={{
+              borderRadius: "10px",
+              fontSize: "20px",
+              textTransform: "capitalize",
+            }}
             type="submit"
           >
             {t("Sign up")}

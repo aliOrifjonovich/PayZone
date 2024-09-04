@@ -27,14 +27,14 @@ const Games = () => {
           spacing={{ xs: 2, md: 3 }}
           columns={{ xs: 4, sm: 8, md: 12 }}
         >
-          {data?.root1.map((item, index) => (
+          {Games?.map((item, index) => (
             <Grid item xs={12} sm={4} md={3} key={index} data-aos="fade-right"
             data-aos-duration={getDuration(index)}>
               <CardGame
                 key={item.id}
                 id={item.id}
                 name={item.name}
-                img={item.img}
+                img={item.image}
               />
             </Grid>
           ))}

@@ -27,7 +27,7 @@ const Advertisement = () => {
 
             <p>{t("info")}</p>
             <div className={styles.btn}>
-              <Button variant="outlined">
+              <Button variant="outlined" sx={{ border: "2px solid", borderRadius:"10px"}}>
                 <div className={styles.btn_content}>{t("Play")}</div>
               </Button>
             </div>
