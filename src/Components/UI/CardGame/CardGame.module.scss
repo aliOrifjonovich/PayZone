@@ -22,7 +22,7 @@
       height: 295px;
       border-radius: 10px;
       overflow: hidden;
-    transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
 
 
       img {
@@ -31,12 +31,12 @@
         object-fit: cover;
       }
 
-      @media screen and (max-width: 1064px) {
-        width: 220px;
+      @media (max-width: 1064px) {
+        width: 220px !important;
       }
 
       @media screen and (max-width: 1000px) {
-        width: 200px;
+        width: 200px !important;
       }
     }
 

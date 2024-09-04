@@ -1,354 +1,164 @@
 import React, { useState } from "react";
 import styles from "./Profile.module.scss";
-import { Button, Container } from "@mui/material";
-import img from "../../Components/assets/images/profile.png";
 import {
-  CancelIcon,
-  ChangeIconButton,
-  PlusIcon,
-  ProfileTabelRow,
+  Box,
+  Button,
+  Container,
+  Divider,
+  Drawer,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+  Toolbar,
+} from "@mui/material";
+import {
+  PaymentMethod,
+  PaymentProfileIcon,
+  SignoutIcon,
+  UserIcon,
 } from "helpers/Protected/icons";
 import { useTranslation } from "react-i18next";
-import Modal from "Components/UI/Modal/Modal";
-import img2 from "../../Components/assets/images/ucprofile.png";
-import paymentCArd1 from "../../Components/assets/images/HUMO.png";
-import paymentCArd2 from "../../Components/assets/images/visa.png";
-import paymentCArd3 from "../../Components/assets/images/MASTERCARD.png";
-import paymentCArd4 from "../../Components/assets/images/UZCARD.png";
-import paymentCArd5 from "../../Components/assets/images/payment.png"
-import { useForm } from "react-hook-form";
+import ProfilePage from "Components/UI/ProfilePage/ProfilePage";
+import Payments from "Components/UI/Payments/Payments";
+import PaymentCard from "Components/UI/PaymentCard/PaymentCard";
 
-const data = [
-  {
-    game: "Pubg Mobile",
-    product: img2,
-    quantity: 1900,
-    price: "12,500",
-    date: "13 August 2024",
-    card: "1234 5678 9000 0000",
-  },
-  {
-    game: "Pubg Mobile",
-    product: img2,
-    quantity: 1900,
-    price: "12,500",
-    date: "13 August 2024",
-    card: "1234 5678 9000 0000",
-  },
-  {
-    game: "Pubg Mobile",
-    product: img2,
-    quantity: 1900,
-    price: "12,500",
-    date: "13 August 2024",
-    card: "1234 5678 9000 0000",
-  },
-  {
-    game: "Pubg Mobile",
-    product: img2,
-    quantity: 1900,
-    price: "12,500",
-    date: "13 August 2024",
-    card: "1234 5678 9000 0000",
-  },
-  {
-    game: "Pubg Mobile",
-    product: img2,
-    quantity: 1900,
-    price: "12,500",
-    date: "13 August 2024",
-    card: "1234 5678 9000 0000",
-  },
-  {
-    game: "Pubg Mobile",
-    product: img2,
-    quantity: 1900,
-    price: "12,500",
-    date: "13 August 2024",
-    card: "1234 5678 9000 0000",
-  },
-  {
-    game: "Pubg Mobile",
-    product: img2,
-    quantity: 1900,
-    price: "12,500",
-    date: "13 August 2024",
-    card: "1234 5678 9000 0000",
-  },
-  {
-    game: "Pubg Mobile",
-    product: img2,
-    quantity: 1900,
-    price: "12,500",
-    date: "13 August 2024",
-    card: "1234 5678 9000 0000",
-  },
-  {
-    game: "Pubg Mobile",
-    product: img2,
-    quantity: 1900,
-    price: "12,500",
-    date: "13 August 2024",
-    card: "1234 5678 9000 0000",
-  },
-  {
-    game: "Pubg Mobile",
-    product: img2,
-    quantity: 1900,
-    price: "12,500",
-    date: "13 August 2024",
-    card: "1234 5678 9000 0000",
-  },
-];
+const drawerdata = ["My payments", "Payment methods"];
 
-const paymentcards = [
-  { id: 1, value: "visa", img: paymentCArd1 },
-  { id: 1, value: "visa", img: paymentCArd2 },
-  { id: 1, value: "visa", img: paymentCArd3 },
-  { id: 1, value: "visa", img: paymentCArd4 },
-  { id: 1, value: "visa", img: paymentCArd5 },
-];
-
-const Profile = () => {
-  // const width700 = useMediaQuery("(max-width: 700px)");
-  const [openModal, setOpenModal] = useState(false);
-  const [openAddCardModal, setOpenAddCardModal] = useState(false);
-  const [hoveredIndex, setHoveredIndex] = useState(null);
+const Profile = (props) => {
   const { t } = useTranslation("common");
-  const { register, handleSubmit, formState: { errors } } = useForm();
-  const { register: registerCard, handleSubmit: handleCardSubmit, formState: { errors: cardErrors } } = useForm();
 
-  const handleProfileImageSubmit = (data) => {
-    // Handle form submission logic here
+  const drawerWidth = 221;
+  const { window } = props;
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
+
+  const handleDrawerClose = () => {
+    setIsClosing(true);
+    setMobileOpen(false);
   };
 
-  const handleAddCardSubmit = (data) => {
-    // Handle card addition logic here
+  const handleDrawerTransitionEnd = () => {
+    setIsClosing(false);
   };
-  const handleClose = () => {
-    setOpenModal(false);
-    setOpenAddCardModal(false);
+
+  const handleDrawerToggle = () => {
+    if (!isClosing) {
+      setMobileOpen(!mobileOpen);
+    }
   };
+  const drawer = (
+    <div className={styles.box}>
+      <Toolbar />
+      <Divider />
+      <List className={styles.list}>
+        <ListItem disablePadding className={styles.listItem}>
+          <ListItemButton>
+            <ListItemIcon>
+              <UserIcon />
+            </ListItemIcon>
+            <ListItemText primary="Profile" />
+          </ListItemButton>
+        </ListItem>
+
+        <ListItem disablePadding className={styles.listItem}>
+          <p className={styles.paymentTitle}>Payments</p>
+          {drawerdata?.map((text, index) => (
+            <ListItemButton>
+              <ListItemIcon>
+                {index % 2 === 0 ? <PaymentProfileIcon /> : <PaymentMethod />}
+              </ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItemButton>
+          ))}
+        </ListItem>
+
+        <ListItem disablePadding>
+          <Button
+            variant="contained"
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              width: "100%",
+              marginTop: "10px",
+            }}
+          >
+            {t("Sign out")}
+            <SignoutIcon />
+          </Button>
+        </ListItem>
+      </List>
+      <Divider />
+    </div>
+  );
+
+  const container =
+    window !== undefined ? () => window().document.body : undefined;
 
   return (
     <>
       <div className={styles.profile}>
-        <span className={styles.shadow}></span>
         <Container>
-          <div className={styles.profile_wrapper}>
-            <div className={styles.info}>
-              <h1 className={styles.title}>{t("My Info")}</h1>
-              <div className={styles.myInfo}>
-                <div className={styles.img_wrapper}>
-                  <img src={img} alt="profile" />
-                  <div className={styles.btn_wrapper}>
-                    <button
-                      variant="contained"
-                      onMouseEnter={() => setHoveredIndex(0)}
-                      onMouseLeave={() => setHoveredIndex(null)}
-                      onClick={() => setOpenModal(true)}
-                    >
-                      <ChangeIconButton
-                        fill={hoveredIndex === 0 ? "#00d44a" : "#102838"}
-                      />
-                    </button>
-                  </div>
-                </div>
+          <Box
+            component="nav"
+            sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 }}}
+            aria-label="mailbox folders"
+          >
+            {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
+            <Drawer
+              container={container}
+              variant="temporary"
+              open={mobileOpen}
+              onTransitionEnd={handleDrawerTransitionEnd}
+              onClose={handleDrawerClose}
+              ModalProps={{
+                keepMounted: true, // Better open performance on mobile.
+              }}
+              sx={{
+                display: { xs: "block", sm: "none" },
+                "& .MuiDrawer-paper": {
+                  boxSizing: "border-box",
+                  width: drawerWidth,
+                },
+              }}
+            >
+              {drawer}
+            </Drawer>
+            <Drawer
+              variant="permanent"
+              sx={{
+                display: { xs: "none", sm: "block" },
+                "& .MuiDrawer-paper": {
+                  boxSizing: "border-box",
+                  width: drawerWidth,
+                },
+              }}
+              open
+            >
+              {drawer}
+            </Drawer>
+          </Box>
 
-                <div className={styles.myInfo_content}>
-                  <form action="">
-                    <div className={styles.inputs}>
-                      <div className={styles.input}>
-                        <input type="text" placeholder="Full Name" />
-                      </div>
-                      <div className={styles.input}>
-                        <input type="email" placeholder="E-mail" />
-                      </div>
-                      <div className={styles.input}>
-                        <input type="number" placeholder="Phone Number" />
-                      </div>
-                    </div>
+          <Box
+            component="main"
+            sx={{
+              flexGrow: 1,
+              p: 3,
+              width: { sm: `calc(100% - ${drawerWidth}px)` },
+            }}
+          >
+            <div className={styles.profile_wrapper}>
+              <ProfilePage />
 
-                    <Button
-                      type="submit"
-                      variant="contained"
-                      fullWidth={true}
-                      sx={{ borderRadius: "10px", fontSize: "20px" }}
-                    >
-                      {t("Edit Profile")}
-                    </Button>
-                  </form>
-                </div>
-              </div>
+              <Payments />
+
+              <PaymentCard />
             </div>
-
-            <div className={styles.payments}>
-              <h1 style={{ textAlign: "center" }}>{t("My payments")}</h1>
-
-              <table className={styles.table}>
-                <tr className={styles.tableHeader}>
-                  <th>Game</th>
-                  <th>Product</th>
-                  <th>Quantity</th>
-                  <th>Price</th>
-                  <th>Date</th>
-                  <th>Card</th>
-                </tr>
-
-                {data?.map((item, index) => (
-                  <tr
-                    key={index}
-                    className={styles.tableBody}
-                    onMouseEnter={() => setHoveredIndex(index)}
-                    onMouseLeave={() => setHoveredIndex(null)}
-                  >
-                    <td>{item.game}</td>
-                    <td>
-                      <div className={styles.product_img}>
-                        <img src={item.product} alt="product" />
-                      </div>
-                    </td>
-                    <td>{item.quantity}</td>
-                    <td>{item.price}</td>
-                    <td>{item.date}</td>
-                    <td
-                      style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                      }}
-                    >
-                      <p>{item.card}</p>
-                      <div className={styles.icon}>
-                        <ProfileTabelRow
-                          fill={hoveredIndex === index ? "#00d44a" : "#fff"}
-                        />
-                      </div>
-                    </td>
-                  </tr>
-                ))}
-              </table>
-            </div>
-
-            <div className={styles.payment_card}>
-              <h1 className={styles.title}>{t("My payment methods")}</h1>
-              <div className={styles.card_wrapper}>
-
-                <div
-                  className={styles.add_card}
-                  onClick={() => setOpenAddCardModal(true)}
-                >
-                  <PlusIcon />
-                </div>
-              </div>
-            </div>
-          </div>
+          </Box>
         </Container>
       </div>
-
-      <Modal open={openModal} handleClose={handleClose}>
-        <div className={styles.login_wrapper}>
-          <h1 className={styles.title}>{t("Upload Your Image")}</h1>
-          <span
-            className={styles.cancelIcon}
-            onClick={() => setOpenModal(false)}
-          >
-            <CancelIcon />
-          </span>
-
-          <form action="">
-            <div className={styles.inputs}>
-              <div className={styles.input}>
-                <input type="file" placeholder="Add image" />
-              </div>
-            </div>
-
-            <Button
-              variant="contained"
-              fullWidth={true}
-              sx={{ borderRadius: "10px", fontSize: "20px" }}
-            >
-              {t("Change")}
-            </Button>
-          </form>
-        </div>
-      </Modal>
-
-      <Modal open={openAddCardModal} handleClose={handleClose}>
-        <div className={styles.cards_wrapper}>
-          <h1 className={styles.title}>{t("Add Payment Method")}</h1>
-          <span
-            className={styles.cancelIcon}
-            onClick={handleClose}
-          >
-            <CancelIcon />
-          </span>
-
-          <form action="">
-            <div className={styles.inputs}>
-              <div className={styles.payment_type}>
-                <h1 className={styles.payment_type_title}>
-                  {t("Choose payment type")}
-                </h1>
-
-                <div className={styles.payment_type_cards}>
-                {paymentcards?.map((item) => (
-                  <div className={styles.radioInputs}>
-                    <input
-                      type="radio"
-                      id={item.value}
-                      name="card"
-                      value={item.value}
-                    />
-                    <label for={item.value}>
-                      <img src={item.img} alt="card_img" />
-                    </label>
-                  </div>
-                ))}
-                </div>
-              </div>
-
-              <div className={styles.input}>
-                <label>{t("Card Number")}</label>
-                <input type="number" placeholder="Enter your card number" />
-              </div>
-
-              <div className={`${styles.input} ${styles.input2}`}>
-                <div className={styles.input2_input}>
-                  <label>{t("Expiration Date")} </label>
-                  <input type="date" placeholder="MM/YY" />
-                </div>
-                <div className={styles.input2_input}>
-                  <label>{t("CVV")} </label>
-                  <input type="number" placeholder="xxx" />
-                </div>
-              </div>
-
-              <div className={styles.input}>
-                <label>{t("Name of Card")}</label>
-                <input type="text" placeholder="Enter name of the card" />
-              </div>
-
-              <div className={styles.input}>
-                <label>{t("Name of Card")}</label>
-                <input type="text" placeholder="Enter name of the card" />
-              </div>
-
-              <div className={styles.agreement}>
-                <input type="checkbox"  value='Yes' />
-                <p>{t("Remember this card")}</p>
-              </div>
-            </div>
-
-            <Button
-              variant="contained"
-              fullWidth={true}
-              sx={{ borderRadius: "10px", fontSize: "20px" }}
-            >
-              {t("Add this payment")}
-            </Button>
-          </form>
-        </div>
-      </Modal>
     </>
   );
 };

@@ -58,7 +58,7 @@ const Header = () => {
             </div>
 
             <div className={styles.navbar_items_wrapper_buttons}>
-              {isTrue && (
+              {!isTrue && (
                 <div className={styles.registerButtons}>
                   <Button
                     onClick={() => setOpenModalLogin(true)}
@@ -77,7 +77,7 @@ const Header = () => {
                 </div>
               )}
 
-              {!isTrue && (
+              {isTrue && (
                 <div className={styles.navbar_items_wrapper_buttons_usersCard}>
                   <NavLink to={"/profile"}>
                     <div className={styles.user_button}>

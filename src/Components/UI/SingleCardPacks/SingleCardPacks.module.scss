@@ -34,6 +34,17 @@
         height: 100%;
         object-fit: cover;
       }
+
+      @media (max-width: 1064px) {
+        width: 220px !important;
+      }
+
+      @media screen and (max-width: 1000px) {
+        width: 190px !important;
+      }
+      @media screen and (max-width: 800px) {
+        width: 100% !important;
+      }
     }
 
     .content {

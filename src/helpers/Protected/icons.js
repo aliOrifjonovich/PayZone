@@ -852,22 +852,109 @@ export const PriceIcon = () => (
   </svg>
 );
 
-export const ProfileTabelRow =({fill="#C8C8C8"})=>(
-  <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M0.343311 17.6475C0.799496 18.1175 1.53498 18.1175 1.99116 17.6475L9.72769 9.67626C10.0908 9.30216 10.0908 8.69784 9.72769 8.32374L1.99116 0.352518C1.53498 -0.117506 0.799496 -0.117506 0.343311 0.352518C-0.112874 0.822542 -0.112874 1.58034 0.343311 2.05036L7.08368 9.0048L0.334002 15.9592C-0.112872 16.4197 -0.112874 17.1871 0.343311 17.6475Z" fill={fill}/>
-</svg>
-
-)
-export const PlusIcon = ()=>(
-  <svg width="44" height="43" viewBox="0 0 44 43" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M17.904 42.424V0.375999H25.968V42.424H17.904ZM0.432 25.24V17.656H43.44V25.24H0.432Z" fill="url(#paint0_linear_769_1197)"/>
-<defs>
-<linearGradient id="paint0_linear_769_1197" x1="22" y1="-32" x2="22" y2="74" gradientUnits="userSpaceOnUse">
-<stop stopColor="#73FFA3"/>
-<stop offset="1" stopColor="#006B25"/>
-</linearGradient>
-</defs>
-</svg>
-
-)
-
+export const ProfileTabelRow = ({ fill = "#C8C8C8" }) => (
+  <svg
+    width="10"
+    height="18"
+    viewBox="0 0 10 18"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M0.343311 17.6475C0.799496 18.1175 1.53498 18.1175 1.99116 17.6475L9.72769 9.67626C10.0908 9.30216 10.0908 8.69784 9.72769 8.32374L1.99116 0.352518C1.53498 -0.117506 0.799496 -0.117506 0.343311 0.352518C-0.112874 0.822542 -0.112874 1.58034 0.343311 2.05036L7.08368 9.0048L0.334002 15.9592C-0.112872 16.4197 -0.112874 17.1871 0.343311 17.6475Z"
+      fill={fill}
+    />
+  </svg>
+);
+export const PlusIcon = () => (
+  <svg
+    width="44"
+    height="43"
+    viewBox="0 0 44 43"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M17.904 42.424V0.375999H25.968V42.424H17.904ZM0.432 25.24V17.656H43.44V25.24H0.432Z"
+      fill="url(#paint0_linear_769_1197)"
+    />
+    <defs>
+      <linearGradient
+        id="paint0_linear_769_1197"
+        x1="22"
+        y1="-32"
+        x2="22"
+        y2="74"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#73FFA3" />
+        <stop offset="1" stopColor="#006B25" />
+      </linearGradient>
+    </defs>
+  </svg>
+);
+export const PaymentProfileIcon = () => (
+  <svg
+    width="21"
+    height="18"
+    viewBox="0 0 21 18"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15.7778 5.78571V3.64286C15.7778 2.45939 14.8326 1.5 13.6667 1.5H3.11111C1.94518 1.5 1 2.45939 1 3.64286V10.0714C1 11.2549 1.94518 12.2143 3.11111 12.2143H5.22222M7.33333 16.5H17.8889C19.0549 16.5 20 15.5406 20 14.3571V7.92857C20 6.7451 19.0549 5.78571 17.8889 5.78571H7.33333C6.1674 5.78571 5.22222 6.7451 5.22222 7.92857V14.3571C5.22222 15.5406 6.1674 16.5 7.33333 16.5ZM14.7222 11.1429C14.7222 12.3264 13.7771 13.2857 12.6111 13.2857C11.4451 13.2857 10.5 12.3264 10.5 11.1429C10.5 9.95936 11.4451 9 12.6111 9C13.7771 9 14.7222 9.95936 14.7222 11.1429Z"
+      stroke="#869AB2"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </svg>
+);
+export const PaymentMethod = () => (
+  <svg
+    width="21"
+    height="18"
+    viewBox="0 0 21 18"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M1 6.85714H20M5.22222 12.2143H6.27778M10.5 12.2143H11.5556M4.16667 16.5H16.8333C18.5823 16.5 20 15.061 20 13.2857V4.71429C20 2.93909 18.5823 1.5 16.8333 1.5H4.16667C2.41777 1.5 1 2.93909 1 4.71429V13.2857C1 15.061 2.41777 16.5 4.16667 16.5Z"
+      stroke="#869AB2"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </svg>
+);
+export const SignoutIcon = () => (
+  <svg
+    width="12"
+    height="12"
+    viewBox="0 0 12 12"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M4.33333 11H2.11111C1.81643 11 1.53381 10.8829 1.32544 10.6746C1.11706 10.4662 1 10.1836 1 9.88889V2.11111C1 1.81643 1.11706 1.53381 1.32544 1.32544C1.53381 1.11706 1.81643 1 2.11111 1H4.33333"
+      stroke="#00122A"
+      stroke-width="1.2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M8.22266 8.77779L11.0004 6.00001L8.22266 3.22224"
+      stroke="#00122A"
+      stroke-width="1.2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M10.9997 6H4.33301"
+      stroke="#00122A"
+      stroke-width="1.2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </svg>
+);
