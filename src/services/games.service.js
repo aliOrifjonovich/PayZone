@@ -3,7 +3,7 @@ import { requestPayzone } from "./http-client";
 
 const gamesService = {
   getGame: () => requestPayzone.get("/Games"),
-  getAllProducts: (id) => requestPayzone.get(`/All_Products/?game=${id}`),
+  getAllProducts: (id) => requestPayzone.get(`/All_Products/${id}`),
 };
 
 export const useGetGames = () => {

@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 
 const CardGame = ({ name, image, id }) => {
   const [isHovered, setIsHovered] = useState(false);
-  const {t}=useTranslation("common");
+  const {t}=useTranslation("common"); 
 
 
   return (

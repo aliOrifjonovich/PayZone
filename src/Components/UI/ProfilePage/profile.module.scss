@@ -3,10 +3,17 @@
 .info {
   @include direction-column;
   gap: 50px;
+  border:2px solid red ;
+
+  .title{
+    color: #fff;
+  }
+  
   .myInfo {
     color: #fff;
-    @include align-items-center;
-    @include element-center;
+    @include direction-column;
+    // @include align-items-center;
+    // @include element-center;
     gap: 50px;
     width: 100%;
 

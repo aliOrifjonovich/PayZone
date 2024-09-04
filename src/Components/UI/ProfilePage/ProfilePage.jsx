@@ -42,6 +42,7 @@ const ProfilePage = () => {
             <form action="">
               <div className={styles.inputs}>
                 <div className={styles.input}>
+                  <label></label>
                   <input type="text" placeholder="Full Name" />
                 </div>
                 <div className={styles.input}>

@@ -1,58 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Steam.module.scss";
 import { Box, Container, Grid } from "@mui/material";
 import { t } from "i18next";
 import SIngleCardGame from "Components/UI/SingleCardGame/SIngleCardGame";
 import fakedata from "fakedata";
-import { LanguageRowIcon, PriceIcon } from "helpers/Protected/icons";
+import PriceConvert from "Components/UI/PriceConverter/PriceConvert";
 
 const Steam = () => {
   const data = fakedata();
-  const price = [
-    {
-      label: "so'm",
-    },
-    {
-      label: "usd",
-    },
-    {
-      label: "rub",
-    },
-  ];
+  const [selectedCurrency, setSelectedCurrency] = useState("uzs");
+
   return (
     <div className={styles.steam}>
       <Container>
         <Box sx={{ flexGrow: 1 }}>
           <div className={styles.nav_item}>
             <h1 className="title">{t("PUBG Mobile UC")}</h1>
-            <div className={styles.header_navbar_utils_langs}>
-              <li className={styles.item}>
-                <div className={styles.item_wrapper}>
-                  <span className={styles.iconrow}>
-                    <PriceIcon />
-                  </span>
-                  <span>{"sum"}</span>
-                  <span className={styles.iconrow}>
-                    <LanguageRowIcon />
-                  </span>
-                </div>
-                <div className={styles.childList}>
-                  <ul>
-                    {price.map((lang) => (
-                      <li
-                        key={lang?.label}
-                        className={styles.childItems}
-                        // onClick={() => handleChangeLang(lang.label)}
-                      >
-                        <>
-                          <a>{lang.label} </a>
-                        </>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </li>
-            </div>
+
+            <PriceConvert
+              selectedCurrency={selectedCurrency}
+              setSelectedCurrency={setSelectedCurrency}
+            />
           </div>
 
           <Grid

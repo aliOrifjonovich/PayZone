@@ -45,7 +45,7 @@ const Games = () => {
                 key={item.id}
                 id={item.uuid}
                 name={item.name}
-                img={item.image}
+                image={ "http://payzone.uz/" + item.image?.slice(22)}
               />
             </Grid>
           ))}
