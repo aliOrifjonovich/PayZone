@@ -192,9 +192,18 @@ input:-internal-autofill-selected {
 }
 
 .PhoneInput{
-
   .PhoneInputCountry{
-    display: none;
+   
+    
+    .PhoneInputCountryIcon {
+      margin-left: 10px;
+      width: 24px;
+      height: 18px;
+    }
+    .PhoneInputCountrySelectArrow{
+      display: none;
+
+    }
   }
 }
 

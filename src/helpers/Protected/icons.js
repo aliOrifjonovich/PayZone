@@ -904,9 +904,9 @@ export const PaymentProfileIcon = ({ stroke = "#869AB2" }) => (
     <path
       d="M15.7778 5.78571V3.64286C15.7778 2.45939 14.8326 1.5 13.6667 1.5H3.11111C1.94518 1.5 1 2.45939 1 3.64286V10.0714C1 11.2549 1.94518 12.2143 3.11111 12.2143H5.22222M7.33333 16.5H17.8889C19.0549 16.5 20 15.5406 20 14.3571V7.92857C20 6.7451 19.0549 5.78571 17.8889 5.78571H7.33333C6.1674 5.78571 5.22222 6.7451 5.22222 7.92857V14.3571C5.22222 15.5406 6.1674 16.5 7.33333 16.5ZM14.7222 11.1429C14.7222 12.3264 13.7771 13.2857 12.6111 13.2857C11.4451 13.2857 10.5 12.3264 10.5 11.1429C10.5 9.95936 11.4451 9 12.6111 9C13.7771 9 14.7222 9.95936 14.7222 11.1429Z"
       stroke={stroke}
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
@@ -921,9 +921,9 @@ export const PaymentMethod = ({ stroke = "#869AB2" }) => (
     <path
       d="M1 6.85714H20M5.22222 12.2143H6.27778M10.5 12.2143H11.5556M4.16667 16.5H16.8333C18.5823 16.5 20 15.061 20 13.2857V4.71429C20 2.93909 18.5823 1.5 16.8333 1.5H4.16667C2.41777 1.5 1 2.93909 1 4.71429V13.2857C1 15.061 2.41777 16.5 4.16667 16.5Z"
       stroke={stroke}
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
@@ -938,24 +938,69 @@ export const SignoutIcon = () => (
     <path
       d="M4.33333 11H2.11111C1.81643 11 1.53381 10.8829 1.32544 10.6746C1.11706 10.4662 1 10.1836 1 9.88889V2.11111C1 1.81643 1.11706 1.53381 1.32544 1.32544C1.53381 1.11706 1.81643 1 2.11111 1H4.33333"
       stroke="#00122A"
-      stroke-width="1.2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M8.22266 8.77779L11.0004 6.00001L8.22266 3.22224"
       stroke="#00122A"
-      stroke-width="1.2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M10.9997 6H4.33301"
       stroke="#00122A"
-      stroke-width="1.2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
 
+export const PickerIcon = () => (
+  <svg
+    width="18"
+    height="20"
+    viewBox="0 0 18 20"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15 3H3C1.89543 3 1 3.89543 1 5V17C1 18.1046 1.89543 19 3 19H15C16.1046 19 17 18.1046 17 17V5C17 3.89543 16.1046 3 15 3Z"
+      stroke="#51667E"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M13 1V5"
+      stroke="#51667E"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M5 1V5"
+      stroke="#51667E"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M1 9.00002H17"
+      stroke="#51667E"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M7 13H5V15H7V13Z"
+      stroke="#51667E"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);

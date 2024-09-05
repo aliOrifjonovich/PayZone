@@ -1,21 +1,45 @@
 import React, { useState } from "react";
 import styles from "./profile.module.scss";
-
-// Temperary items
 import img from "../../assets/images/profile.png";
 import { CancelIcon, ChangeIconButton } from "helpers/Protected/icons";
 import { useTranslation } from "react-i18next";
 import Modal from "../Modal/Modal";
 import { Button } from "@mui/material";
+import dayjs from "dayjs";
+import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
+import PhoneInput from "react-phone-number-input";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { Controller, useForm } from "react-hook-form";
 
 const ProfilePage = () => {
   const { t } = useTranslation("common");
   const [openModal, setOpenModal] = useState(false);
+  const [selectedGender, setSelectedGender] = useState("");
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
+  const {
+    register,
+    handleSubmit,
+    control,
+    watch,
+    reset,
+    formState: { errors },
+  } = useForm({
+    defaultValues: {
+      fullname: "",
+      phoneNumber: "",
+      email: "",
+      password: "",
+      confirmPassword: "",
+    },
+  });
 
   const handleClose = () => {
     setOpenModal(false);
+  };
+
+  const handleGenderChange = (event) => {
+    setSelectedGender(event.target.value);
   };
   return (
     <>
@@ -41,26 +65,142 @@ const ProfilePage = () => {
           <div className={styles.myInfo_content}>
             <form action="">
               <div className={styles.inputs}>
-                <div className={styles.input}>
-                  <label></label>
-                  <input type="text" placeholder="Full Name" />
+                <div className={styles.inputs_wrapper}>
+                  <div className={styles.inputs_content}>
+                    <label>{t("Firstname")}</label>
+                    <div className={styles.input}>
+                      <input type="text" placeholder={t("Firstname")} />
+                    </div>
+                  </div>
+
+                  <div className={styles.inputs_content}>
+                    <label>{t("Lastname")}</label>
+                    <div className={styles.input}>
+                      <input type="text" placeholder={t("Lastname")} />
+                    </div>
+                  </div>
                 </div>
-                <div className={styles.input}>
-                  <input type="email" placeholder="E-mail" />
+
+                <div className={styles.inputs_wrapper}>
+                  <div className={styles.inputs_content}>
+                    <label>{t("DateofBirth")}</label>
+                    <div className={`${styles.input} ${styles.inputFocus}`}>
+                      <LocalizationProvider dateAdapter={AdapterDayjs}>
+                        <DatePicker
+                          defaultValue={dayjs("2024-09-17")}
+                          sx={{ width: "100%" }}
+                          slotProps={{
+                            openPickerButton: {
+                              color: "primary",
+                            },
+                          }}
+                        />
+                      </LocalizationProvider>
+                    </div>
+                  </div>
+
+                  <div className={styles.inputs_content}>
+                    <label>{t("Gender")}</label>
+                    <div className={styles.inputs_content_radio}>
+                      <div
+                        className={`${styles.radioInputs} ${
+                          selectedGender === "male" ? styles.activeRadio : ""
+                        }`}
+                      >
+                        <label
+                          htmlFor="male"
+                          className={
+                            selectedGender === "male"
+                              ? styles.activeLabel
+                              : ""
+                          }
+                        >
+                          Male
+                        </label>
+
+                        <input
+                          type="radio"
+                          id="male"
+                          name="gender"
+                          value="male"
+                          checked={selectedGender === "male"}
+                          onChange={handleGenderChange}
+                        />
+                        
+                      </div>
+
+                      <div
+                        className={`${styles.radioInputs} ${
+                          selectedGender === "female" ? styles.activeRadio : ""
+                        }`}
+                      >
+                        <label
+                          htmlFor="female"
+                          className={
+                            selectedGender === "female"
+                              ? styles.activeLabel
+                              : ""
+                          }
+                        >
+                          Female
+                        </label>
+                        
+                        <input
+                          type="radio"
+                          id="female"
+                          name="gender"
+                          value="female"
+                          checked={selectedGender === "female"}
+                          onChange={handleGenderChange}
+                        />
+                        
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className={styles.input}>
-                  <input type="number" placeholder="Phone Number" />
+
+                <div className={styles.inputs_wrapper}>
+                  <div className={styles.inputs_content}>
+                    <label>{t("E-mail")}</label>
+                    <div className={styles.input}>
+                      <input type="email" placeholder={t("E-mail")} />
+                    </div>
+                  </div>
+
+                  <div className={styles.inputs_content}>
+                    <label>{t("Phonenumber")}</label>
+                    <div className={styles.input}>
+                      <Controller
+                        name="phoneNumber"
+                        control={control}
+                        render={({ field }) => (
+                          <PhoneInput
+                            {...field}
+                            placeholder="Phone Number (optional)"
+                            defaultCountry="UZ"
+                            // style={errors.phoneNumber ? { borderColor: "#F76659" } : {}}
+                            className="profilePhone"
+                          />
+                        )}
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              <Button
-                type="submit"
-                variant="contained"
-                fullWidth={true}
-                sx={{ borderRadius: "10px", fontSize: "20px" }}
-              >
-                {t("Edit Profile")}
-              </Button>
+              <div className={styles.btn}>
+                <Button
+                  type="submit"
+                  variant="contained"
+                  sx={{
+                    borderRadius: "10px",
+                    fontSize: "20px",
+                    width: "max-content",
+                  }}
+                >
+                  {t("Edit")}
+                </Button>
+              </div>
             </form>
           </div>
         </div>

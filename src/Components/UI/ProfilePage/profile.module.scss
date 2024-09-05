@@ -3,12 +3,11 @@
 .info {
   @include direction-column;
   gap: 50px;
-  border:2px solid red ;
 
-  .title{
+  .title {
     color: #fff;
   }
-  
+
   .myInfo {
     color: #fff;
     @include direction-column;
@@ -57,39 +56,124 @@
         @include direction-column;
         gap: 30px;
         max-width: 100%;
-        width: 450px;
 
         .inputs {
           @include direction-column;
-          gap: 15px;
+          gap: 20px;
           width: 100%;
 
-          .input {
-            background: #142436;
-            transition: all 0.2s ease-in-out;
-            border-radius: 10px;
-            position: relative;
+          &_wrapper {
+            @include align-items-center;
+            width: 100%;
+            gap: 20px;
 
-            input {
-              padding: 18px 19px;
-              background: transparent;
-              border: 2px solid transparent;
+            .inputs_content {
+              @include direction-column;
+              gap: 10px;
               width: 100%;
-              border-radius: 10px;
-              color: #fff;
-              font-size: 16px;
 
-              &::placeholder {
-                color: #616b74;
-                font-size: 16px;
+              label {
+                font-family: Montserrat;
+                font-size: 18px;
                 font-weight: 500;
+                line-height: 15.6px;
+                letter-spacing: 0.02em;
+                text-align: left;
+                color: #51667e;
               }
-              &:focus {
-                border-color: #00d44a;
-                outline: none;
+
+              .input {
+                background: #142436;
+                transition: all 0.2s ease-in-out;
+                border-radius: 10px;
+                position: relative;
+
+                input {
+                  padding: 18px 19px;
+                  background: transparent;
+                  border: 2px solid transparent;
+                  width: 100%;
+                  border-radius: 10px;
+                  color: #fff;
+                  font-size: 16px;
+
+                  &::placeholder {
+                    color: #616b74;
+                    font-size: 16px;
+                    font-weight: 500;
+                  }
+                  &:focus {
+                    border-color: #00d44a;
+                    outline: none;
+                  }
+                }
+              }
+
+              &_radio {
+                @include align-items-center;
+                gap: 20px;
+                padding: 3px 4px;
+                border: 1px solid #5b5b5b9f;
+                width: max-content;
+                border-radius: 10px;
+
+                .radioInputs {
+                  @include align-items-center;
+                  gap: 15px;
+                  border-radius: 10px;
+                  padding: 15px 20px !important;
+                  cursor: pointer;
+
+                  label {
+                    cursor: pointer;
+                    color: #2f435a;
+                    transition: color 0.3s ease-in-out;
+                  }
+
+                  input[type="radio"] {
+                    /* Hide the default radio button */
+                    appearance: none;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    width: 10px;
+                    height: 10px;
+                    border: 2px solid #616b74;
+                    border-radius: 50%;
+                    outline: none;
+                    cursor: pointer;
+                    position: relative;
+                    background-color: #616b74 !important;
+
+                    &:checked::before {
+                      content: "";
+                      position: absolute;
+                      top: 50%;
+                      left: 50%;
+                      transform: translate(-50%, -50%);
+                      width: 10px;
+                      height: 10px;
+                      background-color: #00d44a;
+                      border-radius: 50%;
+                    }
+                  }
+                }
+              }
+
+              .inputFocus {
+                input {
+                  &:focus {
+                    border-color: transparent !important;
+                    outline: none;
+                  }
+                }
               }
             }
           }
+        }
+
+        .btn {
+          display: flex;
+          justify-content: flex-end;
         }
 
         .btn_wrapper {
@@ -143,6 +227,18 @@
               }
             }
           }
+        }
+
+        .activeRadio {
+          background: linear-gradient(
+            158.34deg,
+            rgba(255, 255, 255, 0.1) 6.53%,
+            rgba(91, 91, 91, 0.1) 92.78%
+          ) !important;
+        }
+
+        .activeLabel {
+          color: #fcfffa !important;
         }
       }
     }

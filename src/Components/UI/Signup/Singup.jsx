@@ -77,6 +77,7 @@ const Signup = ({ setOpenModalSignup, setOpenModalLogin, setOpenModalOTP }) => {
                   placeholder="Phone Number (optional)"
                   defaultCountry="US"
                   style={errors.phoneNumber ? { borderColor: "#F76659" } : {}}
+                  className="signupPhone"
                 />
               )}
             />
