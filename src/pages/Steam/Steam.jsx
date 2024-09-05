@@ -5,10 +5,15 @@ import { t } from "i18next";
 import SIngleCardGame from "Components/UI/SingleCardGame/SIngleCardGame";
 import fakedata from "fakedata";
 import PriceConvert from "Components/UI/PriceConverter/PriceConvert";
+import { useGetSteams } from "services/steams.service";
+import { priceConvert } from "utils/priceConvert";
 
 const Steam = () => {
-  const data = fakedata();
   const [selectedCurrency, setSelectedCurrency] = useState("uzs");
+
+  const { data: SteamProducts } = useGetSteams();
+  console.log("steam", SteamProducts);
+  
 
   return (
     <div className={styles.steam}>
@@ -28,14 +33,15 @@ const Steam = () => {
             spacing={{ xs: 2, md: 3 }}
             columns={{ xs: 4, sm: 8, md: 12 }}
           >
-            {data?.root1.map((item, index) => (
+            {SteamProducts?.map((item, index) => (
               <Grid item xs={12} sm={4} md={3} key={index}>
                 <SIngleCardGame
-                  key={item.id}
-                  id={item.id}
-                  count={item.count}
-                  price={item.price}
-                  img={item.img}
+                  key={item.uuid}
+                  id={item.uuid}
+                  title={item.title}
+                  price={priceConvert(item, "price_str", selectedCurrency)}
+                  img={item.image}
+                  cardType={item.card_type}
                 />
               </Grid>
             ))}
