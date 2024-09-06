@@ -115,7 +115,7 @@ const ProfilePage = () => {
                               : ""
                           }
                         >
-                          Male
+                          {t("Male")}
                         </label>
 
                         <input
@@ -142,7 +142,7 @@ const ProfilePage = () => {
                               : ""
                           }
                         >
-                          Female
+                         {t("Female")}
                         </label>
                         
                         <input
@@ -176,7 +176,7 @@ const ProfilePage = () => {
                         render={({ field }) => (
                           <PhoneInput
                             {...field}
-                            placeholder="Phone Number (optional)"
+                            placeholder={t("Phonenumber")}
                             defaultCountry="UZ"
                             // style={errors.phoneNumber ? { borderColor: "#F76659" } : {}}
                             className="profilePhone"
@@ -196,9 +196,14 @@ const ProfilePage = () => {
                     borderRadius: "10px",
                     fontSize: "20px",
                     width: "max-content",
+                    padding: "12px 48px 12px 48px",
+                    fontSize:"16px",
+                    fontWeight:"600",
+                    fontFamily:"Montserrat",
+                    lineHeight:"17.7px"
                   }}
                 >
-                  {t("Edit")}
+                  {t("Save")}
                 </Button>
               </div>
             </form>

@@ -2,26 +2,14 @@ import React from "react";
 import styles from "./Profile.module.scss";
 import {
   Box,
-  Button,
   Container,
-  Divider,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemIcon,
-  ListItemText,
-  Toolbar,
 } from "@mui/material";
 import {
   PaymentMethod,
   PaymentProfileIcon,
-  SignoutIcon,
   UserIcon,
 } from "helpers/Protected/icons";
 import { useTranslation } from "react-i18next";
-import ProfilePage from "Components/UI/ProfilePage/ProfilePage";
-import Payments from "Components/UI/Payments/Payments";
-import PaymentCard from "Components/UI/PaymentCard/PaymentCard";
 import { Link, Outlet, useLocation } from "react-router-dom";
 
 const drawerdata = [
@@ -53,7 +41,7 @@ const Profile = () => {
           <h4>Profile</h4>
         </div>
       </Link>
-      <p className={styles.list_payments_title}>Payments</p>
+      <p className={styles.list_payments_title}>{t("Payments")}</p>
       <div className={styles.list_payments}>
         {drawerdata?.map((data) => (
           <Link key={data.link} to={data.link}>

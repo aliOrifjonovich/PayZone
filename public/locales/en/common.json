@@ -21,7 +21,15 @@
   "top players":"top players",
   "Havolalar":"Links",
   "Social Medias":"Social Medias",
-  "Steam services":"Steam services"
-  
-
+  "Steam services":"Steam services",
+  "My Info":"My Info",
+  "Firstname":"First Name",
+  "Lastname":"Last Name",
+  "DateofBirth":"Date of Birth",
+  "Gender":"Gender",
+  "Male":"Male",
+  "Female":"Female",
+  "E-mail":"E-mail",
+  "Phonenumber":"Phone number",
+  "Save":"Save"
 }

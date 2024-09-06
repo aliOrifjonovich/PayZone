@@ -2,13 +2,11 @@ import React from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import CardGame from "../CardGame/CardGame";
-import fakedata from "fakedata";
 import { Container } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { useGetGames } from "services/games.service";
 
 const Games = () => {
-  const data = fakedata();
   const { t } = useTranslation("common");
   const { data: Games } = useGetGames();
 
