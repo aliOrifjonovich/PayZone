@@ -1,0 +1,15 @@
+@import "styles/mixins.scss";
+
+.wrapper{
+    .question{
+        color: #fff;
+        font-size: 24px;
+        font-weight: 400;
+    }
+    
+    .answer{
+        color: #fff;
+        font-size: 18px;
+        font-weight: 300;
+    }
+}
