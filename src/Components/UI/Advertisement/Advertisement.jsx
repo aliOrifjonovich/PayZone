@@ -1,13 +1,12 @@
 import React from "react";
 import styles from "./Advertisement.module.scss";
-import img from "../../assets/images/pubg.png";
 import { Button, Container } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { useGetEvents } from "services/events.service";
 import { translate } from "utils/translate";
 
 const Advertisement = () => {
-  const { t, i18n } = useTranslation("common");
+  const { i18n } = useTranslation("common");
   const { data: Events } = useGetEvents();
 
   return (

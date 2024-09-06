@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./Header.module.scss";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
-import {SearchIcon, UserIcon } from "helpers/Protected/icons";
+import { SearchIcon, UserIcon } from "helpers/Protected/icons";
 import { Button } from "@mui/material";
 import Input from "../Input/Input";
 import logo from "../../assets/images/logo.png";
@@ -13,12 +13,14 @@ import Singup from "../Signup/Singup";
 import MobileNavbar from "../MobileNavbar/MobileNavbar";
 import VerifyOTP from "../VerifyOTP/VerifyOTP";
 import LanguageSelection from "../LanguageSelection/LanguageSelection";
+import notification from "../../assets/images/cart+counter.png"
 
 const Header = () => {
   const [isTrue, setIsTrue] = useState(true);
   const [openModalLogin, setOpenModalLogin] = useState(false);
   const [openModalSignup, setOpenModalSignup] = useState(false);
   const [openModalOTP, setOpenModalOTP] = useState(false);
+  const count = 4;
 
   const { t } = useTranslation("common");
 
@@ -62,15 +64,33 @@ const Header = () => {
                 <div className={styles.registerButtons}>
                   <Button
                     onClick={() => setOpenModalLogin(true)}
-                    className={styles.registerbutton}
                     variant="contained"
+                    sx={{
+                      borderRadius: "10px",
+                      padding: "11px 26px 11px 26px",
+                      textTransform: "capitalize",
+                      fontFamily: "Orbitron",
+                      fontSize: "16px",
+                      fontWeight: "400",
+                      lineHeight: "17.7px",
+                      letterSpacing: "0.04em",
+                    }}
                   >
                     {t("Login")}
                   </Button>
                   <Button
                     onClick={() => setOpenModalSignup(true)}
-                    className={styles.registerbutton}
                     variant="outlined"
+                    sx={{
+                      borderRadius: "10px",
+                      padding: "11px 26px 11px 26px",
+                      textTransform: "capitalize",
+                      fontFamily: "Orbitron",
+                      fontSize: "16px",
+                      fontWeight: "400",
+                      lineHeight: "17.7px",
+                      letterSpacing: "0.04em",
+                    }}
                   >
                     {t("Sign up")}
                   </Button>
@@ -79,17 +99,21 @@ const Header = () => {
 
               {isTrue && (
                 <div className={styles.navbar_items_wrapper_buttons_usersCard}>
+                  <NavLink to={"/"}>
+                    <div style={{
+                      position: "relative",
+                      cursor: "pointer",
+                    }}>
+                      <img src={notification} alt="notification" />
+                      {count ? <div className={styles.count}>{count}</div> : ""}
+                    </div>
+                  </NavLink>
+
                   <NavLink to={"/profile"}>
                     <div className={styles.user_button}>
                       <UserIcon />
                     </div>
                   </NavLink>
-                  {/* <NavLink to={"/card"}>
-                    <Button className={styles.card_button} variant="contained">
-                      <CardButton />
-                      {count ? <div className={styles.count}>{count}</div> : ""}
-                    </Button>
-                  </NavLink> */}
                 </div>
               )}
 
@@ -113,6 +137,7 @@ const Header = () => {
           setOpenModalOTP={setOpenModalOTP}
         />
       </Modal>
+
       <Modal open={openModalOTP} handleClose={handleCloseOTP}>
         <VerifyOTP
           setOpenModalSignup={setOpenModalSignup}

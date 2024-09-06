@@ -19,5 +19,15 @@
   "top players":"лучшие игроки",
   "Havolalar":"Страницы",
   "Social Medias":"Социальные сети",
-  "Steam services":"Услуги Steam"
+  "Steam services":"Услуги Steam",
+  "My Info":"Мои данные",
+  "Firstname":"Имя",
+  "Lastname":"Фамилия",
+  "DateofBirth":"Дата рождения",
+  "Gender":"Пол",
+  "Male":"Мужской",
+  "Female":"Женский",
+  "E-mail":"E-mail",
+  "Phonenumber":"Номер Телефона",
+  "Save":"Сохранить"
 }

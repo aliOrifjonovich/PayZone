@@ -19,5 +19,15 @@
   "top players": "top g‘oliblar",
   "Havolalar":"Havolalar",
   "Social Medias":"Ishtimoiy tarmoqlar",
-  "Steam services":"Steam xizmatlari"
+  "Steam services":"Steam xizmatlari",
+  "My Info":"Mening Ma'lumotlarim",
+  "Firstname":"Ismingiz",
+  "Lastname":"Familiyangiz",
+  "DateofBirth":"Tug'ilgan sana",
+  "Gender":"Jins",
+  "Male":"Erkak",
+  "Female":"Ayol",
+  "E-mail":"E-mail",
+  "Phonenumber":"Telefon raqam",
+  "Save":"Saqlash"
 }

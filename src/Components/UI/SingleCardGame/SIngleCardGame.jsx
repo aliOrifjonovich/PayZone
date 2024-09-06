@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./SIngleCardGame.module.scss";
-import { t } from "i18next";
 import { Button } from "@mui/material";
 import rpimage from "../../assets/images/rp.png";
 

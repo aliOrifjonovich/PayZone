@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import styles from "./PaymentCard.module.scss";
+import "react-credit-cards/es/styles-compiled.css";
 import { useTranslation } from "react-i18next";
 import { CancelIcon, PlusIcon } from "helpers/Protected/icons";
 import { Button, Checkbox } from "@mui/material";
+import Cards from "react-credit-cards";
 
 import paymentCArd1 from "../../assets/images/HUMO.png";
 import paymentCArd2 from "../../assets/images/visa.png";
@@ -22,6 +24,13 @@ const paymentcards = [
 const PaymentCard = () => {
   const { t } = useTranslation("common");
   const [openAddCardModal, setOpenAddCardModal] = useState(false);
+  // const [state, setState] = useState({
+  //   number: "",
+  //   expiry: "",
+  //   cvc: "",
+  //   name: "",
+  //   focus: "",
+  // });
 
   const handleClose = () => {
     setOpenAddCardModal(false);
@@ -32,6 +41,12 @@ const PaymentCard = () => {
       <div className={styles.payment_card}>
         <h1 className={styles.title}>{t("My payment methods")}</h1>
         <div className={styles.card_wrapper}>
+          <Cards
+            number={"0000 0000 0000 0000"}
+            name={"Javlon"}
+            expiry={"01/27"}
+            cvc={"125"}
+          />
           <div
             className={styles.add_card}
             onClick={() => setOpenAddCardModal(true)}

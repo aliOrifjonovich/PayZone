@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styles from "./SingleGame.module.scss";
 import { Box, Button, Container, Grid } from "@mui/material";
-import fakedata from "fakedata";
 import { t } from "i18next";
 import SIngleCardGame from "Components/UI/SingleCardGame/SIngleCardGame";
 import SingleCardPacks from "Components/UI/SingleCardPacks/SingleCardPacks";
@@ -9,9 +8,7 @@ import Modal from "Components/UI/Modal/Modal";
 import {
   CancelIcon,
   Exclamation,
-  LanguageRowIcon,
   Line,
-  PriceIcon,
 } from "helpers/Protected/icons";
 import img2 from "../../Components/assets/images/1.png";
 import SingleCardOffer from "Components/UI/SingleCardOffer/SingleCardOffer";

@@ -3,7 +3,6 @@ import styles from "./Steam.module.scss";
 import { Box, Container, Grid } from "@mui/material";
 import { t } from "i18next";
 import SIngleCardGame from "Components/UI/SingleCardGame/SIngleCardGame";
-import fakedata from "fakedata";
 import PriceConvert from "Components/UI/PriceConverter/PriceConvert";
 import { useGetSteams } from "services/steams.service";
 import { priceConvert } from "utils/priceConvert";

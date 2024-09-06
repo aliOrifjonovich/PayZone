@@ -10,7 +10,6 @@ import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/pagination";
 import { MarkedIcon } from "helpers/Protected/icons";
-import img from "../../assets/images/gamerimg.png";
 import { useTranslation } from "react-i18next";
 import { useGetFeedbacks } from "services/testimonials.service";
 
@@ -20,63 +19,6 @@ const StyledRating = styled(Rating)({
   },
 });
 
-const data = [
-  {
-    value: 5,
-    text: "One of the standout features of this gaming website is its extensive library of game guides and tutorials. It has helped me level up my skills, conquer challenging quests, and discover hidden secrets within games.",
-    img,
-    name: "Arlene McCoy",
-    position: "TopAxePlayer",
-  },
-
-  {
-    value: 5,
-    text: "One of the standout features of this gaming website is its extensive library of game guides and tutorials. It has helped me level up my skills, conquer challenging quests, and discover hidden secrets within games.",
-    img,
-    name: "Arlene McCoy",
-    position: "TopAxePlayer",
-  },
-
-  {
-    value: 5,
-    text: "One of the standout features of this gaming website is its extensive library of game guides and tutorials. It has helped me level up my skills, conquer challenging quests, and discover hidden secrets within games.",
-    img,
-    name: "Arlene McCoy",
-    position: "TopAxePlayer",
-  },
-
-  {
-    value: 5,
-    text: "One of the standout features of this gaming website is its extensive library of game guides and tutorials. It has helped me level up my skills, conquer challenging quests, and discover hidden secrets within games.",
-    img,
-    name: "Arlene McCoy",
-    position: "TopAxePlayer",
-  },
-
-  {
-    value: 5,
-    text: "One of the standout features of this gaming website is its extensive library of game guides and tutorials. It has helped me level up my skills, conquer challenging quests, and discover hidden secrets within games.",
-    img,
-    name: "Arlene McCoy",
-    position: "TopAxePlayer",
-  },
-
-  {
-    value: 5,
-    text: "One of the standout features of this gaming website is its extensive library of game guides and tutorials. It has helped me level up my skills, conquer challenging quests, and discover hidden secrets within games.",
-    img,
-    name: "Arlene McCoy",
-    position: "TopAxePlayer",
-  },
-
-  {
-    value: 5,
-    text: "One of the standout features of this gaming website is its extensive library of game guides and tutorials. It has helped me level up my skills, conquer challenging quests, and discover hidden secrets within games.",
-    img,
-    name: "Arlene McCoy",
-    position: "TopAxePlayer",
-  },
-];
 
 const Testimonials = () => {
   const { t } = useTranslation("common");
