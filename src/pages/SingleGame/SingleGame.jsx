@@ -1,16 +1,8 @@
 import React, { useState } from "react";
 import styles from "./SingleGame.module.scss";
-import { Box, Button, Container, Grid } from "@mui/material";
-import { t } from "i18next";
+import { Box, Container, Grid } from "@mui/material";
 import SIngleCardGame from "Components/UI/SingleCardGame/SIngleCardGame";
 import SingleCardPacks from "Components/UI/SingleCardPacks/SingleCardPacks";
-import Modal from "Components/UI/Modal/Modal";
-import {
-  CancelIcon,
-  Exclamation,
-  Line,
-} from "helpers/Protected/icons";
-import img2 from "../../Components/assets/images/1.png";
 import SingleCardOffer from "Components/UI/SingleCardOffer/SingleCardOffer";
 import { useParams } from "react-router-dom";
 import { useGetAllProducts } from "services/games.service";
@@ -18,7 +10,6 @@ import { priceConvert } from "utils/priceConvert";
 import PriceConvert from "Components/UI/PriceConverter/PriceConvert";
 
 const SingleGame = () => {
-  // const data = fakedata();
   const { id } = useParams();
   const [openModal, setOpenModal] = useState(false);
   const [selectedCurrency, setSelectedCurrency] = useState("uzs");
@@ -60,26 +51,34 @@ const SingleGame = () => {
                       price={priceConvert(item, "price_str", selectedCurrency)}
                       img={"http://payzone.uz/" + item.image?.slice(22)}
                       cardType={item.card_type}
+                      ask_text={item.ask_text}
                       openModal={openModal}
                       setOpenModal={setOpenModal}
+                      handleClose={handleClose}
                     />
                   ) : item.card_type === "big_green" ? (
                     <SingleCardPacks
                       key={item.id}
                       id={item.id}
-                      count={item.count}
+                      title={item.title}
                       price={priceConvert(item, "price_str", selectedCurrency)}
                       img={"http://payzone.uz/" + item.image?.slice(22)}
+                      ask_text={item.ask_text}
+                      openModal={openModal}
                       setOpenModal={setOpenModal}
+                      handleClose={handleClose}
                     />
                   ) : item.card_type === "big_gold" ? (
                     <SingleCardOffer
                       key={item.id}
                       id={item.id}
-                      count={item.count}
+                      title={item.title}
                       price={priceConvert(item, "price_str", selectedCurrency)}
                       img={"http://payzone.uz/" + item.image?.slice(22)}
+                      ask_text={item.ask_text}
+                      openModal={openModal}
                       setOpenModal={setOpenModal}
+                      handleClose={handleClose}
                     />
                   ) : (
                     ""
@@ -136,46 +135,6 @@ const SingleGame = () => {
           </Grid>
         </Box> */}
       </Container>
-
-      <Modal open={openModal} handleClose={handleClose}>
-        <div className={styles.login_wrapper}>
-          <h1 className={styles.title}>ID raqamingizni kiriting</h1>
-          <span
-            className={styles.cancelIcon}
-            onClick={() => setOpenModal(false)}
-          >
-            <CancelIcon />
-          </span>
-
-          <form action="">
-            <div className={styles.inputs}>
-              <div className={styles.input}>
-                <input type="text" placeholder="ID" />
-              </div>
-            </div>
-
-            <Button
-              variant="contained"
-              sx={{ borderRadius: "10px", fontSize: "20px" }}
-            >
-              {t("Qabul qilish")}
-            </Button>
-          </form>
-
-          <div className={styles.img_content}>
-            <span className={styles.line}>
-              <Line />
-            </span>
-            <div className={styles.guide}>
-              <Exclamation />
-              ID raqam profil qismida bo‘ladi
-            </div>
-            <div className={styles.img_wrapper}>
-              <img src={img2} alt="guide" />
-            </div>
-          </div>
-        </div>
-      </Modal>
     </div>
   );
 };

@@ -78,5 +78,10 @@
           content: none; /* Prevent the pseudo-element from being created for the first row */
         }
       }
+
+      @media  (max-width: 600px) {
+        overflow-x: scroll !important;
+        border-collapse: separate;
+      }
     }
   }

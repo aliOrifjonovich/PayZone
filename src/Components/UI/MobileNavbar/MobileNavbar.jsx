@@ -21,13 +21,14 @@ import { Link } from "react-scroll";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 
 const MobileNavbar = () => {
-
   const [openModalLogin, setOpenModalLogin] = useState(false);
   const [openModalSignup, setOpenModalSignup] = useState(false);
   const [activeId, setActiveId] = useState(null);
   const [open, setOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+
+  const userToken = false;
 
   useEffect(() => {
     if (location.pathname === "/steam") {
@@ -146,20 +147,59 @@ const MobileNavbar = () => {
         )}
 
         <div className={styles.registerButtons}>
-          <Button
-            onClick={() => setOpenModalLogin(true)}
-            className={styles.registerbutton}
-            variant="contained"
-          >
-            {t("Login")}
-          </Button>
-          <Button
-            onClick={() => setOpenModalSignup(true)}
-            className={styles.registerbutton}
-            variant="outlined"
-          >
-            {t("Signup")}
-          </Button>
+          {userToken ? (
+            <>
+              <Button
+                onClick={() => setOpenModalLogin(true)}
+                sx={{
+                  borderRadius: "10px",
+                  padding: "11px 26px 11px 26px",
+                  textTransform: "capitalize",
+                  fontFamily: "Orbitron",
+                  fontSize: "16px",
+                  fontWeight: "400",
+                  lineHeight: "17.7px",
+                  letterSpacing: "0.04em",
+                }}
+                variant="contained"
+              >
+                {t("Login")}
+              </Button>
+              <Button
+                onClick={() => setOpenModalSignup(true)}
+                sx={{
+                  borderRadius: "10px",
+                  padding: "11px 26px 11px 26px",
+                  textTransform: "capitalize",
+                  fontFamily: "Orbitron",
+                  fontSize: "16px",
+                  fontWeight: "400",
+                  lineHeight: "17.7px",
+                  letterSpacing: "0.04em",
+                }}
+                variant="outlined"
+              >
+                {t("Signup")}
+              </Button>
+            </>
+          ) : (
+            <Button
+              // onClick={() => setOpenModalSignup(true)}
+              sx={{
+                borderRadius: "10px",
+                padding: "11px 26px 11px 26px",
+                textTransform: "capitalize",
+                fontFamily: "Orbitron",
+                fontSize: "16px",
+                fontWeight: "400",
+                lineHeight: "17.7px",
+                letterSpacing: "0.04em",
+              }}
+              variant="contained"
+            >
+              {t("Logout")}
+            </Button>
+          )}
         </div>
       </List>
     </Box>

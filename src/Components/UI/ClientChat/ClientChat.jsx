@@ -4,9 +4,7 @@ import styles from "./ClientChat.module.scss"
 
 const ClientChat = () => {
   return (
-    <div>
-        <img src={chaticon} alt="chaticon" />
-    </div>
+    
   )
 }
 

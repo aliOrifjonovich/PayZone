@@ -3,7 +3,8 @@ import { Footer } from "./Components/UI/Footer/Footer";
 import { Routes } from "./routes";
 import Aos from "aos";
 import "aos/dist/aos.css";
-// import ClientChat from "Components/UI/ClientChat/ClientChat";
+import chaticon from "./Components/assets/images/chaticon.png";
+import { ChatIcon } from "helpers/Protected/icons";
 
 Aos.init({
   once: true,
@@ -15,9 +16,9 @@ function App() {
       <Navbar />
       {Routes()}
       <Footer />
-      {/* <span className="chaticon">
-        <ClientChat />
-      </span> */}
+      <span className="chaticon">
+         <ChatIcon/>
+      </span>
     </div>
   );
 }

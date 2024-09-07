@@ -21,6 +21,16 @@ const paymentcards = [
   { id: 1, value: "visa", img: paymentCArd5 },
 ];
 
+const fakeCards = [
+  {number:"4263982640269299", name:"Javlon", expiry:"02/2026", cvc:"837"},
+  {number:"5425233430109903", name:"Javlon", expiry:"04/2026", cvc:"837" },
+  {number:"6250941006528599", name:"Javlon", expiry:"06/2026", cvc:"837" },
+  {number:"60115564485789458", name:"Javlon", expiry:"12/2026", cvc:"837" },
+  {number:"9860030172443753", name:"Javlon", expiry:"08/26", cvc:"837" },
+
+
+]
+
 const PaymentCard = () => {
   const { t } = useTranslation("common");
   const [openAddCardModal, setOpenAddCardModal] = useState(false);
@@ -41,12 +51,15 @@ const PaymentCard = () => {
       <div className={styles.payment_card}>
         <h1 className={styles.title}>{t("My payment methods")}</h1>
         <div className={styles.card_wrapper}>
+          {fakeCards?.map((item, i)=>(
           <Cards
-            number={"0000 0000 0000 0000"}
-            name={"Javlon"}
-            expiry={"01/27"}
-            cvc={"125"}
+            number={item.number}
+            name={item.name}
+            expiry={item.expiry}
+            cvc={item.cvc}
+            issuer={item.issuer}
           />
+          ))}
           <div
             className={styles.add_card}
             onClick={() => setOpenAddCardModal(true)}
