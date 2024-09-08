@@ -25,6 +25,9 @@ const Testimonials = () => {
   const width1000px = useMediaQuery("max-width:1000px");
   const {data: feedbacks} = useGetFeedbacks();
 
+  console.log("width1000px", width1000px);
+  
+
   return (
     <>
       <div

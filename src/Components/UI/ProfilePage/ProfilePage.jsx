@@ -4,12 +4,29 @@ import img from "../../assets/images/profile.png";
 import { CancelIcon, ChangeIconButton } from "helpers/Protected/icons";
 import { useTranslation } from "react-i18next";
 import Modal from "../Modal/Modal";
-import { Button } from "@mui/material";
+import { Button, createTheme, ThemeProvider } from "@mui/material";
 import dayjs from "dayjs";
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import PhoneInput from "react-phone-number-input";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { Controller, useForm } from "react-hook-form";
+
+const newTheme = (theme) =>
+  createTheme({
+    ...theme,
+    components: {
+      MuiDateCalendar: {
+        styleOverrides: {
+          root: {
+            color: "#bbdefb",
+            borderRadius: "7px",
+            border: "0px solid #00122a",
+            backgroundColor: "transparent",
+          },
+        },
+      },
+    },
+  });
 
 const ProfilePage = () => {
   const { t } = useTranslation("common");
@@ -86,15 +103,26 @@ const ProfilePage = () => {
                     <label>{t("DateofBirth")}</label>
                     <div className={`${styles.input} ${styles.inputFocus}`}>
                       <LocalizationProvider dateAdapter={AdapterDayjs}>
-                        <DatePicker
-                          defaultValue={dayjs("2024-09-17")}
-                          sx={{ width: "100%" }}
-                          slotProps={{
-                            openPickerButton: {
-                              color: "primary",
-                            },
-                          }}
-                        />
+                        <ThemeProvider theme={newTheme}>
+                          <DatePicker
+                            defaultValue={dayjs("2024-09-17")}
+                            sx={{ width: "100%" }}
+                            orientation="portrait"
+                            slotProps={{
+                              openPickerButton: {
+                                color: "primary",
+                              },
+                              layout: {
+                                sx: {
+                                  color: "#fff",
+                                  border: "2px solid #00d44a",
+                                  backgroundColor: "#00122a",
+                                  borderRadius: "10px",
+                                },
+                              },
+                            }}
+                          />
+                        </ThemeProvider>
                       </LocalizationProvider>
                     </div>
                   </div>
@@ -110,9 +138,7 @@ const ProfilePage = () => {
                         <label
                           htmlFor="male"
                           className={
-                            selectedGender === "male"
-                              ? styles.activeLabel
-                              : ""
+                            selectedGender === "male" ? styles.activeLabel : ""
                           }
                         >
                           {t("Male")}
@@ -126,7 +152,6 @@ const ProfilePage = () => {
                           checked={selectedGender === "male"}
                           onChange={handleGenderChange}
                         />
-                        
                       </div>
 
                       <div
@@ -142,9 +167,9 @@ const ProfilePage = () => {
                               : ""
                           }
                         >
-                         {t("Female")}
+                          {t("Female")}
                         </label>
-                        
+
                         <input
                           type="radio"
                           id="female"
@@ -153,7 +178,6 @@ const ProfilePage = () => {
                           checked={selectedGender === "female"}
                           onChange={handleGenderChange}
                         />
-                        
                       </div>
                     </div>
                   </div>
@@ -197,10 +221,10 @@ const ProfilePage = () => {
                     fontSize: "20px",
                     width: "max-content",
                     padding: "12px 48px 12px 48px",
-                    fontSize:"16px",
-                    fontWeight:"600",
-                    fontFamily:"Montserrat",
-                    lineHeight:"17.7px"
+                    fontSize: "16px",
+                    fontWeight: "600",
+                    fontFamily: "Montserrat",
+                    lineHeight: "17.7px",
                   }}
                 >
                   {t("Save")}

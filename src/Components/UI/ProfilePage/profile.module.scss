@@ -37,7 +37,7 @@
         button {
           border-radius: 50%;
           background-color: #00d44a;
-          padding: 10px 6px;
+          padding: 10px 4px;
           border: 1px solid #00122a;
           cursor: pointer;
           transition: all ease-in-out 0.2s;
@@ -48,6 +48,11 @@
             border: 1px solid #00d44a;
           }
         }
+      }
+
+      @media screen and (max-width: 1000px) {
+        width: 134px;
+        height: 132px;
       }
     }
 
@@ -168,6 +173,20 @@
                 }
               }
             }
+
+
+            @media screen and (max-width: 900px) {
+              display: block;
+              width: 100%;
+
+              .inputs_content{
+                margin-bottom: 20px;
+              }
+            }
+          }
+
+          @media screen and (max-width: 1000px) {
+            
           }
         }
 

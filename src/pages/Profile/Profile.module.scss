@@ -9,6 +9,8 @@
   &_sidebar {
     position: relative;
     width: 300px;
+  z-index: 10000;
+
 
     &_inner {
       position: sticky;
@@ -35,10 +37,30 @@
       }
     }
   }
+
+  @media screen and (max-width: 765px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &_sidebar {
+      position: relative;
+      width: 100%;
+  
+      &_inner {
+        position: fixed;
+        top: 80px;
+        width: 100%;
+      }
+    }
+
+  }
 }
 
 .list {
   padding-left: 10px;
+  background-color: #00122a;
 
   &_item {
     display: flex;
@@ -78,5 +100,16 @@
     letter-spacing: 0.02em;
     text-align: left;
     color: #51667e;
+  }
+
+  @media screen and (max-width: 765px) {
+
+    display: flex !important;
+    align-items: center;
+    gap: 20px;
+    &_payments {
+      display: flex !important;
+      flex-direction: row;
+    }
   }
 }

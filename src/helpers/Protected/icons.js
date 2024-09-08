@@ -824,8 +824,8 @@ export const DoneIcon = () => (
 
 export const ChangeIconButton = ({ fill }) => (
   <svg
-    width="35"
-    height="29"
+    width="30"
+    height="19"
     viewBox="0 0 35 29"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -1002,5 +1002,62 @@ export const PickerIcon = () => (
       strokeLinecap="round"
       strokeLinejoin="round"
     />
+  </svg>
+);
+
+export const ChatIcon = () => (
+  <svg
+    width="79"
+    height="79"
+    viewBox="0 0 79 79"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect
+      width="78.4"
+      height="79"
+      rx="39.2"
+      fill="url(#paint0_linear_1018_3126)"
+    />
+    <path
+      d="M39.2 60L32 52.8H27.2C25.2904 52.8 23.4591 52.0414 22.1088 50.6912C20.7586 49.3409 20 47.5096 20 45.6V31.2C20 29.2904 20.7586 27.4591 22.1088 26.1088C23.4591 24.7586 25.2904 24 27.2 24H51.2C53.1096 24 54.9409 24.7586 56.2912 26.1088C57.6414 27.4591 58.4 29.2904 58.4 31.2V45.6C58.4 47.5096 57.6414 49.3409 56.2912 50.6912C54.9409 52.0414 53.1096 52.8 51.2 52.8H46.4L39.2 60Z"
+      stroke="#00122A"
+      stroke-width="3.3"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M29.6006 33.6H48.8006"
+      stroke="#00122A"
+      stroke-width="3.3"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M29.6006 43.2H44.0006"
+      stroke="#00122A"
+      stroke-width="3.3"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <defs>
+      <linearGradient
+        id="paint0_linear_1018_3126"
+        x1="20.6193"
+        y1="309.092"
+        x2="124.007"
+        y2="286.344"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stop-color="#00D44A" />
+        <stop offset="0.1063" stop-color="#11E35A" />
+        <stop offset="0.2375" stop-color="#0AB847" />
+        <stop offset="0.3819" stop-color="#0FB849" />
+        <stop offset="0.5356" stop-color="#25B758" />
+        <stop offset="0.6969" stop-color="#00D44A" />
+        <stop offset="0.8618" stop-color="#29FE73" />
+        <stop offset="1" stop-color="#3FFF82" />
+      </linearGradient>
+    </defs>
   </svg>
 );
