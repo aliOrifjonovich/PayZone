@@ -84,4 +84,8 @@
         border-collapse: separate;
       }
     }
+
+    @media (max-width:1000px) {
+      overflow: scroll !important;
+    }
   }

@@ -25,7 +25,7 @@ const SIngleCardGame = ({ title, img, cardType, setOpenModal, openModal, price, 
           <div className={styles.img_wrapper}>
             <img src={img} alt="game coin/uc/gold/diamonds" />
           </div>
-          <h3 className={styles.coin}>{title}</h3>
+          {/* <h3 className={styles.coin}>{title}</h3> */}
         </div>
         <Button
           variant="contained"
