@@ -22,11 +22,8 @@ const StyledRating = styled(Rating)({
 
 const Testimonials = () => {
   const { t } = useTranslation("common");
-  const width1000px = useMediaQuery("max-width:1000px");
-  const {data: feedbacks} = useGetFeedbacks();
-
-  console.log("width1000px", width1000px);
-  
+  const width1200px = useMediaQuery("max-width:1200px");
+  const {data: feedbacks} = useGetFeedbacks();  
 
   return (
     <>
@@ -39,7 +36,7 @@ const Testimonials = () => {
         </h1>
 
         <Swiper
-          slidesPerView={width1000px ? 1 : 1.5}
+          slidesPerView={width1200px ? 1 : 1.5}
           centeredSlides={true}
           spaceBetween={30}
           autoplay={{
@@ -76,7 +73,7 @@ const Testimonials = () => {
 
                   <div className={styles.reviewer_wrapper}>
                     <div className={styles.img_wrapper}>
-                      <img src={item.image} alt="reviewer_image" />
+                      <img src={"http://payzone.uz/" + item.image?.slice(22)} alt="reviewer_image" />
                     </div>
 
                     <div className={styles.name_position}>

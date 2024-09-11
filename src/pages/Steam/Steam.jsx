@@ -11,7 +11,6 @@ const Steam = () => {
   const [selectedCurrency, setSelectedCurrency] = useState("uzs");
 
   const { data: SteamProducts } = useGetSteams();
-  console.log("steam", SteamProducts);
   
 
   return (

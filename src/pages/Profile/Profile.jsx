@@ -31,7 +31,6 @@ const Profile = () => {
   const { t } = useTranslation("common");
   const width800 = useMediaQuery("max-width:800px")
 
-  console.log("width800", width800);
   
   const drawer = (
     <div className={styles.list}>
@@ -45,7 +44,7 @@ const Profile = () => {
           <h4>Profile</h4>
         </div>
       </Link>
-      {width800 ?  "" : <p className={styles.list_payments_title}>{t("Payments")}</p>}
+     <p className={styles.list_payments_title}>{t("Payments")}</p>
       <div className={styles.list_payments}>
         {drawerdata?.map((data) => (
           <Link key={data.link} to={data.link}>
