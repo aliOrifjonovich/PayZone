@@ -18,7 +18,7 @@ const NavbarAssistens = () => {
   }, [location]);
 
   const handleSetActive = (to) => {
-    if (location.pathname === "/steam" && to.startsWith("#")) {
+    if (location.pathname === "/steam" || location.pathname.startsWith("/profile") && to.startsWith("#")) {
       navigate("/");
     } else {
       setActiveId(to);

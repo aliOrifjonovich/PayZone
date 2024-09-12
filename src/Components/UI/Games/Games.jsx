@@ -5,6 +5,7 @@ import CardGame from "../CardGame/CardGame";
 import { Container } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { useGetGames } from "services/games.service";
+import { Link } from "react-router-dom";
 
 const Games = () => {
   const { t } = useTranslation("common");
@@ -39,12 +40,13 @@ const Games = () => {
               data-aos="fade-right"
               data-aos-duration={getDuration(index)}
             >
-              <CardGame
+             <Link to={`/single-game/${item.uuid}`}>
+             <CardGame
                 key={item.id}
                 id={item.uuid}
                 name={item.name}
                 image={ "http://payzone.uz/" + item.image?.slice(22)}
-              />
+              /></Link>
             </Grid>
           ))}
         </Grid>
