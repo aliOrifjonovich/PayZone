@@ -12,17 +12,17 @@ export const translateTitleWithModification = (item, slug, lang) => {
   }
   let text = item[slug + "_" + lang];
   const words = text.split(" ");
-  
-  if (lang === "uz" || lang === "ru") {
+
+  if (lang === "uz" || lang === "ru" || lang === "eng") {
     if (words.length >= 4) {
       words[3] = `<span style="color: #00d44a">${words[3]}</span><br />`;
     }
-  }else {
-    if (words.length >= 5) {
-      words[4] = `<span style="color: #00d44a">${words[4]}</span><br />`;
-    }
   }
-  
+  //else {
+  //   if (words.length >= 5) {
+  //     words[4] = `<span style="color: #00d44a">${words[4]}</span><br />`;
+  //   }
+  // }
+
   return <span dangerouslySetInnerHTML={{ __html: words.join(" ") }} />;
 };
-

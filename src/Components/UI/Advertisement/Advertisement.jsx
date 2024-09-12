@@ -6,7 +6,6 @@ import { useGetEvents } from "services/events.service";
 import {
   translate,
   translateTitleWithModification,
-  translateWithModification,
 } from "utils/translate";
 
 const Advertisement = () => {
