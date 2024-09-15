@@ -23,7 +23,7 @@ const Advertisement = () => {
             <div className={styles.img_wrapper}>
               <div className={styles.gradient}></div>
               <img
-                src={"http://payzone.uz/" + item.image?.slice(22)}
+                src={"http://api.payzone.uz/" + item.image?.slice(24)}
                 alt="intro_pubg_gaming"
               />
             </div>
