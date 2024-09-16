@@ -37,6 +37,10 @@
       @media screen and (max-width: 1000px) {
         width: 200px !important;
       }
+      @media screen and (max-width: 500px) {
+        width: 150px !important;
+        height: 200px !important;
+      }
     }
 
     .card_content {

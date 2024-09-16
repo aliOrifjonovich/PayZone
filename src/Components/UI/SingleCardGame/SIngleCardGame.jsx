@@ -8,12 +8,28 @@ import { useTranslation } from "react-i18next";
 
 import img2 from "../../assets/images/1.png";
 
-
-const SIngleCardGame = ({ title, img, cardType, setOpenModal, openModal, price, ask_text, handleClose }) => {
-  const {t}=useTranslation("common")
+const SIngleCardGame = ({
+  title,
+  img,
+  cardType,
+  setOpenModal,
+  openModal,
+  price,
+  ask_text,
+  handleClose,
+}) => {
+  const { t } = useTranslation("common");
   return (
     <>
-      <div className={cardType === "green" ? styles.card : styles.gold}>
+      <div
+        className={
+          cardType === "green"
+            ? styles.card
+            : cardType === "light"
+            ? styles.light
+            : styles.gold
+        }
+      >
         {cardType === "gold" ? (
           <span>
             <img src={rpimage} alt="rp" />
@@ -36,7 +52,6 @@ const SIngleCardGame = ({ title, img, cardType, setOpenModal, openModal, price, 
           {price}
         </Button>
       </div>
-
 
       <Modal open={openModal} handleClose={handleClose}>
         <div className={styles.login_wrapper}>

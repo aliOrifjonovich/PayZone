@@ -28,12 +28,12 @@ const Games = () => {
         <Grid
           container
           spacing={{ xs: 2, md: 3 }}
-          columns={{ xs: 4, sm: 8, md: 12 }}
+          columns={{ xs: 12, sm: 8, md: 12 }}
         >
           {Games?.map((item, index) => (
             <Grid
               item
-              xs={12}
+              xs={6}
               sm={4}
               md={3}
               key={index}

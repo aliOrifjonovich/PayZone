@@ -27,6 +27,8 @@ const fakeCards = [
   {number:"6250941006528599", name:"Javlon", expiry:"06/2026", cvc:"837" },
   {number:"60115564485789458", name:"Javlon", expiry:"12/2026", cvc:"837" },
   {number:"9860030172443753", name:"Javlon", expiry:"08/26", cvc:"837" },
+  {number:"4263982640269299", name:"Ilyosbek", expiry:"02/2026", cvc:"837"},
+
 
 
 ]
