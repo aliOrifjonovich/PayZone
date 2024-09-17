@@ -12,12 +12,12 @@ import img2 from "../../assets/images/1.png";
 const SingleCardPacks = ({title, img, cardType, setOpenModal, openModal, price, ask_text, handleClose}) => {
   return (
     <>
-    <div className={styles.card}>
+    <div className={cardType === "big_green_title" ? styles.bigGreenTitle : styles.card}>
       <div className={styles.img_content}>
         <div className={styles.img_wrapper}>
           <img src={img} alt="game coin/uc/gold/diamonds" />
         </div>
-        <div className={styles.content}>
+        {/* <div className={styles.content}>
           <p>
             <DoneIcon/>
             4 content packs
@@ -26,7 +26,7 @@ const SingleCardPacks = ({title, img, cardType, setOpenModal, openModal, price, 
             <DoneIcon/>
             + 1200 coins
           </p>
-        </div>
+        </div> */}
       </div>
       <Button
         variant="contained"
@@ -34,7 +34,7 @@ const SingleCardPacks = ({title, img, cardType, setOpenModal, openModal, price, 
         fullWidth={false}
         onClick={() => setOpenModal(true)}
       >
-        13,000 so’m
+        {price}
       </Button>
     </div>
 

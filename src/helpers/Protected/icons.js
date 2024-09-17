@@ -742,83 +742,30 @@ export const Line = () => (
 );
 export const DoneIcon = () => (
   <svg
-    width="20"
-    height="14"
-    viewBox="0 0 20 14"
+    width="13"
+    height="9"
+    viewBox="0 0 13 9"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
-      d="M19.2422 1.3125L9.28906 12.6875L5.02344 8.42188"
-      stroke="url(#paint0_linear_482_3865)"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      d="M12.0006 0.676331L6.07752 7.67633L3.53906 5.05133"
+      stroke="#8399B1"
+      stroke-linecap="round"
+      stroke-linejoin="round"
     />
     <path
-      d="M5.02344 12.6875L0.757812 8.42188"
-      stroke="url(#paint1_linear_482_3865)"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      d="M3.53846 7.67633L1 5.05133"
+      stroke="#8399B1"
+      stroke-linecap="round"
+      stroke-linejoin="round"
     />
     <path
-      d="M14.9766 1.3125L8.93359 8.24414"
-      stroke="url(#paint2_linear_482_3865)"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      d="M9.46139 0.676331L5.86523 4.94196"
+      stroke="#8399B1"
+      stroke-linecap="round"
+      stroke-linejoin="round"
     />
-    <defs>
-      <linearGradient
-        id="paint0_linear_482_3865"
-        x1="8.76298"
-        y1="45.8179"
-        x2="27.0192"
-        y2="40.7584"
-        gradientUnits="userSpaceOnUse"
-      >
-        <stop stopColor="#00D44A" />
-        <stop offset="0.1063" stopColor="#11E35A" />
-        <stop offset="0.2375" stopColor="#0AB847" />
-        <stop offset="0.3819" stopColor="#0FB849" />
-        <stop offset="0.5356" stopColor="#25B758" />
-        <stop offset="0.6969" stopColor="#00D44A" />
-        <stop offset="0.8618" stopColor="#29FE73" />
-        <stop offset="1" stopColor="#3FFF82" />
-      </linearGradient>
-      <linearGradient
-        id="paint1_linear_482_3865"
-        x1="1.87967"
-        y1="25.1114"
-        x2="7.50088"
-        y2="23.8651"
-        gradientUnits="userSpaceOnUse"
-      >
-        <stop stopColor="#00D44A" />
-        <stop offset="0.1063" stopColor="#11E35A" />
-        <stop offset="0.2375" stopColor="#0AB847" />
-        <stop offset="0.3819" stopColor="#0FB849" />
-        <stop offset="0.5356" stopColor="#25B758" />
-        <stop offset="0.6969" stopColor="#00D44A" />
-        <stop offset="0.8618" stopColor="#29FE73" />
-        <stop offset="1" stopColor="#3FFF82" />
-      </linearGradient>
-      <linearGradient
-        id="paint2_linear_482_3865"
-        x1="10.5229"
-        y1="28.433"
-        x2="18.5768"
-        y2="26.8763"
-        gradientUnits="userSpaceOnUse"
-      >
-        <stop stopColor="#00D44A" />
-        <stop offset="0.1063" stopColor="#11E35A" />
-        <stop offset="0.2375" stopColor="#0AB847" />
-        <stop offset="0.3819" stopColor="#0FB849" />
-        <stop offset="0.5356" stopColor="#25B758" />
-        <stop offset="0.6969" stopColor="#00D44A" />
-        <stop offset="0.8618" stopColor="#29FE73" />
-        <stop offset="1" stopColor="#3FFF82" />
-      </linearGradient>
-    </defs>
   </svg>
 );
 

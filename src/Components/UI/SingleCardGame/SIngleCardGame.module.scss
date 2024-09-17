@@ -107,9 +107,10 @@
     gap: 10px;
 
     .img_wrapper {
-      width: 127px;
-      height: 60px;
-
+      width: 100%;
+      height: 100%;
+      padding: 20px 0 10px 0 ;
+      
       img {
         width: 100%;
         height: 100%;
@@ -186,8 +187,9 @@
     gap: 10px;
 
     .img_wrapper {
-      width: 127px;
-      height: 60px;
+      width: 100%;
+      height: 100%;
+      padding: 20px 0 10px 0 ;
 
       img {
         width: 100%;

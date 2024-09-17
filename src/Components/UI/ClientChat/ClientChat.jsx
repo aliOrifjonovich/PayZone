@@ -16,7 +16,7 @@ const ClientChat = () => {
   const [text, setText] = useState("");
 
   function handleOnEnter(text) {
-    console.log("enter", text);
+    // console.log("enter", text);
   }
 
   return (

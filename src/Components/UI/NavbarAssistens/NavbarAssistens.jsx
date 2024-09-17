@@ -18,7 +18,11 @@ const NavbarAssistens = () => {
   }, [location]);
 
   const handleSetActive = (to) => {
-    if (location.pathname === "/steam" || location.pathname.startsWith("/profile") && to.startsWith("#")) {
+    if (
+      location.pathname === "/steam" ||
+      location.pathname.startsWith("/profile") ||
+      (location.pathname.startsWith("/single-game") && to.startsWith("#"))
+    ) {
       navigate("/");
     } else {
       setActiveId(to);
@@ -33,9 +37,13 @@ const NavbarAssistens = () => {
 
   return (
     <>
-      <nav className={styles.navbar} data-aos="fade-down" data-aos-duration="3000">
+      <nav
+        className={styles.navbar}
+        data-aos="fade-down"
+        data-aos-duration="3000"
+      >
         <ul>
-          {navbarItems?.map((item) => (
+          {navbarItems?.map((item) =>
             item.path.startsWith("#") ? (
               <Link
                 to={item.path}
@@ -46,26 +54,24 @@ const NavbarAssistens = () => {
                 state={item.state}
                 key={item.path}
                 onSetActive={handleSetActive}
-                onClick={()=>handleSetActive(item.path)}
+                onClick={() => handleSetActive(item.path)}
                 activeClass={styles.active}
-                className={`${item.path === activeId  ? styles.active : ""}`}
+                className={`${item.path === activeId ? styles.active : ""}`}
               >
                 <li>{t(item.slug)}</li>
-              </Link>              
+              </Link>
             ) : (
               <NavLink
                 to={item.path}
                 state={item.state}
                 key={item.path}
-                className={({ isActive }) =>
-                  isActive ? styles.active : ""
-                }
+                className={({ isActive }) => (isActive ? styles.active : "")}
                 onClick={() => handleNavLinkClick(item.path)}
               >
                 <li>{t(item.slug)}</li>
               </NavLink>
             )
-          ))}
+          )}
         </ul>
       </nav>
     </>

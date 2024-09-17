@@ -6,6 +6,7 @@ import { navbarItems } from "utils/navbarItems";
 import logo from "../../assets/images/logo.png";
 import { CopywritingIcon, EmailIcon, InstagramIcon, TelegramIcon, WhatsappIcon } from "helpers/Protected/icons";
 import { useGetMedias } from "services/socials.service";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export function Footer() {
   const { t } = useTranslation("common");
@@ -50,6 +51,9 @@ export function Footer() {
               <NavLink to={'/'}><TelegramIcon/></NavLink>
               <NavLink to={'/'}><InstagramIcon/></NavLink>
               <NavLink to={'/'}><WhatsappIcon/></NavLink>
+              {/* <div style={{border:"2px solid red"}}>
+              <FontAwesomeIcon icon="fa-brands fa-telegram" />
+              </div> */}
             </div>
           </div>
 

@@ -8,6 +8,9 @@ import MyPayments from "pages/MyPayments/MyPayments";
 import PaymentMethods from "pages/PaymentMethods/PaymentMethods";
 import MyProfile from "pages/MyProfile/MyProfile";
 import AdminCHat from "pages/AdminChat/AdminCHat";
+import AdminChatLayout from "Components/UI/AdminChatLayout/AdminChatLayout";
+import ChatUsers from "Components/UI/ChatUsers/ChatUsers";
+import Chat from "Components/UI/Chat/Chat";
 
 export const Routes = () =>
   useRoutes([
@@ -42,20 +45,26 @@ export const Routes = () =>
       element: <Steam />,
     },
     {
-      path: "/profile",
+      path: "/admin-chat",
       element: <AdminCHat />,
       children: [
         {
           index: true,
-          element: <MyProfile />,
+          element: <AdminChatLayout />,
         },
         {
-          path: "my-payments",
-          element: <MyPayments />,
-        },
-        {
-          path: "payment-methods",
-          element: <PaymentMethods />,
+          path: "/admin-chat/:gameId",
+          element: <ChatUsers />,
+          children: [
+            {
+              index: true,
+              element: <AdminChatLayout />
+            },
+            {
+              path: '/admin-chat/:gameId/:chatId',
+              element: <Chat />
+            }
+          ]
         },
       ],
     },

@@ -99,7 +99,7 @@ const Header = () => {
 
               {isTrue && (
                 <div className={styles.navbar_items_wrapper_buttons_usersCard}>
-                  <NavLink to={"/"}>
+                  {/* <NavLink to={"/"}>
                     <div style={{
                       position: "relative",
                       cursor: "pointer",
@@ -107,7 +107,7 @@ const Header = () => {
                       <img src={notification} alt="notification" />
                       {count ? <div className={styles.count}>{count}</div> : ""}
                     </div>
-                  </NavLink>
+                  </NavLink> */}
 
                   <NavLink to={"/profile"}>
                     <div className={styles.user_button}>

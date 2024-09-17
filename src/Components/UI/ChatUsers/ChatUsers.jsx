@@ -1,15 +1,28 @@
 import React from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
-import styles from "./AdminChat.module.scss";
-import img from "../../Components/assets/images/image 10.png";
-import { Box, Container } from "@mui/material";
+import styles from "./index.module.scss";
+import img from "../../assets/images/profile.png";
+import Input from "../Input/Input";
 import { useTranslation } from "react-i18next";
+import { Box, Container } from "@mui/material";
+import { useForm } from "react-hook-form";
+import { DoneIcon, SearchIcon } from "helpers/Protected/icons";
 
 const drawerdata = [
   {
     image: img,
+    title: "Arlene McCoy",
+    link: "my-payments",
+  },
+  {
+    image: img,
+    title: "Arlene McCoy",
+    link: "my-payments",
+  },
+  {
+    image: img,
     title: "PUBG",
-    link: 1,
+    link: "my-payments",
   },
   {
     image: img,
@@ -63,13 +76,28 @@ const drawerdata = [
   },
 ];
 
-const AdminCHat = () => {
+const ChatUsers = () => {
   const { pathname } = useLocation();
   const { t } = useTranslation("common");
 
+  const { control } = useForm({
+    defaultValues: {},
+  });
+
   const drawer = (
     <div className={styles.list}>
-      <h1 className={styles.list_games_title}>{t("Games")}</h1>
+      <div className={styles.upperContent}>
+        <h1 className={styles.list_games_title}>{t("Chats")}</h1>
+        <Input
+          icon={<SearchIcon />}
+          type="text"
+          control={control}
+          name="search"
+          placeholder={t("search...")}
+          width={"360px"}
+        />
+      </div>
+
       <div className={styles.list_games}>
         {drawerdata?.map((data) => (
           <Link key={data.link} to={data.link}>
@@ -78,21 +106,33 @@ const AdminCHat = () => {
                 pathname.includes(data.link) && styles.list_item_active
               }`}
             >
-              <div className={styles.img_wrapper}>
-                <img src={data.image} alt="games_images" />
+              <div className={styles.content}>
+                <div className={styles.img_wrapper}>
+                  <img src={data.image} alt="games_images" />
+                </div>
+                <div className={styles.message}>
+                  <h4>{data.title}</h4>
+                  <p>Thank you!</p>
+                </div>
               </div>
-              <h4>{data.title}</h4>
+
+              <div className={styles.time}>
+                <DoneIcon/>
+                <p>8:20</p>
+              </div>
             </div>
           </Link>
         ))}
       </div>
     </div>
   );
+
   return (
     <div className={styles.chat}>
       <div className={styles.chat_sidebar}>
         <div className={styles.chat_sidebar_inner}>{drawer}</div>
       </div>
+      <Container>
         <Box
           component="main"
           sx={{
@@ -105,8 +145,9 @@ const AdminCHat = () => {
             <Outlet />
           </div>
         </Box>
+      </Container>
     </div>
   );
 };
 
-export default AdminCHat;
+export default ChatUsers;

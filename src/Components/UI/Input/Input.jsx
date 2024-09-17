@@ -8,6 +8,7 @@ const Input = ({
   control,
   name = "",
   placeholder,
+  width,
   ...restProps
 }) => {
   return (
@@ -16,7 +17,7 @@ const Input = ({
       name={name}
       render={({ field: { value, onChange, name } }) => {
         return (
-          <div className={styles.inputWrapper}>
+          <div className={styles.inputWrapper} style={{width}}>
             <input
               placeholder={placeholder}
               type={type}

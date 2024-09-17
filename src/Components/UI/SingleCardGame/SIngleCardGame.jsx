@@ -9,7 +9,6 @@ import { useTranslation } from "react-i18next";
 import img2 from "../../assets/images/1.png";
 
 const SIngleCardGame = ({
-  title,
   img,
   cardType,
   setOpenModal,
@@ -18,7 +17,9 @@ const SIngleCardGame = ({
   ask_text,
   handleClose,
 }) => {
+
   const { t } = useTranslation("common");
+  
   return (
     <>
       <div
