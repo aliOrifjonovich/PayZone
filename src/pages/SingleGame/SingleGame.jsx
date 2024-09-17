@@ -218,7 +218,7 @@ const SingleGame = () => {
                       id={item.uuid || item.id}
                       title={item.title}
                       price={priceConvert(item, "price_str", selectedCurrency)}
-                      img={"http://payzone.uz/" + item.image?.slice(22)}
+                      img={"http://api.payzone.uz/" + item.image?.slice(24)}
                       cardType={item.card_type}
                       ask_text={item.ask_text}
                       openModal={openModal}

@@ -73,7 +73,7 @@ const Testimonials = () => {
 
                   <div className={styles.reviewer_wrapper}>
                     <div className={styles.img_wrapper}>
-                      <img src={"http://payzone.uz/" + item.image?.slice(22)} alt="reviewer_image" />
+                      <img src={"http://api.payzone.uz/" + item.image?.slice(24)} alt="reviewer_image" />
                     </div>
 
                     <div className={styles.name_position}>
