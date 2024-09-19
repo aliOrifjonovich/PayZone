@@ -12,6 +12,8 @@ import {
   GoogleIcon,
   OpenEyeIcon,
 } from "helpers/Protected/icons";
+import { useGoogleLogin } from '@react-oauth/google';
+
 
 const Signup = ({ setOpenModalSignup, setOpenModalLogin, setOpenModalOTP }) => {
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -46,6 +48,10 @@ const Signup = ({ setOpenModalSignup, setOpenModalLogin, setOpenModalOTP }) => {
     handleModalClose();
     setOpenModalOTP(true);
   };
+
+  const login = useGoogleLogin({
+    onSuccess: tokenResponse => console.log(tokenResponse),
+  });
 
   return (
     <div className={styles.login_wrapper}>
@@ -175,7 +181,7 @@ const Signup = ({ setOpenModalSignup, setOpenModalLogin, setOpenModalOTP }) => {
           <span>{t("Login with")}</span>
         </div>
         <div className={styles.btns}>
-          <div className={styles.btn}>
+          <div className={styles.btn} onClick={() => login()}>
             <GoogleIcon />
             <p>Google</p>
           </div>

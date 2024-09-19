@@ -44,7 +44,7 @@
             border-radius: 10px;
             position: relative;
             color: #00122a;
-            font-family: Montserrat;
+            font-family: "Montserrat", sans-serif;
             font-size: 18px;
             font-weight: 500;
             line-height: 19.76px;
@@ -281,7 +281,7 @@
       .guide {
         @include align-items-center;
         gap: 10px;
-        font-family: Montserrat;
+        font-family: "Montserrat", sans-serif;
         font-size: 16px;
         font-weight: 300;
         line-height: 17.07px;

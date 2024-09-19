@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import Modal from "Components/UI/Modal/Modal";
 import ClientChat from "Components/UI/ClientChat/ClientChat";
+import { useLocation } from "react-router-dom";
 
 Aos.init({
   once: true,
@@ -16,6 +17,7 @@ Aos.init({
 function App() {
   const { i18n } = useTranslation("common");
   const [openModalChat, setOpenModalChat] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     if (i18n.language === "en-US") {
@@ -26,21 +28,22 @@ function App() {
   const handleCloseChat = () => setOpenModalChat(false);
 
   return (
-   <>
-    <div className="app">
-      <Navbar />
-      {Routes()}
-      <Footer />
-      <span className="chaticon"onClick={() => setOpenModalChat(true)}>
-        <ChatIcon />
-      </span>
-    </div>
+    <>
+      <div className="app">
+        <Navbar />
+        {Routes()}
+        <Footer />
+        {!location.pathname.startsWith("/admin-chat") && (
+          <span className="chaticon" onClick={() => setOpenModalChat(true)}>
+            <ChatIcon />
+          </span>
+        )}
+      </div>
 
-    <Modal open={openModalChat} handleClose={handleCloseChat}>
-      <ClientChat/>
-    </Modal>
-   </>
-
+      <Modal open={openModalChat} handleClose={handleCloseChat}>
+        <ClientChat />
+      </Modal>
+    </>
   );
 }
 

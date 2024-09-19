@@ -52,6 +52,7 @@ const Header = () => {
             control={control}
             name="search"
             placeholder={t("search...")}
+            width={"400px"}
           />
 
           <div className={styles.navbar_items_wrapper}>
@@ -60,7 +61,7 @@ const Header = () => {
             </div>
 
             <div className={styles.navbar_items_wrapper_buttons}>
-              {!isTrue && (
+              {isTrue && (
                 <div className={styles.registerButtons}>
                   <Button
                     onClick={() => setOpenModalLogin(true)}
@@ -97,7 +98,7 @@ const Header = () => {
                 </div>
               )}
 
-              {isTrue && (
+              {!isTrue && (
                 <div className={styles.navbar_items_wrapper_buttons_usersCard}>
                   {/* <NavLink to={"/"}>
                     <div style={{
@@ -120,6 +121,7 @@ const Header = () => {
               <MobileNavbar />
             </div>
           </div>
+          
         </div>
       </div>
 

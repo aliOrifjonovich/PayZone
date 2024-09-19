@@ -67,7 +67,7 @@
 
       .errorMessage {
         color: red;
-        font-family: Manrope sans-serif;
+        font-family: "Manrope", sans-serif;
         font-size: 18px;
         line-height: 22.23px;
       }
@@ -78,7 +78,7 @@
 
 
       h3 {
-        font-family: Montserrat;
+        font-family: "Montserrat", sans-serif;
         font-size: 18px;
         font-weight: 300;
         line-height: 17.07px;
@@ -116,7 +116,7 @@
         }
       }
       p {
-        font-family: Montserrat;
+        font-family: "Montserrat", sans-serif;
         font-size: 18px;
         font-weight: 300;
         line-height: 17.07px;
@@ -194,7 +194,7 @@
       color: #fcfffa;
       letter-spacing: 1px;
       padding: 0 20px;
-      font-family: Manrope sans-serif;
+      font-family: "Manrope", sans-serif;
       @include element-center;
       gap: 5px;
       p {

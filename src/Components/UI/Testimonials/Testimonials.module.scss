@@ -14,9 +14,8 @@
     border: 1px solid #ffffff8a;
     border-radius: 10px;
     position: relative;
-    // width: 537px;
-    // height: 343px;
-
+    height: 100% !important;
+   
     .markedIcon {
       position: absolute;
       top: -40px;
@@ -30,7 +29,7 @@
       gap: 15px;
 
       &_text {
-        font-family: Montserrat;
+        font-family: "Montserrat", sans-serif;
         font-size: 16px;
         font-weight: 400;
         line-height: 29.62px;
@@ -72,14 +71,14 @@
           gap: 10px;
           h1 {
             color: #fff;
-            font-family: Montserrat;
+            font-family: "Montserrat", sans-serif;
             font-size: 20.97px;
             font-weight: 500;
             line-height: 23.19px;
             letter-spacing: 0.035em;
           }
           h2 {
-            font-family: Montserrat;
+            font-family: "Montserrat", sans-serif;
             font-size: 12px;
             font-weight: 500;
             color: #afb0b1;
