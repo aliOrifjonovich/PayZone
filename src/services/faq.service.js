@@ -2,7 +2,7 @@ import { useQuery } from "react-query";
 import { requestPayzone } from "./http-client";
 
 const faqService = {
-  getfaqquestion: () => requestPayzone.get("/All_FAQs"),
+  getfaqquestion: () => requestPayzone.get("/api/v1/All_FAQs"),
 };
 
 export const useGetFaq = () => {

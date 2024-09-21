@@ -12,7 +12,7 @@ import {
   WhatsappIcon,
 } from "helpers/Protected/icons";
 import { useGetMedias } from "services/socials.service";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export function Footer() {
   const { t } = useTranslation("common");

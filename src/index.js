@@ -14,6 +14,7 @@ import { queryClient } from "services/http-client";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+const googleClientId = "1041206037611-sa1lj6o6hcjm9ot64sdj2jhl1fmnmvp9.apps.googleusercontent.com";
 root.render(
   <React.StrictMode>
     <Provider store={store}>
@@ -22,7 +23,7 @@ root.render(
           <QueryClientProvider client={queryClient}>
             <BrowserRouter>
               <Suspense fallback={<div className="suspense">Loading...</div>}>
-                <GoogleOAuthProvider clientId="<your_client_id>">
+                <GoogleOAuthProvider clientId={googleClientId}>
                   <App />
                 </GoogleOAuthProvider>
               </Suspense>

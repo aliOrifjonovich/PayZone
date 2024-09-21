@@ -3,7 +3,7 @@ import { requestPayzone } from "./http-client";
 
 const eventsService = {
   getEvents: () =>
-    requestPayzone.get("/Events"),
+    requestPayzone.get("/api/v1/Events"),
 };
 
 export const useGetEvents = () => {

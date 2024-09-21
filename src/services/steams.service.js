@@ -2,7 +2,7 @@ import { useQuery } from "react-query";
 import { requestPayzone } from "./http-client";
 
 const SteamsService = {
-  getSteams: () => requestPayzone.get("/SteamProducts"),
+  getSteams: () => requestPayzone.get("/api/v1/SteamProducts"),
 };
 
 

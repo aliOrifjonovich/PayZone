@@ -3,7 +3,7 @@ import { requestPayzone } from "./http-client";
 
 const socialService = {
   getMedias: () =>
-    requestPayzone.get("/Social"),
+    requestPayzone.get("/api/v1/Social"),
 };
 
 export const useGetMedias = () => {

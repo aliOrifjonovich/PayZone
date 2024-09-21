@@ -11,6 +11,8 @@ import {
   OpenEyeIcon,
 } from "helpers/Protected/icons";
 import { useGoogleLogin } from '@react-oauth/google';
+import axios from "axios";
+import { usePostLogin } from "services/auth.service";
 
 
 const Login = ({ setOpenModalLogin, setOpenModalSignup }) => {
@@ -47,8 +49,45 @@ const Login = ({ setOpenModalLogin, setOpenModalSignup }) => {
     reset();
   };
 
+  const {mutate} = usePostLogin({
+    onSuccess: (res) => {
+      localStorage.setItem('token', res.token);
+      setOpenModalLogin(false);
+    },
+    onError: (err) => {
+      console.log('err', err)
+    }
+  })
+
+  const handleGoogleLoginSuccess = async (tokenResponse) => {
+    try {
+      const userInfoResponse = await axios.get(
+        "https://www.googleapis.com/oauth2/v3/userinfo",
+        {
+          headers: {
+            Authorization: `Bearer ${tokenResponse.access_token}`,
+          },
+        }
+      );
+
+      const userInfo = userInfoResponse.data;
+      mutate({
+        name: userInfo.name,
+        email: userInfo.email,
+        imageUrl: userInfo.picture,
+        type: 'google'
+      })
+
+      console.log("Foydalanuvchi Google bilan kirish muvaffaqiyatli amalga oshirildi:", userInfo);
+    } catch (error) {
+      console.error("Google bilan kirishda xatolik:", error);
+    }
+  };
+
+  // Google login hook
   const login = useGoogleLogin({
-    onSuccess: tokenResponse => console.log(tokenResponse),
+    onSuccess: handleGoogleLoginSuccess,
+    onError: (error) => console.log("Google login xatolik: ", error),
   });
 
   return (

@@ -2,8 +2,8 @@ import { useQuery } from "react-query";
 import { requestPayzone } from "./http-client";
 
 const gamesService = {
-  getGame: () => requestPayzone.get("/Games"),
-  getAllProducts: (id) => requestPayzone.get(`/All_Products/${id}`),
+  getGame: () => requestPayzone.get("/api/v1/Games"),
+  getAllProducts: (id) => requestPayzone.get(`/api/v1/All_Products/${id}`),
 };
 
 export const useGetGames = () => {

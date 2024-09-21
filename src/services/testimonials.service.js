@@ -3,7 +3,7 @@ import { requestPayzone } from "./http-client";
 
 const testimonialsService = {
   getFeedbacks: () =>
-    requestPayzone.get("/Testimonial"),
+    requestPayzone.get("/api/v1/Testimonial"),
 };
 
 export const useGetFeedbacks = () => {

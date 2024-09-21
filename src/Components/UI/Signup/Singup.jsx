@@ -13,6 +13,8 @@ import {
   OpenEyeIcon,
 } from "helpers/Protected/icons";
 import { useGoogleLogin } from '@react-oauth/google';
+import axios from "axios";
+import { usePostSignup } from "services/auth.service";
 
 
 const Signup = ({ setOpenModalSignup, setOpenModalLogin, setOpenModalOTP }) => {
@@ -35,6 +37,16 @@ const Signup = ({ setOpenModalSignup, setOpenModalLogin, setOpenModalOTP }) => {
     },
   });
 
+  const {mutate} = usePostSignup({
+    onSuccess: (res) => {
+      localStorage.setItem('token', res.token);
+      setOpenModalSignup(false);
+    },
+    onError: (err) => {
+      console.log('err', err)
+    }
+  })
+
   const handleModalClose = () => {
     setOpenModalSignup(false);
     reset();
@@ -45,12 +57,47 @@ const Signup = ({ setOpenModalSignup, setOpenModalLogin, setOpenModalOTP }) => {
   };
 
   const onSubmit = (data) => {
+    mutate({
+      name: data.fullname,
+      email: data.email,
+      phoneNumber: data.phoneNumber,
+      password: data.password,
+      confirmPassword: data.confirmPassword
+    })
     handleModalClose();
     setOpenModalOTP(true);
   };
 
+  
+
+  const handleGoogleLoginSuccess = async (tokenResponse) => {
+    try {
+      const userInfoResponse = await axios.get(
+        "https://www.googleapis.com/oauth2/v3/userinfo",
+        {
+          headers: {
+            Authorization: `Bearer ${tokenResponse.access_token}`,
+          },
+        }
+      );
+
+      const userInfo = userInfoResponse.data;
+      mutate({
+        name: userInfo.name,
+        email: userInfo.email,
+        imageUrl: userInfo.picture,
+        type: 'google'
+      })
+
+      console.log("Foydalanuvchi Google bilan kirish muvaffaqiyatli amalga oshirildi:", userInfo);
+    } catch (error) {
+      console.error("Google bilan kirishda xatolik:", error);
+    }
+  };
+
   const login = useGoogleLogin({
-    onSuccess: tokenResponse => console.log(tokenResponse),
+    onSuccess: handleGoogleLoginSuccess,
+    onError: (error) => console.log("Google login xatolik: ", error),
   });
 
   return (

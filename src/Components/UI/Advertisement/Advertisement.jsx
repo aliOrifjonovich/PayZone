@@ -37,6 +37,7 @@ const Advertisement = () => {
                     src={"http://api.payzone.uz/" + item.image?.slice(24)}
                     alt="intro_pubg_gaming"
                   />
+                  {console.log("events", item.image)}
                 </div>
 
                 <div className={styles.content_infos}>

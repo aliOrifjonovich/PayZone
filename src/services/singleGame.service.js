@@ -3,7 +3,7 @@ import { requestPayzone } from "./http-client";
 
 const singleGame = {
   getServices: () =>
-    requestPayzone.get("/Services"),
+    requestPayzone.get("/api/v1/Services"),
 };
 
 export const useGetServices = () => {
